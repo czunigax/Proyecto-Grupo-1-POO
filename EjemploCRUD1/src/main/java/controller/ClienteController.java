@@ -4,8 +4,7 @@
  * and open the template in the editor.
  */
 package controller;
-import modelo.Persona;
-import view.PersonaView;
+
 import unah.ejemplocrud1.ConectarBD;
 
 import java.sql.Connection;
