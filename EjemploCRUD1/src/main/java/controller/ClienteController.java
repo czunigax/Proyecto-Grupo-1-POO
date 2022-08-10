@@ -87,7 +87,7 @@ public class ClienteController {
         st= null;
         cn= null;
         
-        sql= "update cliente set nombre= '"+Modelo.getNombre()+"' "+
+        sql= "update cliente set nombre= '"+Modelo.getNombre()+"' "+Modelo.getDireccion()+"' "+
                 "where id='"+Modelo.getId()+"'";
         
         try{
