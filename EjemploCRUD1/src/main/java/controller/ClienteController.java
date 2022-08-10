@@ -11,6 +11,8 @@ import java.sql.Connection;
 import java.sql.Statement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import modelo.Cliente;
+import view.ClienteView;
 
 /**
  *
@@ -51,11 +53,11 @@ public class ClienteController {
     return this.Modelo.getDireccion();
     }
     public void setDireccion(String Direccion){
-    this.Modelo.setDireccion();
+    this.Modelo.setDireccion(Direccion);
     }
     
     public void ActualizarVistaCliente(){
-        Vista.ImprimirDatospersona(Modelo.getId(), Modelo.getNombre(), Modelo.getDireccion());
+        Vista.ImprimirDatoscliente(Modelo.getId(), Modelo.getNombre(), Modelo.getDireccion());
     }
     
     public boolean Insertar(){
