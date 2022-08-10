@@ -27,23 +27,12 @@ public class EjemploCRUD1 {
         //ahora se instancia el controlador y este actualiza a la vez modelo y vista
         ClienteController controladorCliente= new ClienteController(modeloCliente, vistacliente);
         
-      /*  //comprobar que actualizo
-        controlador.ActualizarVista();
-        
-        //ahora probar hacer cambios
-        controlador.setNombre("la pepe");
-        
-        //comprobar el cambio
-        controlador.ActualizarVista();
-        
-       System.out.println("Persistente");
-        controlador.Insertar();
-        
-        //modificar info en base al Id
+      /*
+       //modificar info en base al Id
         System.out.println("Modificar");
         controlador.setNombre("Nombre xd");
 
-       controlador.Update("123");
+        controlador.Update("123");
         
         controlador.ActualizarVista();
         
@@ -51,17 +40,9 @@ public class EjemploCRUD1 {
         System.out.println("Informacion de la BD");
         controlador.Select("123");
         
-       // controlador.ActualizarVista();
+       // controlador.ActualizarVista();*/
        
-        RetiroController controladorRetiro= new RetiroController(modeloRetiro, vistaRetiro);
-        controladorRetiro.ActualizarVista();
-        
-        controladorRetiro.setNombre("El abuelo");
-        controladorRetiro.setmonto("2000");
-       
-        controladorRetiro.ActualizarVista();
-        
-        controladorRetiro.Insertar();*/
+     
         
         //Tabla Cliente
         
@@ -76,18 +57,5 @@ public class EjemploCRUD1 {
        
     }
     
-   /* public static Persona InsertNOpersistente(){
-        Persona oPersona= new Persona();
-        oPersona.setId("123");
-        oPersona.setNombre("Nombre codigo 123");
-        
-        return oPersona;
-    }*/
-  /*  public static Cliente InsertNOpersistenteCliente(){
-        Cliente obCliente= new Cliente();
-        obCliente.setId("0801");
-        obCliente.setNombre("Maria Johnson");
-        obCliente.setDireccion("La satelite");
-        return obCliente;
-    }*/
+
 }
