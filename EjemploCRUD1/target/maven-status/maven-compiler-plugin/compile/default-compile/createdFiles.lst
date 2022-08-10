@@ -1,0 +1,8 @@
+controller\ClienteController.class
+controller\PersonaController.class
+unah\ejemplocrud1\EjemploCRUD1.class
+modelo\Cliente.class
+modelo\Persona.class
+view\PersonaView.class
+unah\ejemplocrud1\ConectarBD.class
+view\ClienteView.class

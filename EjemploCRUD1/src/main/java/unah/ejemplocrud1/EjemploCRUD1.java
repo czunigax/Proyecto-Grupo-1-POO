@@ -4,11 +4,14 @@
  */
 
 package unah.ejemplocrud1;
+import controller.ClienteController;
 import modelo.Persona;
 import view.PersonaView;
 import controller.PersonaController;
 import controller.RetiroController;
+import modelo.Cliente;
 import modelo.Retiro;
+import view.ClienteView;
 import view.RetiroView;
 
 /**
@@ -18,18 +21,13 @@ import view.RetiroView;
 public class EjemploCRUD1 {
 
     public static void main(String[] args) {
-        System.out.println("Sin persistencia en BD");
         //delcara el modelo y la vista
-        Retiro modeloRetiro = InsertNOpersistenteRetiro();
-        RetiroView vistaRetiro = new RetiroView();
-        Persona modelo= InsertNOpersistente();
-        PersonaView vista= new PersonaView();
-        
-        
+       ClienteView vistacliente= new ClienteView();
+       Cliente modeloCliente = new Cliente();
         //ahora se instancia el controlador y este actualiza a la vez modelo y vista
-        PersonaController controlador= new PersonaController(modelo, vista);
+        ClienteController controladorCliente= new ClienteController(modeloCliente, vistacliente);
         
-        //comprobar que actualizo
+      /*  //comprobar que actualizo
         controlador.ActualizarVista();
         
         //ahora probar hacer cambios
@@ -63,23 +61,33 @@ public class EjemploCRUD1 {
        
         controladorRetiro.ActualizarVista();
         
-        controladorRetiro.Insertar();
-       
+        controladorRetiro.Insertar();*/
+        
+        //Tabla Cliente
+        
+        controladorCliente.ActualizarVistaCliente();
+        
+        controladorCliente.setNombre("Karim Benzema");
+        controladorCliente.setId("090019");
+        controladorCliente.setDireccion("La torocaua");
+        
+       controladorCliente.ActualizarVistaCliente();
+       controladorCliente.Insertar();
        
     }
     
-    public static Persona InsertNOpersistente(){
+   /* public static Persona InsertNOpersistente(){
         Persona oPersona= new Persona();
         oPersona.setId("123");
         oPersona.setNombre("Nombre codigo 123");
         
         return oPersona;
-    }
-    public static Retiro InsertNOpersistenteRetiro(){
-        Retiro obRetiro= new Retiro();
-        obRetiro.setMonto("500");
-        obRetiro.setNombre("el abuelo reforged");
-        
-        return obRetiro;
-    }
+    }*/
+  /*  public static Cliente InsertNOpersistenteCliente(){
+        Cliente obCliente= new Cliente();
+        obCliente.setId("0801");
+        obCliente.setNombre("Maria Johnson");
+        obCliente.setDireccion("La satelite");
+        return obCliente;
+    }*/
 }
