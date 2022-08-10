@@ -11,15 +11,15 @@ package modelo;
  */
 public class Cliente   {
     
-    String Id;
-   String Nombre:
+   String Id;
+   String Nombre;
    String Direccion;
    
    public Cliente(){
    }
    
-     public Cliente (String Id, String Nombre. String Direccion){
-        this.Id= Id;
+     public Cliente (String Id, String Nombre, String Direccion){
+        this.Id = Id;
         this.Nombre= Nombre; 
         this.Direccion=Direccion;
     }
@@ -42,7 +42,7 @@ public class Cliente   {
     public String getDireccion(){
     return Direccion;
     }
-    public setDireccion(String Direccion){
+    public void setDireccion(String Direccion){
     this.Direccion=Direccion;
     }
     
