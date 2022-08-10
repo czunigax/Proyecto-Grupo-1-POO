@@ -11,7 +11,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author migsauceda
+ * 
  */
 public class PersonaView {
     private ResultSetMetaData rsmt;
