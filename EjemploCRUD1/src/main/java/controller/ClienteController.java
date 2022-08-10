@@ -81,4 +81,49 @@ public class ClienteController {
         }
         return exito;
     }
+    
+    public boolean Update(String Id){
+        exito= false;
+        st= null;
+        cn= null;
+        
+        sql= "update cliente set nombre= '"+Modelo.getNombre()+"' "+
+                "where id='"+Modelo.getId()+"'";
+        
+        try{
+            cn= ConectarBD.Conectar();
+            st= cn.createStatement();
+            st.execute(sql);
+            
+            exito= true;
+            
+            st.close();
+            cn.close();
+        }catch(SQLException e){
+            System.out.println("Error en la ejecucion update");
+        }
+        return exito;        
+    }
+    
+    public boolean Select(String Id){
+        exito= false;
+        st= null;
+        cn= null;
+        
+        sql= "select id, nombre from cliente where id= '"+Id+"'";
+        
+        try{
+            cn= ConectarBD.Conectar();
+            st= cn.createStatement();
+            rs= st.executeQuery(sql);
+            
+            Vista.ImprimirSelect(rs);
+            
+            exito= true;
+        } catch(SQLException e){
+            System.out.println("Error en la ejecucion select");
+        }
+        return exito;
+    }
+    
 }
