@@ -69,6 +69,8 @@ public class EjemploCRUD1 {
        controladorCliente.Insertar();
        
        //Tabla Cuenta
+       
+       controladorcuenta.ActualizarVistaCuenta();
        String nombre = JOptionPane.showInputDialog("Ingrese su nombre");
        String Id = JOptionPane.showInputDialog("Ingrese su id");
        String Idcuenta = JOptionPane.showInputDialog("Ingrese su idcuenta");

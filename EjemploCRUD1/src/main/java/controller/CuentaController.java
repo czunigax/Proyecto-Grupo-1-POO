@@ -109,7 +109,7 @@ public class CuentaController {
         st= null;
         cn= null;
         
-        sql= "select id, nombre from cliente where id= '"+Id+"'";
+        sql= "select id, nombre from cuenta where id= '"+Id+"'";
         
         try{
             cn= ConectarBD.Conectar();
