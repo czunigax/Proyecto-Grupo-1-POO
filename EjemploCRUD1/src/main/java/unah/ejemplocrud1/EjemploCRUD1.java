@@ -10,6 +10,7 @@ import modelo.Persona;
 import view.PersonaView;
 import controller.PersonaController;
 import controller.RetiroController;
+import javax.swing.JOptionPane;
 import modelo.Cliente;
 import modelo.Cuenta;
 import modelo.Retiro;
@@ -60,17 +61,25 @@ public class EjemploCRUD1 {
         controladorCliente.setNombre("Karim Benzema");
         controladorCliente.setId("090019");
         controladorCliente.setDireccion("La torocaua");
-        controladorcuenta.setIdcuenta("200");
-        controladorcuenta.setTipoCuenta("Navidena");
+        
        
         
        controladorCliente.ActualizarVistaCliente();
-       controladorcuenta.Insertar();
+      
        controladorCliente.Insertar();
        
        //Tabla Cuenta
+       String nombre = JOptionPane.showInputDialog("Ingrese su nombre");
+       String Id = JOptionPane.showInputDialog("Ingrese su id");
+       String Idcuenta = JOptionPane.showInputDialog("Ingrese su idcuenta");
+       String Tipo = JOptionPane.showInputDialog("Ingrese su tipo");
+       controladorcuenta.setNombre(nombre);
+       controladorcuenta.setId(Id);
+       controladorcuenta.setIdcuenta(Idcuenta);
+       controladorcuenta.setTipoCuenta(Tipo);
        
-       
+       controladorcuenta.ActualizarVistaCuenta();
+       controladorcuenta.Insertar();
        
     }
     
