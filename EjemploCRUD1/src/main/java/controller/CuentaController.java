@@ -116,7 +116,7 @@ public class CuentaController {
             st= cn.createStatement();
             rs= st.executeQuery(sql);
             
-            Vista.ImprimirSelect(rs);
+            Vista.ImprimirSelectCuenta(rs);
             
             exito= true;
         } catch(SQLException e){

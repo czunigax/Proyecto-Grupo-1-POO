@@ -53,35 +53,34 @@ public class EjemploCRUD1 {
        // controlador.ActualizarVista();*/
        
      
-        
-        //Tabla Cliente
-        
-        controladorCliente.ActualizarVistaCliente();
-        
-        controladorCliente.setNombre("Karim Benzema");
-        controladorCliente.setId("090019");
-        controladorCliente.setDireccion("La torocaua");
-        
-       
-        
-       controladorCliente.ActualizarVistaCliente();
-      
-       controladorCliente.Insertar();
-       
-       //Tabla Cuenta
-       
-       controladorcuenta.ActualizarVistaCuenta();
        String nombre = JOptionPane.showInputDialog("Ingrese su nombre");
        String Id = JOptionPane.showInputDialog("Ingrese su id");
        String Idcuenta = JOptionPane.showInputDialog("Ingrese su idcuenta");
        String Tipo = JOptionPane.showInputDialog("Ingrese su tipo");
+        //Tabla Cliente
+        
+        controladorCliente.ActualizarVistaCliente();
+        controladorcuenta.ActualizarVistaCuenta();
+       
+        
+       controladorCliente.setNombre(nombre);
+       controladorCliente.setId(Id);
+       controladorCliente.setDireccion("La torocaua");
        controladorcuenta.setNombre(nombre);
        controladorcuenta.setId(Id);
        controladorcuenta.setIdcuenta(Idcuenta);
        controladorcuenta.setTipoCuenta(Tipo);
        
-       controladorcuenta.ActualizarVistaCuenta();
+        
+       controladorCliente.ActualizarVistaCliente();
+        controladorcuenta.ActualizarVistaCuenta();
+      
+       controladorCliente.Insertar();
        controladorcuenta.Insertar();
+       
+       //Tabla Cuenta
+       
+     
        
     }
     

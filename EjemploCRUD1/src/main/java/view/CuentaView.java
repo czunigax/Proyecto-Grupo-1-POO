@@ -22,7 +22,7 @@ public class CuentaView {
         System.out.println("Id: "+Id);
         System.out.println("Tipo: "+TipoCuenta);
     }    
-   public void ImprimirSelect(ResultSet rs){
+   public void ImprimirSelectCuenta(ResultSet rs){
         try {
             rsmt= rs.getMetaData();
             
