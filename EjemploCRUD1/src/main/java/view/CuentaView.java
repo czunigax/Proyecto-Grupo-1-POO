@@ -16,10 +16,10 @@ import java.util.logging.Logger;
 public class CuentaView {
     private ResultSetMetaData rsmt;
     
- public void ImprimirDatoscuenta( String Nombre, String IdCuenta,String Id, String TipoCuenta ){
+ public void ImprimirDatoscuenta( String Nombre,String Id, String IdCuenta, String TipoCuenta ){
         System.out.println("Nombre: "+Nombre);
-        System.out.println("IdCuenta: "+IdCuenta);
         System.out.println("Id: "+Id);
+        System.out.println("IdCuenta: "+IdCuenta);
         System.out.println("Tipo: "+TipoCuenta);
     }    
    public void ImprimirSelectCuenta(ResultSet rs){

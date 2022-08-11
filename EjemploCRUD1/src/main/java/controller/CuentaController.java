@@ -16,8 +16,8 @@ import view.CuentaView;
  * @author cris
  */
 public class CuentaController {
-    private Cuenta Modelo;
-    private CuentaView Vista;
+    private Cuenta ModeloC;
+    private CuentaView VistaC;
     
     private boolean exito;
     private Statement st;
@@ -25,37 +25,37 @@ public class CuentaController {
     private ResultSet rs;
     private String sql;
     
-    public CuentaController(Cuenta Modelo, CuentaView Vista){
-        this.Modelo= Modelo;
-        this.Vista= Vista;
+    public CuentaController(Cuenta ModeloC, CuentaView VistaC){
+        this.ModeloC= ModeloC;
+        this.VistaC= VistaC;
         }
     public String getNombre(){
-    return Modelo.getNombre();
+    return ModeloC.getNombre();
     }
     public void setNombre(String Nombre){
-    this.Modelo.setNombre(Nombre);
+    this.ModeloC.setNombre(Nombre);
     }
     public String getIdcuenta(){
-    return Modelo.get_idcuenta();
+    return ModeloC.get_idcuenta();
     }
     public void setIdcuenta(String Idcuenta){
-    this.Modelo.setidcuenta(Idcuenta);
+    this.ModeloC.setidcuenta(Idcuenta);
     }
      public String getId(){
-    return Modelo.getId();
+    return ModeloC.getId();
     }
     public void setId(String Id){
-    this.Modelo.setId(Id);
+    this.ModeloC.setId(Id);
     }
      public String getTipoCuenta(){
-    return Modelo.getTipo();
+    return ModeloC.getTipo();
     }
     public void setTipoCuenta(String TipoCuenta){
-    this.Modelo.setTipo(TipoCuenta);
+    this.ModeloC.setTipo(TipoCuenta);
     }
     
     public void ActualizarVistaCuenta(){
-        Vista.ImprimirDatoscuenta(Modelo.getNombre(), Modelo.get_idcuenta(), Modelo.getId(),Modelo.getTipo() );
+        VistaC.ImprimirDatoscuenta(ModeloC.getNombre(), ModeloC.getId(),ModeloC.get_idcuenta(),ModeloC.getTipo() );
     }
     
     public boolean Insertar(){
@@ -63,9 +63,9 @@ public class CuentaController {
         st= null;
         cn= null;
                 
-        sql= "insert into cuenta values ('"+
-                Modelo.getId()+"', '"+Modelo.getNombre()+"','"+Modelo.get_idcuenta()+"','"+Modelo.getId()+"','"
-                +Modelo.getTipo()+"')";
+        sql= "insert into cuentas values ('"+
+                ModeloC.getNombre()+"', '"+ModeloC.getId()+"','"+ModeloC.get_idcuenta()+"','"+ModeloC.getId()+"','"
+                +ModeloC.getTipo()+"')";
         
         try{
             cn= ConectarBD.Conectar();
@@ -87,8 +87,8 @@ public class CuentaController {
         st= null;
         cn= null;
         
-        sql= "update cuenta set nombre= '"+Modelo.getNombre()+"','"+Modelo.get_idcuenta()+"','"+Modelo.getTipo()+"' "+
-                "where id='"+Modelo.getId()+"'";
+        sql= "update cuentas set nombre= '"+ModeloC.getNombre()+"','"+ModeloC.get_idcuenta()+"','"+ModeloC.getTipo()+"' "+
+                "where id='"+ModeloC.getId()+"'";
         
         try{
             cn= ConectarBD.Conectar();
@@ -109,14 +109,14 @@ public class CuentaController {
         st= null;
         cn= null;
         
-        sql= "select id, nombre from cuenta where id= '"+Id+"'";
+        sql= "select id, nombre from cuentas where id= '"+Id+"'";
         
         try{
             cn= ConectarBD.Conectar();
             st= cn.createStatement();
             rs= st.executeQuery(sql);
             
-            Vista.ImprimirSelectCuenta(rs);
+            VistaC.ImprimirSelectCuenta(rs);
             
             exito= true;
         } catch(SQLException e){
