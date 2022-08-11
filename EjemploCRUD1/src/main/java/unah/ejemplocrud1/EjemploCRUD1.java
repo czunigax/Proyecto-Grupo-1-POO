@@ -57,7 +57,8 @@ public class EjemploCRUD1 {
        String Id = JOptionPane.showInputDialog("Ingrese su id");
        String Idcuenta = JOptionPane.showInputDialog("Ingrese su idcuenta");
        String Tipo = JOptionPane.showInputDialog("Ingrese su tipo");
-        //Tabla Cliente
+      
+       //Tabla Cliente
         
         controladorCliente.ActualizarVistaCliente();
         controladorcuenta.ActualizarVistaCuenta();

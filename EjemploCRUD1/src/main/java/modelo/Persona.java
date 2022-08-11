@@ -4,6 +4,9 @@
  */
 package modelo;
 
+
+import java.util.Date;
+
 /**
  *
  * @author migsauceda
@@ -11,14 +14,22 @@ package modelo;
 public class Persona {
     private String Id;
     private String Nombre;
+    private String Telefono;
+    private Date Nacimiento;
+    private String Direccion;
+    private String Email;
     
     public Persona(){
         
     }
     
-    public Persona(String Id, String Nombre){
+    public Persona(String Id, String Nombre, String Telefono, Date Nacimiento, String Direccion, String Email){
         this.Id= Id;
-        this.Nombre= Nombre;        
+        this.Nombre= Nombre;
+        this.Telefono= Telefono;
+        this.Nacimiento= Nacimiento;  
+        this.Direccion= Direccion;
+        this.Email= Email;  
     }
 
     public String getId() {
@@ -35,5 +46,33 @@ public class Persona {
 
     public void setNombre(String Nombre) {
         this.Nombre = Nombre;
+    }
+     public String getTelefono() {
+        return Telefono;
+    }
+
+    public void setTelefono(String Telefono) {
+        this.Telefono = Telefono;
+    }
+     public Date getNacimiento() {
+        return Nacimiento;
+    }
+
+    public void setNacimiento(Date Nacimiento) {
+        this.Nacimiento = Nacimiento;
+    }
+     public String getDireccion() {
+        return Direccion;
+    }
+
+    public void setDireccion(String Direccion) {
+        this.Direccion = Direccion;
+    }
+     public String getEmail() {
+        return Email;
+    }
+
+    public void setEmail(String Email) {
+        this.Email = Email;
     }
 }
