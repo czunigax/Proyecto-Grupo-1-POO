@@ -9,36 +9,27 @@ package modelo;
  *
  * @author cris
  */
-public class Cliente   {
+public class Cliente extends Persona  {
     
-   String Id;
-   String Nombre;
+
    String Direccion;
    
    public Cliente(){
+    super();
    }
    
-     public Cliente (String Id, String Nombre, String Direccion){
-        this.Id = Id;
-        this.Nombre= Nombre; 
+     public Cliente (String Direccion){
+       super();
         this.Direccion=Direccion;
     }
+     
+     public Cliente(String Nombre, String Id,String Direccion) {
+	super(Nombre, Id);
+	this.Direccion = Direccion;
+	
+     }
     
-       public String getId() {
-        return Id;
-    }
-
-    public void setId(String Id) {
-        this.Id = Id;
-    }
-
-    public String getNombre() {
-        return Nombre;
-    }
-
-    public void setNombre(String Nombre) {
-        this.Nombre = Nombre;
-    }
+    
     public String getDireccion(){
     return Direccion;
     }

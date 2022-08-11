@@ -71,12 +71,14 @@ public class EjemploCRUD1 {
        controladorcuenta.setIdcuenta(Idcuenta);
        controladorcuenta.setTipoCuenta(Tipo);
        
+        controladorcuenta.Insertar();
+        controladorCliente.Insertar();
         
-       controladorCliente.ActualizarVistaCliente();
+        controladorCliente.ActualizarVistaCliente();
         controladorcuenta.ActualizarVistaCuenta();
       
-       controladorCliente.Insertar();
-       controladorcuenta.Insertar();
+      
+       
        
        //Tabla Cuenta
        

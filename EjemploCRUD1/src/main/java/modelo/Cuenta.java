@@ -9,7 +9,7 @@ package modelo;
  *
  * @author cris
  */
-public class Cuenta extends Cliente {
+public class Cuenta extends Persona {
     private String IdCuenta;
     private String TipoCuenta;
     
@@ -25,7 +25,7 @@ public class Cuenta extends Cliente {
 }  
   
 public Cuenta(String Nombre, String Id,String Direccion, String IdCuenta, String TipoCuenta) {
-	super(Nombre, Id, Direccion);
+	super(Nombre, Id);
 	this.IdCuenta = IdCuenta;
 	this.TipoCuenta = TipoCuenta;
 	

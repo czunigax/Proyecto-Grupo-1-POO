@@ -17,7 +17,7 @@ public class CuentaView {
     private ResultSetMetaData rsmt;
     
  public void ImprimirDatoscuenta( String Nombre, String IdCuenta,String Id, String TipoCuenta ){
-        System.out.println("Nombre: "+Id);
+        System.out.println("Nombre: "+Nombre);
         System.out.println("IdCuenta: "+IdCuenta);
         System.out.println("Id: "+Id);
         System.out.println("Tipo: "+TipoCuenta);
