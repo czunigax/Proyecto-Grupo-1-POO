@@ -9,7 +9,7 @@ import java.util.Date;
 
 /**
  *
- * @author migsauceda
+ * 
  */
 public class Persona {
     private String Id;
