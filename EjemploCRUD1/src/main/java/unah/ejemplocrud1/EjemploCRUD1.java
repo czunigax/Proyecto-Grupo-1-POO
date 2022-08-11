@@ -5,13 +5,16 @@
 
 package unah.ejemplocrud1;
 import controller.ClienteController;
+import controller.CuentaController;
 import modelo.Persona;
 import view.PersonaView;
 import controller.PersonaController;
 import controller.RetiroController;
 import modelo.Cliente;
+import modelo.Cuenta;
 import modelo.Retiro;
 import view.ClienteView;
+import view.CuentaView;
 import view.RetiroView;
 
 /**
@@ -21,12 +24,18 @@ import view.RetiroView;
 public class EjemploCRUD1 {
 
     public static void main(String[] args) {
-        //delcara el modelo y la vista
+        //Cliente
        ClienteView vistacliente= new ClienteView();
        Cliente modeloCliente = new Cliente();
-        //ahora se instancia el controlador y este actualiza a la vez modelo y vista
-        ClienteController controladorCliente= new ClienteController(modeloCliente, vistacliente);
+       ClienteController controladorCliente= new ClienteController(modeloCliente, vistacliente);
         
+       //Cuenta
+       CuentaView vistacuenta = new CuentaView();
+       Cuenta modeloCuenta = new Cuenta();
+       CuentaController controladorcuenta = new CuentaController(modeloCuenta, vistacuenta); 
+       
+       
+       
       /*
        //modificar info en base al Id
         System.out.println("Modificar");
@@ -51,9 +60,17 @@ public class EjemploCRUD1 {
         controladorCliente.setNombre("Karim Benzema");
         controladorCliente.setId("090019");
         controladorCliente.setDireccion("La torocaua");
+        controladorcuenta.setIdcuenta("200");
+        controladorcuenta.setTipoCuenta("Navidena");
+       
         
        controladorCliente.ActualizarVistaCliente();
+       controladorcuenta.Insertar();
        controladorCliente.Insertar();
+       
+       //Tabla Cuenta
+       
+       
        
     }
     

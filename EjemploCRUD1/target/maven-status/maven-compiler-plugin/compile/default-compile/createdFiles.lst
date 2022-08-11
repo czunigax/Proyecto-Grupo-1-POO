@@ -1,8 +1,11 @@
+view\ClienteView.class
 controller\ClienteController.class
 controller\PersonaController.class
 unah\ejemplocrud1\EjemploCRUD1.class
+view\CuentaView.class
 modelo\Cliente.class
 modelo\Persona.class
+controller\CuentaController.class
 view\PersonaView.class
+modelo\Cuenta.class
 unah\ejemplocrud1\ConectarBD.class
-view\ClienteView.class
