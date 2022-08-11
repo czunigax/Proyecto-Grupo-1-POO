@@ -5,18 +5,14 @@
 
 package unah.ejemplocrud1;
 import controller.ClienteController;
-import controller.CuentaController;
+
 import modelo.Persona;
 import view.PersonaView;
 import controller.PersonaController;
-import controller.RetiroController;
 import javax.swing.JOptionPane;
 import modelo.Cliente;
-import modelo.Cuenta;
-import modelo.Retiro;
 import view.ClienteView;
-import view.CuentaView;
-import view.RetiroView;
+
 
 /**
  *
@@ -31,9 +27,9 @@ public class EjemploCRUD1 {
        ClienteController controladorCliente= new ClienteController(modeloCliente, vistacliente);
         
        //Cuenta
-       CuentaView vistacuenta = new CuentaView();
+      /* CuentaView vistacuenta = new CuentaView();
        Cuenta modeloCuenta = new Cuenta();
-       CuentaController controladorcuenta = new CuentaController(modeloCuenta, vistacuenta); 
+       CuentaController controladorcuenta = new CuentaController(modeloCuenta, vistacuenta); /*
        
        
        
@@ -61,22 +57,18 @@ public class EjemploCRUD1 {
        //Tabla Cliente
         
         controladorCliente.ActualizarVistaCliente();
-        controladorcuenta.ActualizarVistaCuenta();
+        
        
         
        controladorCliente.setNombre(nombre);
        controladorCliente.setId(Id);
        controladorCliente.setDireccion("La torocaua");
-       controladorcuenta.setNombre(nombre);
-       controladorcuenta.setId(Id);
-       controladorcuenta.setIdcuenta(Idcuenta);
-       controladorcuenta.setTipoCuenta(Tipo);
        
-        controladorcuenta.Insertar();
+       
         controladorCliente.Insertar();
         
         controladorCliente.ActualizarVistaCliente();
-        controladorcuenta.ActualizarVistaCuenta();
+       
       
       
        
