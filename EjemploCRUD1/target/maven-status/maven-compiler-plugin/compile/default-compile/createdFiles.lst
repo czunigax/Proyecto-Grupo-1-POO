@@ -1,5 +1,5 @@
-view\ClienteView.class
-controller\ClienteController.class
+modelo\Prestamo.class
+modelo\Empleado.class
 controller\PersonaController.class
 unah\ejemplocrud1\EjemploCRUD1.class
 view\CuentaView.class

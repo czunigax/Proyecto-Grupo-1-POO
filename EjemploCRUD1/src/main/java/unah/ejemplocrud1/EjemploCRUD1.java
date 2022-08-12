@@ -88,7 +88,22 @@ public class EjemploCRUD1 {
        
      
 */     
+     controladorcuenta.ActualizarVista();
      
+     controladorcuenta.setId("080119992222");
+     controladorcuenta.setNombre("Manuel Jonhson");
+     controladorcuenta.setCodigoCliente("1212");
+     controladorcuenta.setTelefono("90897886");
+     controladorcuenta.setNacimiento("12/11/92");
+     controladorcuenta.setDireccion("Col. loarque 3a calle");
+     controladorcuenta.setEmail("poetadelamor@gmail.com");
+     controladorcuenta.setTipo("Navidena");
+     controladorcuenta.setNumerodeCuenta("#111");
+     controladorcuenta.setMonto(20000);
+     controladorcuenta.setFechaApertura("21/10/2017");
+     
+     controladorcuenta.AperturarCuenta();
+     controladorcuenta.ActualizarVista();
      
     }
     
