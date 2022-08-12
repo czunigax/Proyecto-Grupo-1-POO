@@ -35,6 +35,8 @@ public class CuentaController {
         this.ModeloCuenta= ModeloCuenta;
         this.VistaCuenta= VistaCuenta;
      }
+
+   
      
     public String getId() {
     return ModeloCuenta.getId();

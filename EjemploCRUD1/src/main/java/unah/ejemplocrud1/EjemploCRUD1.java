@@ -6,11 +6,14 @@
 package unah.ejemplocrud1;
 
 
+import controller.CuentaController;
 import modelo.Persona;
 import view.PersonaView;
 import controller.PersonaController;
 import javax.swing.JOptionPane;
 import modelo.Cliente;
+import modelo.Cuenta;
+import view.CuentaView;
 
 
 
@@ -21,6 +24,14 @@ import modelo.Cliente;
 public class EjemploCRUD1 {
 
     public static void main(String[] args) {
+        
+    CuentaView vistacuenta = new CuentaView();
+    Cuenta modelocuenta = new Cuenta();
+    CuentaController controladorcuenta = new CuentaController(modelocuenta, vistacuenta);
+
+
+    
+        
         //Cliente
      /*  ClienteView vistacliente= new ClienteView();
        Cliente modeloCliente = new Cliente();
@@ -76,7 +87,9 @@ public class EjemploCRUD1 {
        //Tabla Cuenta
        
      
-*/       
+*/     
+     
+     
     }
     
 
