@@ -43,7 +43,7 @@ public class CuentaView {
                 }
             }            
         } catch (SQLException ex) {
-            Logger.getLogger(PersonaView.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(CuentaView.class.getName()).log(Level.SEVERE, null, ex);
         }                   
     }
 }
