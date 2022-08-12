@@ -51,11 +51,11 @@ public class PersonaController {
         this.Modelo.setNombre(Nombre);
     } 
     
-    //Pasar los datos del modelo a la vista
+    
     public void ActualizarVista(){
         Vista.ImprimirDatospersona(Modelo.getId(), Modelo.getNombre());
     }
-    
+    //Inserta
     public boolean Insertar(){
         exito= false;
         st= null;
@@ -78,7 +78,7 @@ public class PersonaController {
         }
         return exito;
     }
-    
+    //Modificar Cuenta
     public boolean Update(String Id){
         exito= false;
         st= null;
@@ -101,13 +101,13 @@ public class PersonaController {
         }
         return exito;        
     }
-    
+    //Buscar Cuenta
     public boolean Select(String Id){
         exito= false;
         st= null;
         cn= null;
         
-        sql= "select id, nombre from persona where id= '"+Id+"'";
+        sql= "select id, nombre from cuenta where id= '"+Id+"'";
         
         try{
             cn= ConectarBD.Conectar();
