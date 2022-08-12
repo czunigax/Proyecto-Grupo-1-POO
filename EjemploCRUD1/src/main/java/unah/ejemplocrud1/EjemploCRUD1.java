@@ -4,14 +4,14 @@
  */
 
 package unah.ejemplocrud1;
-import controller.ClienteController;
+
 
 import modelo.Persona;
 import view.PersonaView;
 import controller.PersonaController;
 import javax.swing.JOptionPane;
 import modelo.Cliente;
-import view.ClienteView;
+
 
 
 /**
@@ -22,7 +22,7 @@ public class EjemploCRUD1 {
 
     public static void main(String[] args) {
         //Cliente
-       ClienteView vistacliente= new ClienteView();
+     /*  ClienteView vistacliente= new ClienteView();
        Cliente modeloCliente = new Cliente();
        ClienteController controladorCliente= new ClienteController(modeloCliente, vistacliente);
         
@@ -46,7 +46,7 @@ public class EjemploCRUD1 {
         System.out.println("Informacion de la BD");
         controlador.Select("123");
         
-       // controlador.ActualizarVista();*/
+       // controlador.ActualizarVista();
        
      
        String nombre = JOptionPane.showInputDialog("Ingrese su nombre");
@@ -76,7 +76,7 @@ public class EjemploCRUD1 {
        //Tabla Cuenta
        
      
-       
+*/       
     }
     
 

@@ -7,23 +7,31 @@ package view;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
 /**
  *
  * @author cris
  */
-public class ClienteView {
-    private ResultSetMetaData rsmt;
+public class CuentaView {
+     private ResultSetMetaData rsmt;
     
- public void ImprimirDatoscliente(String Id, String Nombre, String Direccion){
+    public void ImprimirDatosCuenta(String Nombre, String Id,String CodigoCliente, String Telefono, Date Nacimiento, String Direccion, String Email, String TipodeCuenta, String NumerodeCuenta, double Monto, Date FechaApertura){
         System.out.println("Identidad: "+Id);
         System.out.println("Nombre: "+Nombre);
+        System.out.println("CodigoCliente: "+CodigoCliente);
+        System.out.println("Telefono: "+Telefono);
+        System.out.println("Nacimiento: "+Nacimiento);
         System.out.println("Direccion: "+Direccion);
-    }    
-    
- public void ImprimirSelect(ResultSet rs){
+        System.out.println("Email: "+Email);
+        System.out.println("Tipo: "+TipodeCuenta);
+        System.out.println("Numero de Cuenta: "+NumerodeCuenta);
+        System.out.println("Monto: "+Monto);
+        System.out.println("Fecha de apertura: "+FechaApertura);
+    } 
+
+    public void ImprimirSelect(ResultSet rs){
         try {
             rsmt= rs.getMetaData();
             
@@ -35,8 +43,7 @@ public class ClienteView {
                 }
             }            
         } catch (SQLException ex) {
-            Logger.getLogger(ClienteView.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(PersonaView.class.getName()).log(Level.SEVERE, null, ex);
         }                   
     }
- 
 }
