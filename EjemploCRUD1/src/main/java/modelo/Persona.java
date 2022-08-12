@@ -15,7 +15,7 @@ public class Persona {
     private String Id;
     private String Nombre;
     private String Telefono;
-    private Date Nacimiento;
+    private String Nacimiento;
     private String Direccion;
     private String Email;
     
@@ -23,7 +23,7 @@ public class Persona {
         
     }
     
-    public Persona(String Id, String Nombre, String Telefono, Date Nacimiento, String Direccion, String Email){
+    public Persona(String Id, String Nombre, String Telefono, String Nacimiento, String Direccion, String Email){
         this.Id= Id;
         this.Nombre= Nombre;
         this.Telefono= Telefono;
@@ -54,11 +54,11 @@ public class Persona {
     public void setTelefono(String Telefono) {
         this.Telefono = Telefono;
     }
-     public Date getNacimiento() {
+     public String getNacimiento() {
         return Nacimiento;
     }
 
-    public void setNacimiento(Date Nacimiento) {
+    public void setNacimiento(String Nacimiento) {
         this.Nacimiento = Nacimiento;
     }
      public String getDireccion() {

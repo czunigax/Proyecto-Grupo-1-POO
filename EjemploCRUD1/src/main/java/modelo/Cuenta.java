@@ -16,13 +16,13 @@ public class Cuenta extends Cliente{
    private String TipodeCuenta;
    private String NumerodeCuenta;
    private double Monto;
-   private Date FechaApertura;
+   private String FechaApertura;
     
     public Cuenta(){
     super();
    }
    
-     public Cuenta (String TipodeCuenta, String NumerodeCuenta, double Monto, Date FechaApertura ){
+     public Cuenta (String TipodeCuenta, String NumerodeCuenta, double Monto, String FechaApertura ){
        super();
         this.TipodeCuenta=TipodeCuenta;
         this.NumerodeCuenta=NumerodeCuenta;
@@ -30,7 +30,7 @@ public class Cuenta extends Cliente{
         this.FechaApertura=FechaApertura;
     }
      
-     public Cuenta(String Nombre, String Id,String CodigoCliente, String Telefono, Date Nacimiento, String Direccion, String Email, String TipodeCuenta, String NumerodeCuenta, double Monto, Date FechaApertura) {
+     public Cuenta(String Nombre, String Id,String CodigoCliente, String Telefono, String Nacimiento, String Direccion, String Email, String TipodeCuenta, String NumerodeCuenta, double Monto, String FechaApertura) {
 	super(Nombre, Id,CodigoCliente, Telefono, Nacimiento, Direccion, Email);
 	this.TipodeCuenta=TipodeCuenta;
         this.NumerodeCuenta=NumerodeCuenta;
@@ -58,10 +58,10 @@ public class Cuenta extends Cliente{
     public void setMonto(double Monto){
     this.Monto=Monto;
     }
-    public Date getFechaApertura(){
+    public String getFechaApertura(){
     return FechaApertura;
     }
-    public void setFechaApertura(Date FechaApertura){
+    public void setFechaApertura(String FechaApertura){
     this.FechaApertura=FechaApertura;
     }
 }

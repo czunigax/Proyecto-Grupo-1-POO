@@ -70,11 +70,11 @@ public class CuentaController {
     this.ModeloCuenta.setTelefono(Telefono);
     }
     
-    public Date getNacimiento(){
+    public String getNacimiento(){
     return ModeloCuenta.getNacimiento();
     }
     
-    public void setTelefono(Date Nacimiento){
+    public void setNacimiento(String Nacimiento){
     this.ModeloCuenta.setNacimiento(Nacimiento);
     }
     
@@ -118,11 +118,11 @@ public class CuentaController {
     this.ModeloCuenta.setMonto(Monto);
     }
     
-    public Date getFechaApertura(){
+    public String getFechaApertura(){
     return ModeloCuenta.getFechaApertura();
     }
     
-    public void setFechaApertura(Date FechaApertura){
+    public void setFechaApertura(String FechaApertura){
     this.ModeloCuenta.setFechaApertura(FechaApertura);
     }
     

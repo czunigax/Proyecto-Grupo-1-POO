@@ -25,7 +25,7 @@ public class Cliente extends Persona  {
         this.CodigoCliente=CodigoCliente;
     }
      
-     public Cliente(String Nombre, String Id,String CodigoCliente, String Telefono, Date Nacimiento, String Direccion, String Email) {
+     public Cliente(String Nombre, String Id,String CodigoCliente, String Telefono, String Nacimiento, String Direccion, String Email) {
 	super(Nombre, Id, Telefono, Nacimiento, Direccion, Email);
 	this.CodigoCliente = CodigoCliente;
 	

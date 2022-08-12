@@ -17,7 +17,7 @@ import java.util.logging.Logger;
 public class CuentaView {
      private ResultSetMetaData rsmt;
     
-    public void ImprimirDatosCuenta(String Nombre, String Id,String CodigoCliente, String Telefono, Date Nacimiento, String Direccion, String Email, String TipodeCuenta, String NumerodeCuenta, double Monto, Date FechaApertura){
+    public void ImprimirDatosCuenta(String Nombre, String Id,String CodigoCliente, String Telefono, String Nacimiento, String Direccion, String Email, String TipodeCuenta, String NumerodeCuenta, double Monto, String FechaApertura){
         System.out.println("Identidad: "+Id);
         System.out.println("Nombre: "+Nombre);
         System.out.println("CodigoCliente: "+CodigoCliente);
