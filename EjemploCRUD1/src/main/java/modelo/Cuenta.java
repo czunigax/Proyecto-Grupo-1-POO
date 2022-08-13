@@ -12,12 +12,13 @@ import java.util.Date;
  * @author cris
  */
 public class Cuenta extends Cliente{
-    
+   //Atributos
    private String TipodeCuenta;
    private String NumerodeCuenta;
    private double Monto;
    private String FechaApertura;
     
+   //Constructor
     public Cuenta(){
     super();
    }
@@ -39,7 +40,7 @@ public class Cuenta extends Cliente{
 	
      }
      
-     
+    //Getters & Setters
     public String getTipo(){
     return TipodeCuenta;
     }

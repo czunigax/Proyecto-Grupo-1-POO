@@ -10,6 +10,7 @@ import java.util.Date;
  */
 public class Prestamo {
         
+    //Atributos
     private Date TiempoPago;
     private double ValorIntereses;
     private Date FechaInicio;
@@ -17,7 +18,7 @@ public class Prestamo {
     private String TipoCuenta;
 
   
-    
+    //Constructor
      public Prestamo(){
          
      }
@@ -30,13 +31,13 @@ public class Prestamo {
             this.TipoCuenta=TipoCuenta;
         }
      
+        //Getters & Setters
         public Date getTiempoPago(){
             return TiempoPago;
         }
         public void setTiempoPago(Date TiempoPago){
             this.TiempoPago=TiempoPago;
         }
-        
         
           public double getValorIntereses() {
         return ValorIntereses;

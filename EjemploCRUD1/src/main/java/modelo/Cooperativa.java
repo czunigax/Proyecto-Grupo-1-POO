@@ -9,9 +9,20 @@ package modelo;
  * @author kevin
  */
 public class Cooperativa {
+    //Atributos
    private String Nombre;
    private String Dirrecion;
 
+   //Constructor
+    public Cooperativa(String Nombre, String Dirrecion) {
+        this.Nombre = Nombre;
+        this.Dirrecion = Dirrecion;
+    }
+   
+    public Cooperativa(){
+    }
+    
+   //Getters & Setters
     public String getNombre() {
         return Nombre;
     }
@@ -26,16 +37,6 @@ public class Cooperativa {
 
     public void setDirrecion(String Dirrecion) {
         this.Dirrecion = Dirrecion;
-    }
-
-    public Cooperativa(String Nombre, String Dirrecion) {
-        this.Nombre = Nombre;
-        this.Dirrecion = Dirrecion;
-    }
-   
-    public Cooperativa(){}
-    
-    
-        
+    } 
     
 }
