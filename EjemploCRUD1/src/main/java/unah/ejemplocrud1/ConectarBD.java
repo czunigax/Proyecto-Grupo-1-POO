@@ -8,7 +8,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 /**
  *
- * @author migsauceda
+ *
  */
 public class ConectarBD {
     public static Connection Conectar(){
