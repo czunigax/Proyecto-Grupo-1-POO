@@ -17,6 +17,7 @@ public class Cuenta extends Cliente{
    private String NumerodeCuenta;
    private double Monto;
    private String FechaApertura;
+   
     
    //Constructor
     public Cuenta(){
@@ -65,4 +66,27 @@ public class Cuenta extends Cliente{
     public void setFechaApertura(String FechaApertura){
     this.FechaApertura=FechaApertura;
     }
+    
+    public boolean depositar(double cantidad){
+    
+    if (cantidad <=0){
+    
+    return false;
+    }
+    else{
+    
+    this.Monto+=cantidad;
+    return true;
+    }
+    }
+    
+    public boolean retirar (double cantidadretirar){
+    if (cantidadretirar <= this.Monto){
+   this.Monto-=cantidadretirar;
+    return true;
+    }else{
+return false;
+}
+
+}
 }
