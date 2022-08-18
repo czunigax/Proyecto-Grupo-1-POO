@@ -3,13 +3,21 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package ventanas;
-
+import modelo.Cuenta;
+import view.CuentaView;
+import controller.CuentaController;
 /**
  *
  * @author The Ice
  */
 public class Inicio extends javax.swing.JFrame {
 
+    
+  public static  CuentaView vistacuenta = new CuentaView();
+  public static Cuenta modelocuenta = new Cuenta();
+  public static  CuentaController controladorcuenta = new CuentaController(modelocuenta, vistacuenta);
+    
+    
     /**
      * Creates new form Inicio
      */

@@ -4,6 +4,11 @@
  */
 package ventanas;
 
+import controller.CuentaController;
+import modelo.Cuenta;
+import static ventanas.Inicio.vistacuenta;
+import view.CuentaView;
+
 /**
  *
  * @author The Ice
@@ -29,17 +34,17 @@ public class Deposito extends javax.swing.JFrame {
 
         jLabellogodp = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        numerotxt = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        montotxt = new javax.swing.JTextField();
+        jbenviar = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        fechatxt = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        tipotxt = new javax.swing.JTextField();
         jLabelfondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -52,22 +57,22 @@ public class Deposito extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel3.setText("Numero de cuenta:");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 170, -1, -1));
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 170, 440, 30));
+        getContentPane().add(numerotxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 170, 440, 30));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel1.setText("Monto:");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 220, -1, -1));
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 220, 150, 30));
+        getContentPane().add(montotxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 220, 150, 30));
 
-        jButton1.setBackground(new java.awt.Color(153, 153, 255));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jButton1.setText("Enviar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jbenviar.setBackground(new java.awt.Color(153, 153, 255));
+        jbenviar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jbenviar.setText("Enviar");
+        jbenviar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jbenviarActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 410, -1, -1));
+        getContentPane().add(jbenviar, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 410, -1, -1));
 
         jButton2.setBackground(new java.awt.Color(153, 153, 255));
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -96,12 +101,12 @@ public class Deposito extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel4.setText("Fecha:");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 270, -1, -1));
-        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 270, 150, 30));
+        getContentPane().add(fechatxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 270, 150, 30));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel5.setText("Tipo de cuenta:");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 320, -1, -1));
-        getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 320, 440, 30));
+        getContentPane().add(tipotxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 320, 440, 30));
 
         jLabelfondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/white wallpaper (30)-991074_800.jpeg"))); // NOI18N
         getContentPane().add(jLabelfondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -109,9 +114,30 @@ public class Deposito extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jbenviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbenviarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+        String numerodecuenta, monto, fecha, tipo;
+        
+        numerodecuenta= numerotxt.getText();
+        monto=montotxt.getText();
+        fecha=fechatxt.getText();
+        tipo=tipotxt.getText();
+        
+        Cuenta cuentadepositar = new Cuenta(tipo,numerodecuenta,Double.parseDouble(monto),fecha);
+        CuentaView vistacuenta = new CuentaView();
+        CuentaController controladorcuenta = new CuentaController(cuentadepositar, vistacuenta);
+        
+        cuentadepositar.setTipo(tipo);
+        cuentadepositar.setNumeroC(numerodecuenta);
+        cuentadepositar.depositar(Double.parseDouble(monto));
+        
+        
+        controladorcuenta.Actualizarmonto(cuentadepositar.getMonto());
+        
+       
+               
+        
+    }//GEN-LAST:event_jbenviarActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
@@ -159,7 +185,7 @@ public class Deposito extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JTextField fechatxt;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
@@ -169,9 +195,9 @@ public class Deposito extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabelfondo;
     private javax.swing.JLabel jLabellogodp;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
+    private javax.swing.JButton jbenviar;
+    private javax.swing.JTextField montotxt;
+    private javax.swing.JTextField numerotxt;
+    private javax.swing.JTextField tipotxt;
     // End of variables declaration//GEN-END:variables
 }

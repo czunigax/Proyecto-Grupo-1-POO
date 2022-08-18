@@ -162,9 +162,9 @@ public class CuentaController {
         st= null;
         cn= null;
         
-        sql= "update cuenta set nombre= '"+ModeloCuenta.getId()+"', '"+ ModeloCuenta.getNombre()+"', '"+ModeloCuenta.getCodigoCliente()+"', '"+ModeloCuenta.getTelefono()
+        sql= "update cuenta set nombre,codigo de cliente, telefono, nacimiento, direccion, email, tipo, numero de cuenta, fecha de apertura= '"+ ModeloCuenta.getNombre()+"', '"+ModeloCuenta.getCodigoCliente()+"', '"+ModeloCuenta.getTelefono()
         +"', '"+ModeloCuenta.getNacimiento()+"', '"+ModeloCuenta.getDireccion()+"', '"+ModeloCuenta.getEmail()+"', '"+ModeloCuenta.getTipo()
-            +"', '"+ModeloCuenta.getNumerodeCuenta()+"', '"+ModeloCuenta.getMonto()+"', '"+ModeloCuenta.getFechaApertura()+"' "+
+            +"', '"+ModeloCuenta.getNumerodeCuenta()+"','"+ModeloCuenta.getFechaApertura()+"' "+
                 "where id='"+ModeloCuenta.getId()+"'";
         
         try{
@@ -202,4 +202,25 @@ public class CuentaController {
         }
         return exito;
     }
+      public boolean Actualizarmonto(String NumerodeCuenta){
+        exito= false;
+        st= null;
+        cn= null;
+        
+        sql= "update cuenta set monto= '"+ModeloCuenta.getMonto()+"' "+
+                "where numero de cuenta='"+ModeloCuenta.getNumerodeCuenta()+"'";
+        
+        try{
+            cn= ConectarBD.Conectar();
+            st= cn.createStatement();
+            st.execute(sql);
+            
+            exito= true;
+            
+            st.close();
+            cn.close();
+        }catch(SQLException e){
+            System.out.println("Error en la actualizacion");
+        }
+        return exito;       
 }

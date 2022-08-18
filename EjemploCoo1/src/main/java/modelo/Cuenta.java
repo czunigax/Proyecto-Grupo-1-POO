@@ -65,4 +65,13 @@ public class Cuenta extends Cliente{
     public void setFechaApertura(String FechaApertura){
     this.FechaApertura=FechaApertura;
     }
+    
+    public boolean depositar (double cantidad){
+    if (cantidad <=0){
+    return false;
+    }else{
+        this.Monto+=cantidad;
+    return true;    
+    }
+    }
 }
