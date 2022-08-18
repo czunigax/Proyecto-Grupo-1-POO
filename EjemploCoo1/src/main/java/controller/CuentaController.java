@@ -182,12 +182,12 @@ public class CuentaController {
         return exito;        
     }
      //Busca una cuenta en base al ID
-      public boolean Buscar(String Id){
+      public boolean Buscar(String NumerodeCuenta){
         exito= false;
         st= null;
         cn= null;
         
-        sql= "select id, nombre from cuenta where id= '"+Id+"'";
+        sql= "select id, nombre from cuenta where numero de cuenta= '"+NumerodeCuenta+"'";
         
         try{
             cn= ConectarBD.Conectar();
@@ -223,4 +223,5 @@ public class CuentaController {
             System.out.println("Error en la actualizacion");
         }
         return exito;       
+}
 }

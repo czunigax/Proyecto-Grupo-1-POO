@@ -126,14 +126,16 @@ public class Deposito extends javax.swing.JFrame {
         Cuenta cuentadepositar = new Cuenta(tipo,numerodecuenta,Double.parseDouble(monto),fecha);
         CuentaView vistacuenta = new CuentaView();
         CuentaController controladorcuenta = new CuentaController(cuentadepositar, vistacuenta);
-        
+        if(controladorcuenta.Buscar(numerodecuenta)== true){
         cuentadepositar.setTipo(tipo);
         cuentadepositar.setNumeroC(numerodecuenta);
         cuentadepositar.depositar(Double.parseDouble(monto));
         
         
-        controladorcuenta.Actualizarmonto(cuentadepositar.getMonto());
-        
+        controladorcuenta.Actualizarmonto(numerodecuenta);
+        }else{
+        System.out.println("Error carajo");
+        }
        
                
         

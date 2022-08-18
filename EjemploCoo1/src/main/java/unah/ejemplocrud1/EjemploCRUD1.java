@@ -7,9 +7,7 @@ package unah.ejemplocrud1;
 
 
 import controller.CuentaController;
-import modelo.Persona;
 import javax.swing.JOptionPane;
-import modelo.Cliente;
 import modelo.Cuenta;
 import view.CuentaView;
 
@@ -69,10 +67,10 @@ public class EjemploCRUD1 {
      controladorcuenta.setEmail("poetadelamor@gmail.com");
      controladorcuenta.setTipo("Navidena");
      controladorcuenta.setNumerodeCuenta("#111");
-     controladorcuenta.setMonto(20000);
+   //  controladorcuenta.setMonto(20000);
      controladorcuenta.setFechaApertura("21/10/2017");
      
-     controladorcuenta.AperturarCuenta();
+     //controladorcuenta.AperturarCuenta();
      controladorcuenta.ActualizarVista();
      
     }
