@@ -38,6 +38,14 @@ public class CuentaAportaciones extends Cuenta {
     this.fechaDeposito=fechaDeposito;
     }
 
+    //METODOS
+    
+    @Override
+    public String toString() {        
+        String _infoCuentaAportaciones = String.format("Saldo: %f\n", this.Monto);
+        return super.toString() + _infoCuentaAportaciones;
+    }
+    
     @Override
     public boolean depositar(double cantidad) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -45,7 +53,13 @@ public class CuentaAportaciones extends Cuenta {
 
     @Override
     public boolean retirar(double cantidadRetirar) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if (cantidadRetirar <= this.Monto){
+            // CuentaAportaciones.this.eliminarTipoCuenta();
+            this.Monto -= cantidadRetirar;
+            return true;
+        } else {
+            return false;
+        }
     }
 
     @Override
