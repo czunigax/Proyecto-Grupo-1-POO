@@ -6,6 +6,7 @@
 package modelo;
 
 import java.util.Date;
+import java.util.LinkedList;
 
 /**
  *
@@ -13,10 +14,10 @@ import java.util.Date;
  */
 public abstract class Cuenta extends Cliente{
    //Atributos
-   private String TipodeCuenta;
-   private String NumerodeCuenta;
-   private double Monto;
-   private String FechaApertura;
+   protected String TipodeCuenta;
+   protected String NumerodeCuenta;
+   protected double Monto;
+   protected String FechaApertura;
     
    //Constructor
     public Cuenta(){
@@ -70,19 +71,86 @@ public abstract class Cuenta extends Cliente{
     this.FechaApertura=FechaApertura;
     }
     
-    /**
+    //PARA GESTIONES DE LA CLASE CUENTA
+    //COLECCIÓN PARA REALIZAR COMPORTAMIENTO POLIMORFICO
+    LinkedList<Cuenta> _listaTipoCuenta = new LinkedList<>();
+    
+   /**
+     * MÉTODO PARA OBTENER COLECCIÓN
      *
-     * @param cantidad
-     * @return
      */
-    /*public boolean depositar (double cantidad){
-    if (cantidad <=0){
-    return false;
-    }else{
-        this.Monto+=cantidad;
-    return true;    
+    public LinkedList<Cuenta> getCuenta() {
+        return _listaTipoCuenta;
     }
-    }*/
+    
+    /**
+     * MÉTODO PARA OBTENER POSICIÓN DE LA COLECCI�N TIPO DE CUENTA
+     * @param _index
+     * @return POSICIÓN O INDICE DE LA COLECCIÓN
+     */
+    public Cuenta getCuenta(int _index) {
+        return _listaTipoCuenta.get(_index);
+    }
+    
+   /**
+     * MÉTODO QUE BUSCA TIPO DE CUENTA
+     *
+     * @param numeroCuenta
+     * @return null, SI NO SE ENCUENTRA TIPO CUENTA, CASO CONTRARIO return OBJ
+     * CUENTA 
+     */
+     public Cuenta buscarTipoCuenta(String numeroCuenta) {
+        Cuenta cuentaBuscada = null;
+        for (int i = 0; i < _listaTipoCuenta.size(); i++) {
+            if (_listaTipoCuenta.get(i).getNumerodeCuenta() == numeroCuenta) {
+                cuentaBuscada = _listaTipoCuenta.get(i);
+            }
+        }
+        return cuentaBuscada;
+    }
+     /**
+      * METODO BUSCAR TIPO DE CUENTA 
+      * @param numeroCuenta
+      * @param tipoCta
+      * @return 
+      */
+    
+    public Cuenta buscarTipoCuenta(String numeroCuenta, String tipoCta) {
+        Cuenta cuentaBuscada = null;
+        for (int i = 0; i < _listaTipoCuenta.size(); i++) {
+            if (_listaTipoCuenta.get(i).getNumerodeCuenta() == numeroCuenta
+                    && _listaTipoCuenta.get(i).getTipo().equals(tipoCta)) {
+                cuentaBuscada = _listaTipoCuenta.get(i);
+            }
+        }
+        return cuentaBuscada;
+    }
+    
+    /**
+     * MÉTODO QUE AGREGA TIPO DE CUENTA
+     *
+     * @param tipoCuenta
+     * @return true - SI SE AGREGA CORRECTAMENTE, CASO CONTRARIO return false
+     */
+    
+        public boolean agregarTipoCuenta(Cuenta tipoCuenta) {
+        if (buscarTipoCuenta(tipoCuenta.getNumerodeCuenta()) == null) {//Si la cuenta no esta agregada
+            _listaTipoCuenta.add(tipoCuenta);
+            return true;
+        } else {
+            return false;
+        }
+    }
+        
+    //Metodo para eliminar cuenta
+    public boolean eliminarTipoCuenta(Cuenta tipoCuenta) {
+        if (buscarTipoCuenta(tipoCuenta.getNumerodeCuenta()) == null) {
+            return false;
+        } else {
+            _listaTipoCuenta.remove(tipoCuenta);
+            return true;
+        }
+    }
     
     //DEFINICION DE METODOS ABSTRACTOS
     public abstract boolean depositar(double cantidad);

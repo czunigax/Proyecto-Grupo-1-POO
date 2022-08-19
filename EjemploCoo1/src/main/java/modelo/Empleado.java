@@ -9,7 +9,7 @@ import java.util.Date;
 
 /**
  *
- * @author cris
+ * @author cris, Olbin
  */
 public class Empleado extends Persona {
     private String CodigoEmpleado;
@@ -42,8 +42,18 @@ public class Empleado extends Persona {
     public String getCargo(){
     return Cargo;
     }
-    public void setCargoo(String Cargo){
+    public void setCargo(String Cargo){
     this.Cargo=Cargo;
+    }
+    
+    //Metodo toString
+    @Override
+    public String toString() {
+       String _Empleado = String.format("INFORMACIÓN DE EMPLEADO:\n--------------------------------------\n"
+                +"CodigoEmpleado: "+CodigoEmpleado+"\n"
+                +"Cargo: "+Cargo+"\n"
+        );
+        return _Empleado;
     }
     
 }
