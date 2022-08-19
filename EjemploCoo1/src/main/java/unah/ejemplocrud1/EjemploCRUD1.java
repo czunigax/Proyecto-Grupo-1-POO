@@ -73,20 +73,28 @@ public class EjemploCRUD1 {
 */     
      controladorcuenta.ActualizarVista();
      
-     controladorcuenta.setId("1");
-     controladorcuenta.setNombre("d d");
-     controladorcuenta.setCodigoCliente("1");
-     controladorcuenta.setTelefono("1");
-     controladorcuenta.setNacimiento("12/11/92");
-     controladorcuenta.setDireccion("Col. loarque 3a calle");
-     controladorcuenta.setEmail("er@gmail.com");
-     controladorcuenta.setTipo("Navidena");
-     controladorcuenta.setNumerodeCuenta("#111");
-     controladorcuenta.setMonto(2000);
-     controladorcuenta.setFechaApertura("21/10/2017");
+     //controladorcuenta.setId("1");
+    // controladorcuenta.setNombre("d d");
+    // controladorcuenta.setCodigoCliente("1");
+     //controladorcuenta.setTelefono("1");
+    // controladorcuenta.setNacimiento("12/11/92");
+    // controladorcuenta.setDireccion("Col. loarque 3a calle");
+    // controladorcuenta.setEmail("er@gmail.com");
+     /*controladorcuenta.setNumerodeCuenta("2");
+     controladorcuenta.setTipo("enfermo");
+     controladorcuenta.setMonto(9);
+     controladorcuenta.setFechaApertura("21/10/2017");*/
      
-     controladorcuenta.AperturarCuenta();
+    /* controladorcuenta.setNumerodeCuenta("2");
+    
+     controladorcuenta.setMonto(20);*/
+     
+    // controladorcuenta.InsertarDeposito();
+    
+     controladorcuenta.setMonto(20);
+     controladorcuenta.Actualizarmonto("2");
      controladorcuenta.ActualizarVista();
+    
      
     }
     

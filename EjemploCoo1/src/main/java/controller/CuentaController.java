@@ -187,7 +187,7 @@ public class CuentaController {
         st= null;
         cn= null;
         
-        sql= "select id, nombre from cuenta where numero de cuenta= '"+NumerodeCuenta+"'";
+        sql= "select numero de cuenta, tipo from cuenta where numero de cuenta= '"+NumerodeCuenta+"'";
         
         try{
             cn= ConectarBD.Conectar();
@@ -202,13 +202,35 @@ public class CuentaController {
         }
         return exito;
     }
-      public boolean Actualizarmonto(String NumerodeCuenta){
+    /*  public boolean Actualizarmonto(String NumerodeCuenta){
         exito= false;
         st= null;
         cn= null;
         
-        sql= "update cuenta set monto= '"+ModeloCuenta.getMonto()+"' "+
-                "where numero de cuenta='"+ModeloCuenta.getNumerodeCuenta()+"'";
+        sql= "update deposito set monto= '"+ModeloCuenta.getNumerodeCuenta()+"' "+ModeloCuenta.getTipo()+"' "+ModeloCuenta.getMonto()+"' "+
+                ModeloCuenta.getFechaApertura()+"' "+ "where numero de cuenta='"+ModeloCuenta.getNumerodeCuenta()+"'";
+        
+        try{
+            cn= ConectarBD.Conectar();
+            st= cn.createStatement();
+            st.execute(sql);
+            
+            exito= true;
+            
+            st.close();
+            cn.close();
+        }catch(SQLException e){
+            System.out.println("Error en la actualizacion");
+        }
+        return exito;       
+}*/
+      public boolean Actualizarmonto(String Id ){
+        exito= false;
+        st= null;
+        cn= null;
+        
+        sql= "update deposito set monto= '"+ModeloCuenta.getMonto()+"'"+ 
+             "where numero de cuenta='"+ModeloCuenta.getNumerodeCuenta()+"'";
         
         try{
             cn= ConectarBD.Conectar();
@@ -229,7 +251,7 @@ public class CuentaController {
         st= null;
         cn= null;
                 
-        sql= "insert into deposito values ('"+ModeloCuenta.getMonto()+"', '"+ ModeloCuenta.getFechaRegistro() +"')";
+        sql= "insert into dep values ('"+ModeloCuenta.getNumerodeCuenta()+"', '"+ ModeloCuenta.getMonto()+"')";
         
         try{
             cn= ConectarBD.Conectar();
