@@ -26,7 +26,6 @@ public class Retiro extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabellogort = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jTextFieldnumerocuentart = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
@@ -38,15 +37,11 @@ public class Retiro extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jLabelfondoRt = new javax.swing.JLabel();
+        tiporetiro = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabellogort.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/logomenu.png"))); // NOI18N
-        getContentPane().add(jLabellogort, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel1.setText("Numero de cuenta:");
@@ -96,15 +91,8 @@ public class Retiro extends javax.swing.JFrame {
         jLabel5.setText("Tipo de cuenta:");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 310, -1, -1));
 
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 310, 410, 30));
-
-        jLabelfondoRt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/white wallpaper (30)-991074_800.jpeg"))); // NOI18N
-        getContentPane().add(jLabelfondoRt, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 510));
+        tiporetiro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Navidena", "Aportaciones", "Especial", "Estudiante" }));
+        getContentPane().add(tiporetiro, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 310, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -118,10 +106,6 @@ public class Retiro extends javax.swing.JFrame {
         retiro.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -167,11 +151,9 @@ public class Retiro extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabelfondoRt;
-    private javax.swing.JLabel jLabellogort;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextFieldmontort;
     private javax.swing.JTextField jTextFieldnumerocuentart;
+    private javax.swing.JComboBox<String> tiporetiro;
     // End of variables declaration//GEN-END:variables
 }

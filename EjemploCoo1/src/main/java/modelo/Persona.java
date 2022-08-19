@@ -101,7 +101,7 @@ public class Persona {
                 + "Telefono: %s \n"
                 + "ID: %s \n"
                 + "Correo Electronico: %s \n",
-                this.Nombre, this.Nacimiento.toString(),
+                this.Nombre, this.Nacimiento,
                 this.Direccion, this.Telefono, this.Id, this.Email);
         return _infoPersona;
     }

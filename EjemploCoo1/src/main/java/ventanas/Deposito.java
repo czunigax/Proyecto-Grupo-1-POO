@@ -32,7 +32,6 @@ public class Deposito extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabellogodp = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         numerotxt = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
@@ -44,15 +43,11 @@ public class Deposito extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         fechatxt = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        tipotxt = new javax.swing.JTextField();
-        jLabelfondo = new javax.swing.JLabel();
+        tipocbx = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabellogodp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/logomenu.png"))); // NOI18N
-        getContentPane().add(jLabellogodp, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel3.setText("Numero de cuenta:");
@@ -106,10 +101,9 @@ public class Deposito extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel5.setText("Tipo de cuenta:");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 320, -1, -1));
-        getContentPane().add(tipotxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 320, 440, 30));
 
-        jLabelfondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/white wallpaper (30)-991074_800.jpeg"))); // NOI18N
-        getContentPane().add(jLabelfondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        tipocbx.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Navidena", "Especial", "Aportaciones", "Estudiante" }));
+        getContentPane().add(tipocbx, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 320, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -121,9 +115,27 @@ public class Deposito extends javax.swing.JFrame {
         numerodecuenta= numerotxt.getText();
         monto=montotxt.getText();
         fecha=fechatxt.getText();
-        tipo=tipotxt.getText();
+        tipo=tipocbx.getSelectedItem().toString();
+      
+
+//  tipo=tipotxt.getText();
         
-        Cuenta cuentadepositar = new Cuenta(tipo,numerodecuenta,Double.parseDouble(monto),fecha);
+        Cuenta cuentadepositar = new Cuenta(tipo,numerodecuenta,Double.parseDouble(monto),fecha) {
+            @Override
+            public boolean depositar(double cantidad) {
+                throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+            }
+
+            @Override
+            public boolean retirar(double cantidadRetirar) {
+                throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+            }
+
+            @Override
+            public double consultar() {
+                throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+            }
+        };
         CuentaView vistacuenta = new CuentaView();
         CuentaController controladorcuenta = new CuentaController(cuentadepositar, vistacuenta);
         if(controladorcuenta.Buscar(numerodecuenta)== true){
@@ -195,11 +207,9 @@ public class Deposito extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabelfondo;
-    private javax.swing.JLabel jLabellogodp;
     private javax.swing.JButton jbenviar;
     private javax.swing.JTextField montotxt;
     private javax.swing.JTextField numerotxt;
-    private javax.swing.JTextField tipotxt;
+    private javax.swing.JComboBox<String> tipocbx;
     // End of variables declaration//GEN-END:variables
 }

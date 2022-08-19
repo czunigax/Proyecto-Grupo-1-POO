@@ -6,6 +6,8 @@ package ventanas;
 import modelo.Cuenta;
 import view.CuentaView;
 import controller.CuentaController;
+import java.awt.Image;
+import javax.swing.ImageIcon;
 /**
  *
  * @author The Ice
@@ -13,8 +15,27 @@ import controller.CuentaController;
 public class Inicio extends javax.swing.JFrame {
 
     
+/*ImageIcon icono = new
+ImageIcon(getClass().getResource("/imagenes/logo1.png"));
+jLabel1.setIcon(icono);*/
+    
   public static  CuentaView vistacuenta = new CuentaView();
-  public static Cuenta modelocuenta = new Cuenta();
+  public static Cuenta modelocuenta = new Cuenta() {
+      @Override
+      public boolean depositar(double cantidad) {
+          throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+      }
+
+      @Override
+      public boolean retirar(double cantidadRetirar) {
+          throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+      }
+
+      @Override
+      public double consultar() {
+          throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+      }
+  };
   public static  CuentaController controladorcuenta = new CuentaController(modelocuenta, vistacuenta);
     
     
@@ -35,24 +56,16 @@ public class Inicio extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabelmundo = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
         jButtoncuenta = new javax.swing.JButton();
         jButtonsalir = new javax.swing.JButton();
         jButtontransacciones = new javax.swing.JButton();
         jButtonprestamo = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-        jLabelfondo = new javax.swing.JLabel();
+        jLayeredPane1 = new javax.swing.JLayeredPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabelmundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mundo recortadp.png"))); // NOI18N
-        getContentPane().add(jLabelmundo, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 370, -1, 210));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/logo1.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 70, -1, -1));
 
         jButtoncuenta.setBackground(new java.awt.Color(153, 153, 255));
         jButtoncuenta.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -104,10 +117,7 @@ public class Inicio extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 310, 130, 60));
-
-        jLabelfondo.setBackground(new java.awt.Color(204, 204, 255));
-        jLabelfondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/white wallpaper (30)-991074_800.jpeg"))); // NOI18N
-        getContentPane().add(jLabelfondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 590));
+        getContentPane().add(jLayeredPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 20, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -183,8 +193,6 @@ public class Inicio extends javax.swing.JFrame {
     private javax.swing.JButton jButtonprestamo;
     private javax.swing.JButton jButtonsalir;
     private javax.swing.JButton jButtontransacciones;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabelfondo;
-    private javax.swing.JLabel jLabelmundo;
+    private javax.swing.JLayeredPane jLayeredPane1;
     // End of variables declaration//GEN-END:variables
 }
