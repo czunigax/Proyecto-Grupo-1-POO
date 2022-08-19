@@ -20,7 +20,7 @@ public class CuentaAportaciones extends Cuenta {
     super();
     }
     
-    public CuentaAportaciones(Date fechaDeposito ){
+    public CuentaAportaciones(Date fechaDeposito){
        super();
         this.fechaDeposito=fechaDeposito;
     }
@@ -36,6 +36,21 @@ public class CuentaAportaciones extends Cuenta {
     
     public void setFechaDeposito(Date fechaDeposito){
     this.fechaDeposito=fechaDeposito;
+    }
+
+    @Override
+    public boolean depositar(double cantidad) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean retirar(double cantidadRetirar) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public double consultar() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
   
 }

@@ -22,7 +22,22 @@ public class EjemploCRUD1 {
     public static void main(String[] args) {
         
     CuentaView vistacuenta = new CuentaView();
-    Cuenta modelocuenta = new Cuenta();
+    Cuenta modelocuenta = new Cuenta() {
+        @Override
+        public boolean depositar(double cantidad) {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+
+        @Override
+        public boolean retirar(double cantidadRetirar) {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+
+        @Override
+        public double consultar() {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+    };
     CuentaController controladorcuenta = new CuentaController(modelocuenta, vistacuenta);
 
 

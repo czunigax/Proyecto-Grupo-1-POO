@@ -57,7 +57,11 @@ public abstract class Cuenta extends Cliente{
     return Monto;
     }
     public void setMonto(double Monto){
-    this.Monto=Monto;
+        if(Monto <= 0){
+            throw new IllegalArgumentException("El saldo debe ser mayor a cero.");
+        }else{
+            this.Monto=Monto;
+        }
     }
     public String getFechaApertura(){
     return FechaApertura;
