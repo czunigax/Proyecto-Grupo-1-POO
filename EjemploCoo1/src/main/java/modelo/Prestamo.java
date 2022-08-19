@@ -90,6 +90,7 @@ public class Prestamo implements Interes {
       
       } 
       
+      //RELIZANDO COMPORTAMIENTO POLIMORFICO
       private final LinkedList<Prestamo> _listasPrestamos = new LinkedList<>();
       
       /**

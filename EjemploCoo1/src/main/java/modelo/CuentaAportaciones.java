@@ -66,7 +66,7 @@ public class CuentaAportaciones extends Cuenta implements Interes{
 
     @Override
     public double consultar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return this.Monto;
     }
   
     @Override

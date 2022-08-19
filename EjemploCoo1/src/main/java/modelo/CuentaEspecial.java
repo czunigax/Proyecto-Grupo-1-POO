@@ -119,7 +119,7 @@ public class CuentaEspecial extends Cuenta implements Interes{
         
         switch (nombreCE){
             case "CUENTA AHORRO":
-                if (monto >= 0 || monto <= 999.99) {
+            if (monto >= 0 || monto <= 999.99) {
                  Interesesremunerados = (monto * (0.0005));
                       this.intereses += Interesesremunerados;
                    return Interesesremunerados;
@@ -131,37 +131,12 @@ public class CuentaEspecial extends Cuenta implements Interes{
                     Interesesremunerados = (monto * (0.01));
                      this.intereses += Interesesremunerados;
                      return Interesesremunerados;
-                } else if (monto >= 25000 || monto <= 49999.99) {
+                } else if (monto >= 25000) {
                       Interesesremunerados = (monto * (0.0126));
                       this.intereses += Interesesremunerados;
                          return Interesesremunerados;
-                } else if (monto >= 50000 || monto <= 99999.99) {
-                    Interesesremunerados = (monto * (0.0151));
-                      this.intereses += Interesesremunerados;
-                      return Interesesremunerados;
-                  } else if (monto >= 100000 || monto <= 249999.99) {
-                    Interesesremunerados = (monto * (0.0176));
-                         this.intereses += Interesesremunerados;
-                    return Interesesremunerados;
-                 } else if (monto >= 250000 || monto <= 499999.99) {
-                      Interesesremunerados = (monto * (0.0176));
-                      this.intereses += Interesesremunerados;
-                      return Interesesremunerados;
-                 } else if (monto >= 500000 || monto <= 999999.99) {
-                     Interesesremunerados = (monto * (0.0176));
-                      this.intereses += Interesesremunerados;
-                      return Interesesremunerados;
-                 } else if (monto >= 1000000 || monto <= 1999999.99) {
-                       Interesesremunerados = (monto * (0.0176));
-                       this.intereses += Interesesremunerados;
-                         return Interesesremunerados;
-                 } else if (monto >= 2000000 || monto > 2000000) {
-                        Interesesremunerados = (monto * (0.0176));
-                          this.intereses += Interesesremunerados;
-                          return Interesesremunerados;
-                 } else {
-                   return Interesesremunerados;
-                 }
+                } 
+            
                  break;
             
                  case "CUENTA NAVIDEÑA":
@@ -177,13 +152,13 @@ public class CuentaEspecial extends Cuenta implements Interes{
                     Interesesremunerados = (monto * (0.005));
                     this.intereses += Interesesremunerados;
                     return Interesesremunerados;
-                 } else if (monto >= 2000000 || monto > 2000000) {
+                 } else if (monto >= 2000000) {
                     Interesesremunerados = (monto * (0.0356));
                     this.intereses += Interesesremunerados;
                     return Interesesremunerados;
-                } else {
+                } /*else {
                     return Interesesremunerados;
-                }
+                }*/
             
                 break;
                 
@@ -204,9 +179,9 @@ public class CuentaEspecial extends Cuenta implements Interes{
                         Interesesremunerados = (monto * (0.0356));
                         this.intereses += Interesesremunerados;
                         return Interesesremunerados;
-                    } else {
+                    } /*else {
                          return Interesesremunerados;
-                     }
+                     }*/
                     break;
                 default:
                     break;
@@ -214,6 +189,5 @@ public class CuentaEspecial extends Cuenta implements Interes{
         
         return Interesesremunerados;
     }
-    
     
 }
