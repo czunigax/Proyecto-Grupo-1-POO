@@ -123,9 +123,13 @@ public class Deposito extends javax.swing.JFrame {
         Cuenta cuentadepositar = new Cuenta(tipo,numerodecuenta,Double.parseDouble(monto),fecha) {
             @Override
             public boolean depositar(double cantidad) {
-                throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+                 if (cantidad <= 0) {
+            return false;
+        } else {
+            this.Monto += cantidad;
+            return true;
+        }
             }
-
             @Override
             public boolean retirar(double cantidadRetirar) {
                 throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
@@ -138,15 +142,16 @@ public class Deposito extends javax.swing.JFrame {
         };
         CuentaView vistacuenta = new CuentaView();
         CuentaController controladorcuenta = new CuentaController(cuentadepositar, vistacuenta);
-        if(controladorcuenta.Buscar(numerodecuenta)== true){
+        if(cuentadepositar.buscarTipoCuenta(numerodecuenta)!=null){
         cuentadepositar.setTipo(tipo);
         cuentadepositar.setNumeroC(numerodecuenta);
         cuentadepositar.depositar(Double.parseDouble(monto));
+        cuentadepositar.setMonto(cuentadepositar.getMonto());
         
+        controladorcuenta.InsertarDeposito();
         
-        controladorcuenta.Actualizarmonto(numerodecuenta);
         }else{
-        System.out.println("Error carajo");
+        System.out.println("Error");
         }
        
                

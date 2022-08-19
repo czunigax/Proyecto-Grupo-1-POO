@@ -224,4 +224,25 @@ public class CuentaController {
         }
         return exito;       
 }
+      public boolean InsertarDeposito(){
+        exito= false;
+        st= null;
+        cn= null;
+                
+        sql= "insert into deposito values ('"+ModeloCuenta.getMonto()+"', '"+ ModeloCuenta.getFechaRegistro() +"')";
+        
+        try{
+            cn= ConectarBD.Conectar();
+            st= cn.createStatement();
+            st.execute(sql);
+            
+            exito= true;
+            
+            st.close();
+            cn.close();
+        }catch(SQLException e){
+            System.out.println("Error al insertar deposito");
+        }
+        return exito;
+    }
 }

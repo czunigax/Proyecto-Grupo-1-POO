@@ -74,6 +74,7 @@ public abstract class Cuenta extends Cliente{
     //PARA GESTIONES DE LA CLASE CUENTA
     //COLECCIÓN PARA REALIZAR COMPORTAMIENTO POLIMORFICO
     LinkedList<Cuenta> _listaTipoCuenta = new LinkedList<>();
+   
     
    /**
      * MÉTODO PARA OBTENER COLECCIÓN

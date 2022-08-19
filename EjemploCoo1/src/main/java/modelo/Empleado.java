@@ -9,7 +9,7 @@ import java.util.Date;
 
 /**
  *
- * @author cris, Olbin
+ * @author cris, Gissela
  */
 public class Empleado extends Persona {
     private String CodigoEmpleado;
