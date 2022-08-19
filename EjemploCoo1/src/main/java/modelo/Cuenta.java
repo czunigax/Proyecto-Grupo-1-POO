@@ -9,9 +9,9 @@ import java.util.Date;
 
 /**
  *
- * @author cris
+ * @authores cristian, Gleny
  */
-public class Cuenta extends Cliente{
+public abstract class Cuenta extends Cliente{
    //Atributos
    private String TipodeCuenta;
    private String NumerodeCuenta;
@@ -66,12 +66,25 @@ public class Cuenta extends Cliente{
     this.FechaApertura=FechaApertura;
     }
     
-    public boolean depositar (double cantidad){
+    /**
+     *
+     * @param cantidad
+     * @return
+     */
+    /*public boolean depositar (double cantidad){
     if (cantidad <=0){
     return false;
     }else{
         this.Monto+=cantidad;
     return true;    
     }
-    }
+    }*/
+    
+    //DEFINICION DE METODOS ABSTRACTOS
+    public abstract boolean depositar(double cantidad);
+
+    public abstract boolean retirar(double cantidadRetirar);
+
+    public abstract double consultar();
+    
 }
