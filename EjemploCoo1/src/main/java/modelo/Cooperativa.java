@@ -6,17 +6,17 @@ package modelo;
 
 /**
  *
- * @author kevin
+ * @author kevin, Olbin
  */
 public class Cooperativa {
     //Atributos
    private String Nombre;
-   private String Dirrecion;
+   private String Direccion;
 
    //Constructor
-    public Cooperativa(String Nombre, String Dirrecion) {
+    public Cooperativa(String Nombre, String Direccion) {
         this.Nombre = Nombre;
-        this.Dirrecion = Dirrecion;
+        this.Direccion = Direccion;
     }
    
     public Cooperativa(){
@@ -31,12 +31,22 @@ public class Cooperativa {
         this.Nombre = Nombre;
     }
 
-    public String getDirrecion() {
-        return Dirrecion;
+    public String getDireccion() {
+        return Direccion;
     }
 
-    public void setDirrecion(String Dirrecion) {
-        this.Dirrecion = Dirrecion;
+    public void setDirrecion(String Direccion) {
+        this.Direccion = Direccion;
     } 
     
+    //Metodo toString
+    @Override
+    public String toString() {
+       String _Cooperativa = String.format("INFORMACIÓN DE COOPERATIVA:\n--------------------------------------\n"
+                +"Nombre: "+Nombre+"\n"
+                +"Direccion: "+Direccion+"\n"
+        );
+        return _Cooperativa;
+    
+ }
 }
