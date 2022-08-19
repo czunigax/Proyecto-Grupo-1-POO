@@ -37,7 +37,11 @@ public class Persona {
     }
 
     public void setId(String Id) {
-        this.Id = Id;
+        if (Id == null || Id.equals("")){
+            throw new IllegalArgumentException("ID es un dato obligatorio");
+        } else {
+            this.Id = Id;
+        }
     }
 
     public String getNombre() {
@@ -45,8 +49,13 @@ public class Persona {
     }
 
     public void setNombre(String Nombre) {
-        this.Nombre = Nombre;
+        if (Nombre == null || Nombre.equals("")){
+            throw new IllegalArgumentException("Nombre es un dato obligatorio");
+        } else {
+            this.Nombre = Nombre;
+        }
     }
+    
      public String getTelefono() {
         return Telefono;
     }
@@ -66,13 +75,34 @@ public class Persona {
     }
 
     public void setDireccion(String Direccion) {
-        this.Direccion = Direccion;
+        if (Direccion == null || Direccion.equals("")){
+            throw new IllegalArgumentException("Dirección es un dato obligatorio");
+        }  else {
+            this.Direccion = Direccion;
+        }
     }
      public String getEmail() {
         return Email;
     }
 
     public void setEmail(String Email) {
-        this.Email = Email;
+         if (!Email.contains("@") || !Email.contains(".")) {
+            throw new IllegalArgumentException("Correo electrónico es incorrecto");
+        } else {
+            this.Email = Email;
+        }
+    }
+    
+    @Override
+    public String toString() {
+        String _infoPersona = String.format("Nombre: %s \n"
+                + "Fecha nacimiento: %s \n"
+                + "DirecciÓn: %s \n"
+                + "Telefono: %s \n"
+                + "ID: %s \n"
+                + "Correo Electronico: %s \n",
+                this.Nombre, this.Nacimiento.toString(),
+                this.Direccion, this.Telefono, this.Id, this.Email);
+        return _infoPersona;
     }
 }
