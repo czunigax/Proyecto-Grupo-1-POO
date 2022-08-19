@@ -83,7 +83,12 @@ public class CuentaEspecial extends Cuenta implements Interes{
     
     @Override
     public boolean depositar(double cantidad) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        if (cantidad <= 0) {
+            return false;
+        } else {
+            this.Monto += cantidad;
+            return true;
+        }
     }
     
     @Override
@@ -93,7 +98,7 @@ public class CuentaEspecial extends Cuenta implements Interes{
 
     @Override
     public boolean retirar(double cantidadRetirar) {
-         if (cantidadRetirar <= this.Monto ) {
+         if (cantidadRetirar <= this.Monto) {
             this.Monto -= cantidadRetirar;
             return true;
         } else {
@@ -101,17 +106,34 @@ public class CuentaEspecial extends Cuenta implements Interes{
         }
     }
     
-    public boolean retirar(String tipoCuenta, double cantidadRetirar, Date fechaRetiro){
-        if (tipoCuenta == "Cuenta Ahorro"){
-            this.Monto -= cantidadRetirar;
-            return true;
-        } else {
-           /* if (tipoCuenta == "Cuenta Navideña"){
+     public boolean retirar(double cantidadRetirar, String fechaRetiro){
+        //Para cuenta Estudiante
+        /*String fechaIRE = "20/01/2023";
+        String fechaFRE = "15/02/2023";
+        
+        //Para cuenta navideña
+        String fechaIRN = "16/12/2022";
+        String fechaFRN = "05/01/2023";
+        
+        switch(nombreCE){
+            case "CUENTA AHORRO":
+                if (cantidadRetirar <= this.Monto) {
+                     this.Monto -= cantidadRetirar;
+                     return true;
+                } else {
+                    return false;
+                }
+                break;
                 
-            }*/
-           return false;
-        }
-      }
+            case "CUENTA NAVIDEÑA":
+                if(fechaRetiro == fechaIRN || fechaRetiro == fechaFRN){
+                    
+                    
+                }
+                break;
+         }*/
+        return false;
+     }
  
     @Override
     public double CalculoInteres(double monto) {

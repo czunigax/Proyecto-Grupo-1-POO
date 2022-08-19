@@ -50,14 +50,21 @@ public class CuentaAportaciones extends Cuenta implements Interes{
     
     @Override
     public boolean depositar(double cantidad) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if (cantidad <= 0) {
+            return false;
+        } else {
+            this.Monto += cantidad;
+            return true;
+        }
     }
 
     @Override
     public boolean retirar(double cantidadRetirar) {
+        cantidadRetirar = Monto;
+        
         if (cantidadRetirar <= this.Monto){
-            // CuentaAportaciones.this.eliminarTipoCuenta();
             this.Monto -= cantidadRetirar;
+            System.out.print("Su cuenta sera cancelada.");
             return true;
         } else {
             return false;
