@@ -5,12 +5,13 @@
  */
 package modelo;
 
+import Interfaces.Interes;
 import java.util.Date;
 /**
  *
  * @author gleny
  */
-public class CuentaAportaciones extends Cuenta {
+public class CuentaAportaciones extends Cuenta implements Interes{
     
     //Atributos
     private Date fechaDeposito;
@@ -68,27 +69,8 @@ public class CuentaAportaciones extends Cuenta {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
   
+    @Override
     public double CalculoInteres(double monto) {
-        double Intereses = 0;
-
-        if (monto >= 0 || monto <= 100000) {
-            Intereses = (monto * (0.0));
-            this.interes += Intereses;
-            return Intereses;
-        } else if (monto >= 100000 || monto <= 500000) {
-            Intereses = (monto * (0.0025));
-            this.interes += Intereses;
-            return Intereses;
-        } else if (monto >= 500000 || monto <= 1000000) {
-            Intereses = (monto * (0.005));
-            this.interes += Intereses;
-            return Intereses;
-        } else if (monto >= 1000000 || monto > 3000000) {
-            Intereses = (monto * (0.0356));
-            this.interes += Intereses;
-            return Intereses;
-        } else {
-            return Intereses;
-        }
+        return 0;
     }
 }

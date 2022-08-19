@@ -5,12 +5,13 @@
  */
 package modelo;
 
+import Interfaces.Interes;
 import java.util.Date;
 /**
  *
- * @author gleny
+ * @author Gleny
  */
-public class CuentaEspecial extends Cuenta {
+public class CuentaEspecial extends Cuenta implements Interes{
     //Atributos
     private String nombreCE;
     private int idCE;
@@ -30,7 +31,7 @@ public class CuentaEspecial extends Cuenta {
         this.idCE=idCE;
     }
     
-    public CuentaEspecial(String Nombre, String Id,String CodigoCliente, String Telefono, String Nacimiento, String Direccion, String Email, String TipodeCuenta, String NumerodeCuenta, double Monto, String FechaApertura, String nombreCE, int idCE, Date fechaRetiro) {
+    public CuentaEspecial(String Nombre, String Id,String CodigoCliente, String Telefono, String Nacimiento, String Direccion, String Email, String TipodeCuenta, String NumerodeCuenta, double Monto, String FechaApertura, double intereses, String nombreCE, int idCE, Date fechaRetiro) {
 	super(Nombre, Id,CodigoCliente, Telefono, Nacimiento, Direccion, Email, TipodeCuenta, NumerodeCuenta, Monto, FechaApertura);
 	this.nombreCE=nombreCE;
         this.intereses=intereses;
@@ -112,28 +113,107 @@ public class CuentaEspecial extends Cuenta {
         }
       }
  
+    @Override
     public double CalculoInteres(double monto) {
-        double Intereses = 0;
-
-        if (monto >= 0 || monto <= 500000) {
-            Intereses = (monto * (0.0));
-            this.intereses += Intereses;
-            return Intereses;
-        } else if (monto >= 500000 || monto <= 1000000) {
-            Intereses = (monto * (0.0025));
-            this.intereses += Intereses;
-            return Intereses;
-        } else if (monto >= 1000000 || monto <= 2000000) {
-            Intereses = (monto * (0.005));
-            this.intereses += Intereses;
-            return Intereses;
-        } else if (monto >= 2000000 || monto > 2000000) {
-            Intereses = (monto * (0.0356));
-            this.intereses += Intereses;
-            return Intereses;
-        } else {
-            return Intereses;
+        double Interesesremunerados = 0;
+        
+        switch (nombreCE){
+            case "CUENTA AHORRO":
+                if (monto >= 0 || monto <= 999.99) {
+                 Interesesremunerados = (monto * (0.0005));
+                      this.intereses += Interesesremunerados;
+                   return Interesesremunerados;
+                } else if (monto >= 1000 || monto <= 9999.99) {
+                    Interesesremunerados = (monto * (0.0075));
+                    this.intereses += Interesesremunerados;
+                     return Interesesremunerados;
+                 } else if (monto >= 10000 || monto <= 24999.99) {
+                    Interesesremunerados = (monto * (0.01));
+                     this.intereses += Interesesremunerados;
+                     return Interesesremunerados;
+                } else if (monto >= 25000 || monto <= 49999.99) {
+                      Interesesremunerados = (monto * (0.0126));
+                      this.intereses += Interesesremunerados;
+                         return Interesesremunerados;
+                } else if (monto >= 50000 || monto <= 99999.99) {
+                    Interesesremunerados = (monto * (0.0151));
+                      this.intereses += Interesesremunerados;
+                      return Interesesremunerados;
+                  } else if (monto >= 100000 || monto <= 249999.99) {
+                    Interesesremunerados = (monto * (0.0176));
+                         this.intereses += Interesesremunerados;
+                    return Interesesremunerados;
+                 } else if (monto >= 250000 || monto <= 499999.99) {
+                      Interesesremunerados = (monto * (0.0176));
+                      this.intereses += Interesesremunerados;
+                      return Interesesremunerados;
+                 } else if (monto >= 500000 || monto <= 999999.99) {
+                     Interesesremunerados = (monto * (0.0176));
+                      this.intereses += Interesesremunerados;
+                      return Interesesremunerados;
+                 } else if (monto >= 1000000 || monto <= 1999999.99) {
+                       Interesesremunerados = (monto * (0.0176));
+                       this.intereses += Interesesremunerados;
+                         return Interesesremunerados;
+                 } else if (monto >= 2000000 || monto > 2000000) {
+                        Interesesremunerados = (monto * (0.0176));
+                          this.intereses += Interesesremunerados;
+                          return Interesesremunerados;
+                 } else {
+                   return Interesesremunerados;
+                 }
+                 break;
+            
+                 case "CUENTA NAVIDEÑA":
+                     if (monto >= 0 || monto <= 500000) {
+                   Interesesremunerados = (monto * (0.0));
+                     this.intereses += Interesesremunerados;
+                    return Interesesremunerados;
+                 } else if (monto >= 500000 || monto <= 1000000) {
+                     Interesesremunerados = (monto * (0.0025));
+                      this.intereses += Interesesremunerados;
+                        return Interesesremunerados;
+                } else if (monto >= 1000000 || monto <= 2000000) {
+                    Interesesremunerados = (monto * (0.005));
+                    this.intereses += Interesesremunerados;
+                    return Interesesremunerados;
+                 } else if (monto >= 2000000 || monto > 2000000) {
+                    Interesesremunerados = (monto * (0.0356));
+                    this.intereses += Interesesremunerados;
+                    return Interesesremunerados;
+                } else {
+                    return Interesesremunerados;
+                }
+            
+                break;
+                
+                case "CUENTA ESTUDIANTIL":
+                    if (monto >= 0 || monto <= 100000) {
+                         Interesesremunerados = (monto * (0.0));
+                         this.intereses += Interesesremunerados;
+                            return Interesesremunerados;
+                     } else if (monto >= 100000 || monto <= 500000) {
+                       Interesesremunerados = (monto * (0.0025));
+                         this.intereses += Interesesremunerados;
+                         return Interesesremunerados;
+                     } else if (monto >= 500000 || monto <= 1000000) {
+                        Interesesremunerados = (monto * (0.005));
+                        this.intereses += Interesesremunerados;
+                          return Interesesremunerados;
+                     } else if (monto >= 1000000 || monto > 3000000) {
+                        Interesesremunerados = (monto * (0.0356));
+                        this.intereses += Interesesremunerados;
+                        return Interesesremunerados;
+                    } else {
+                         return Interesesremunerados;
+                     }
+                    break;
+                default:
+                    break;
         }
+        
+        return Interesesremunerados;
     }
+    
     
 }
