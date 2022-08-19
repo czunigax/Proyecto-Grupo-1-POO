@@ -8,7 +8,7 @@ package modelo;
 import java.util.Date;
 
 /**
- *
+ *@author gleny
  * 
  */
 public class Persona {
