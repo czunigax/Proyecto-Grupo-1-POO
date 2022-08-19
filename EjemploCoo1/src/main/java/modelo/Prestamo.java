@@ -6,7 +6,7 @@ package modelo;
 import java.util.Date;
 /**
  *
- * @author kevin
+ * @author kevin, Olbin
  */
 public class Prestamo {
         
@@ -87,5 +87,18 @@ public class Prestamo {
       public void CalculoInteres(){
       
       }
+      
+    //Metodo toString
+    @Override
+    public String toString() {
+        String _Prestamo = String.format("INFORMACIÓN DE PRESTAMO:\n--------------------------------------\n"
+                +"TiempoPago: "+TiempoPago+"\n"
+                +"ValorIntereses: "+ValorIntereses+"\n"
+                +"FechaInicio: "+FechaInicio+"\n"
+                +"FechaFinal: "+FechaFinal+"\n"
+                +"TipoCuenta: "+TipoCuenta+"\n"
+        );
+        return _Prestamo;
+    }
       
 }
