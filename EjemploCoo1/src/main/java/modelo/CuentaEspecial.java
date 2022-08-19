@@ -5,12 +5,13 @@
  */
 package modelo;
 
+import Interfaces.Interes;
 import java.util.Date;
 /**
  *
- * @author gleny
+ * @author Gleny
  */
-public class CuentaEspecial extends Cuenta {
+public class CuentaEspecial extends Cuenta implements Interes{
     //Atributos
     private String nombreCE;
     private int idCE;
@@ -30,7 +31,7 @@ public class CuentaEspecial extends Cuenta {
         this.idCE=idCE;
     }
     
-    public CuentaEspecial(String Nombre, String Id,String CodigoCliente, String Telefono, String Nacimiento, String Direccion, String Email, String TipodeCuenta, String NumerodeCuenta, double Monto, String FechaApertura, String nombreCE, int idCE, Date fechaRetiro) {
+    public CuentaEspecial(String Nombre, String Id,String CodigoCliente, String Telefono, String Nacimiento, String Direccion, String Email, String TipodeCuenta, String NumerodeCuenta, double Monto, String FechaApertura, double intereses, String nombreCE, int idCE, Date fechaRetiro) {
 	super(Nombre, Id,CodigoCliente, Telefono, Nacimiento, Direccion, Email, TipodeCuenta, NumerodeCuenta, Monto, FechaApertura);
 	this.nombreCE=nombreCE;
         this.intereses=intereses;
@@ -71,15 +72,7 @@ public class CuentaEspecial extends Cuenta {
     this.fechaRetiro=fechaRetiro;
     }
 
-
-    @Override
-    public boolean depositar(double cantidad) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-
-    //METODOS
-    
-    }
-    
+   //METODOS
     @Override
     public String toString() {
         String _infoCuentaEspecial = String.format("Saldo: %f\n"
@@ -88,48 +81,135 @@ public class CuentaEspecial extends Cuenta {
         return super.toString() + _infoCuentaEspecial;
     }
     
-  
-
-   
-
+    @Override
+    public boolean depositar(double cantidad) {
+        if (cantidad <= 0) {
+            return false;
+        } else {
+            this.Monto += cantidad;
+            return true;
+        }
+    }
+    
     @Override
     public double consultar() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return this.Monto;
     }
 
     @Override
     public boolean retirar(double cantidadRetirar) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-    
-    public boolean retirar(String tipoCuenta, double cantidadRetirar, Date fechaRetiro){
-        if (tipoCuenta == "Cuenta Ahorro"){
-            this.Monto -= cantidadRetirar;
-            return true;
-        } else {
-           /* if (tipoCuenta == "Cuenta Navideña"){
-                
-            }*/
-           return false;
-        }
-      }
- 
-    
-   
-    
-    
-}
-
-    /*    if (cantidadRetirar <= this.Monto ) {
+         if (cantidadRetirar <= this.Monto) {
             this.Monto -= cantidadRetirar;
             return true;
         } else {
             return false;
         }
-    }*/
- 
-
-  
+    }
     
-
-
+     public boolean retirar(double cantidadRetirar, String fechaRetiro){
+        //Para cuenta Estudiante
+        /*String fechaIRE = "20/01/2023";
+        String fechaFRE = "15/02/2023";
+        
+        //Para cuenta navideña
+        String fechaIRN = "16/12/2022";
+        String fechaFRN = "05/01/2023";
+        
+        switch(nombreCE){
+            case "CUENTA AHORRO":
+                if (cantidadRetirar <= this.Monto) {
+                     this.Monto -= cantidadRetirar;
+                     return true;
+                } else {
+                    return false;
+                }
+                break;
+                
+            case "CUENTA NAVIDEÑA":
+                if(fechaRetiro == fechaIRN || fechaRetiro == fechaFRN){
+                    
+                    
+                }
+                break;
+         }*/
+        return false;
+     }
+ 
+    @Override
+    public double CalculoInteres(double monto) {
+        double Interesesremunerados = 0;
+        
+        switch (nombreCE){
+            case "CUENTA AHORRO":
+            if (monto >= 0 || monto <= 999.99) {
+                 Interesesremunerados = (monto * (0.0005));
+                      this.intereses += Interesesremunerados;
+                   return Interesesremunerados;
+                } else if (monto >= 1000 || monto <= 9999.99) {
+                    Interesesremunerados = (monto * (0.0075));
+                    this.intereses += Interesesremunerados;
+                     return Interesesremunerados;
+                 } else if (monto >= 10000 || monto <= 24999.99) {
+                    Interesesremunerados = (monto * (0.01));
+                     this.intereses += Interesesremunerados;
+                     return Interesesremunerados;
+                } else if (monto >= 25000) {
+                      Interesesremunerados = (monto * (0.0126));
+                      this.intereses += Interesesremunerados;
+                         return Interesesremunerados;
+                } 
+            
+                 break;
+            
+                 case "CUENTA NAVIDEÑA":
+                     if (monto >= 0 || monto <= 500000) {
+                   Interesesremunerados = (monto * (0.0));
+                     this.intereses += Interesesremunerados;
+                    return Interesesremunerados;
+                 } else if (monto >= 500000 || monto <= 1000000) {
+                     Interesesremunerados = (monto * (0.0025));
+                      this.intereses += Interesesremunerados;
+                        return Interesesremunerados;
+                } else if (monto >= 1000000 || monto <= 2000000) {
+                    Interesesremunerados = (monto * (0.005));
+                    this.intereses += Interesesremunerados;
+                    return Interesesremunerados;
+                 } else if (monto >= 2000000) {
+                    Interesesremunerados = (monto * (0.0356));
+                    this.intereses += Interesesremunerados;
+                    return Interesesremunerados;
+                } /*else {
+                    return Interesesremunerados;
+                }*/
+            
+                break;
+                
+                case "CUENTA ESTUDIANTIL":
+                    if (monto >= 0 || monto <= 100000) {
+                         Interesesremunerados = (monto * (0.0));
+                         this.intereses += Interesesremunerados;
+                            return Interesesremunerados;
+                     } else if (monto >= 100000 || monto <= 500000) {
+                       Interesesremunerados = (monto * (0.0025));
+                         this.intereses += Interesesremunerados;
+                         return Interesesremunerados;
+                     } else if (monto >= 500000 || monto <= 1000000) {
+                        Interesesremunerados = (monto * (0.005));
+                        this.intereses += Interesesremunerados;
+                          return Interesesremunerados;
+                     } else if (monto >= 1000000 || monto > 3000000) {
+                        Interesesremunerados = (monto * (0.0356));
+                        this.intereses += Interesesremunerados;
+                        return Interesesremunerados;
+                    } /*else {
+                         return Interesesremunerados;
+                     }*/
+                    break;
+                default:
+                    break;
+        }
+        
+        return Interesesremunerados;
+    }
+    
+}
