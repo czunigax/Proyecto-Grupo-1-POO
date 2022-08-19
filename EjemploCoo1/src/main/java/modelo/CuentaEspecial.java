@@ -71,15 +71,7 @@ public class CuentaEspecial extends Cuenta {
     this.fechaRetiro=fechaRetiro;
     }
 
-
-    @Override
-    public boolean depositar(double cantidad) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-
-    //METODOS
-    
-    }
-    
+   //METODOS
     @Override
     public String toString() {
         String _infoCuentaEspecial = String.format("Saldo: %f\n"
@@ -88,18 +80,24 @@ public class CuentaEspecial extends Cuenta {
         return super.toString() + _infoCuentaEspecial;
     }
     
-  
-
-   
-
+    @Override
+    public boolean depositar(double cantidad) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+    
     @Override
     public double consultar() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return this.Monto;
     }
 
     @Override
     public boolean retirar(double cantidadRetirar) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+         if (cantidadRetirar <= this.Monto ) {
+            this.Monto -= cantidadRetirar;
+            return true;
+        } else {
+            return false;
+        }
     }
     
     public boolean retirar(String tipoCuenta, double cantidadRetirar, Date fechaRetiro){
@@ -114,22 +112,28 @@ public class CuentaEspecial extends Cuenta {
         }
       }
  
-    
-   
-    
+    public double CalculoInteres(double monto) {
+        double Intereses = 0;
+
+        if (monto >= 0 || monto <= 500000) {
+            Intereses = (monto * (0.0));
+            this.intereses += Intereses;
+            return Intereses;
+        } else if (monto >= 500000 || monto <= 1000000) {
+            Intereses = (monto * (0.0025));
+            this.intereses += Intereses;
+            return Intereses;
+        } else if (monto >= 1000000 || monto <= 2000000) {
+            Intereses = (monto * (0.005));
+            this.intereses += Intereses;
+            return Intereses;
+        } else if (monto >= 2000000 || monto > 2000000) {
+            Intereses = (monto * (0.0356));
+            this.intereses += Intereses;
+            return Intereses;
+        } else {
+            return Intereses;
+        }
+    }
     
 }
-
-    /*    if (cantidadRetirar <= this.Monto ) {
-            this.Monto -= cantidadRetirar;
-            return true;
-        } else {
-            return false;
-        }
-    }*/
- 
-
-  
-    
-
-
