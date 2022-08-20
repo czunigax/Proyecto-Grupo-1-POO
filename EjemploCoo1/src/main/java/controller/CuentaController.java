@@ -284,7 +284,7 @@ public class CuentaController {
         st= null;
         cn= null;
         ps=null;
-        sql= "select sum(monto) from cuenta where id = '?'";
+        sql= "select sum(monto) as sumo from cuenta where id = '?'";
       // sql="Select count (monto) from deposito";
                
         try{
@@ -292,11 +292,11 @@ public class CuentaController {
             
               cn= ConectarBD.Conectar();
               ps=cn.prepareStatement(sql);
-             ps.setString(1, NumerodeCuenta);
+              ps.setString(1, NumerodeCuenta);
               rs=ps.executeQuery();
               if(rs.next()){
               
-              String sum = rs.getString("sum(monto)");
+              String sum = rs.getString("sumo");
               
              System.out.println(sum);
              exito= true;

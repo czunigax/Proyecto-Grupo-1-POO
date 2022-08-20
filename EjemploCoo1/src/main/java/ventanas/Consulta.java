@@ -160,10 +160,14 @@ public class Consulta extends javax.swing.JFrame {
 
     private void jbconsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbconsultarActionPerformed
         // TODO add your handling code here:
+        String id;
+        id=num_txt.getText();
         try{
-         sql="Select Sum(monto) as summonto from cuenta";
-         cn= ConectarBD.Conectar();
+        
+        sql="Select Sum(monto) as summonto from cuenta where id = ?";
+        cn= ConectarBD.Conectar();
         ps=cn.prepareStatement(sql);
+        ps.setString(1, id);
         rs=ps.executeQuery();
         if(rs.next()){
         String sum=rs.getString("summonto");
