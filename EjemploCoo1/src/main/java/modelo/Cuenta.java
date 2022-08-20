@@ -5,7 +5,7 @@
  */
 package modelo;
 
-import java.util.Date;
+//import java.util.Date;
 import java.util.LinkedList;
 import javax.swing.JOptionPane;
 
@@ -34,8 +34,8 @@ public abstract class Cuenta extends Cliente{
         this.FechaApertura=FechaApertura;
     }
      
-     public Cuenta(String Nombre, String Id,String CodigoCliente, String Telefono, String Nacimiento, String Direccion, String Email, String TipodeCuenta, String NumerodeCuenta, double Monto, String FechaApertura) {
-	super(Nombre, Id,CodigoCliente, Telefono, Nacimiento, Direccion, Email);
+     public Cuenta(String Nombre, String Id,String fechaRegistro, String CodigoCliente, String Telefono, String Nacimiento, String Direccion, String Email, String TipodeCuenta, String NumerodeCuenta, double Monto, String FechaApertura) {
+	super(Nombre, Id,CodigoCliente ,fechaRegistro, Telefono, Nacimiento, Direccion, Email);
 	this.TipodeCuenta=TipodeCuenta;
         this.NumerodeCuenta=NumerodeCuenta;
         this.Monto=Monto;
@@ -80,7 +80,8 @@ public abstract class Cuenta extends Cliente{
    
     
    /**
-     * MÉTODO PARA OBTENER COLECCIÓN
+     * MÉTODO PARA OBTENER CO
+     * @return LECCIÓN
      *
      */
     public LinkedList<Cuenta> getCuenta() {
@@ -130,7 +131,7 @@ public abstract class Cuenta extends Cliente{
      /*public Cuenta buscarTipoCuenta(String numeroCuenta) {
         Cuenta cuentaBuscada = null;
         for (int i = 0; i < _listaTipoCuenta.size(); i++) {
-            if (_listaTipoCuenta.get(i).getNumerodeCuenta() == numeroCuenta) {
+            if (_listaTipoCuenta.get(i).getNumerodeCuenta().equals(numeroCuenta)) {
                 cuentaBuscada = _listaTipoCuenta.get(i);
             }
         }

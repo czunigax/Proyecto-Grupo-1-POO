@@ -6,7 +6,7 @@
 package modelo;
 
 import Interfaces.Interes;
-import java.util.Date;
+//import java.util.Date;
 /**
  *
  * @author Gleny
@@ -16,14 +16,14 @@ public class CuentaEspecial extends Cuenta implements Interes{
     private String nombreCE;
     private int idCE;
     private double intereses;
-    private Date fechaRetiro;
+    private String fechaRetiro;
     
     //Constructor
     public CuentaEspecial(){
     super();
     }
     
-    public CuentaEspecial(String nombreCE, int idCE, double intereses, Date fechaRetiro){
+    public CuentaEspecial(String nombreCE, int idCE, double intereses, String fechaRetiro){
        super();
         this.intereses=intereses;
         this.nombreCE=nombreCE;
@@ -31,8 +31,8 @@ public class CuentaEspecial extends Cuenta implements Interes{
         this.idCE=idCE;
     }
     
-    public CuentaEspecial(String Nombre, String Id,String CodigoCliente, String Telefono, String Nacimiento, String Direccion, String Email, String TipodeCuenta, String NumerodeCuenta, double Monto, String FechaApertura, double intereses, String nombreCE, int idCE, Date fechaRetiro) {
-	super(Nombre, Id,CodigoCliente, Telefono, Nacimiento, Direccion, Email, TipodeCuenta, NumerodeCuenta, Monto, FechaApertura);
+    public CuentaEspecial(String Nombre, String Id,String CodigoCliente ,String fechaRegistro, String Telefono, String Nacimiento, String Direccion, String Email, String TipodeCuenta, String NumerodeCuenta, double Monto, String FechaApertura, double intereses, String nombreCE, int idCE, String fechaRetiro) {
+	super(Nombre, Id,CodigoCliente, fechaRegistro, Telefono, Nacimiento, Direccion, Email, TipodeCuenta, NumerodeCuenta, Monto, FechaApertura);
 	this.nombreCE=nombreCE;
         this.intereses=intereses;
         this.fechaRetiro=fechaRetiro;
@@ -64,11 +64,11 @@ public class CuentaEspecial extends Cuenta implements Interes{
     this.idCE=idCE;
     }
     
-    public Date getFechaRetiro(){
+    public String getFechaRetiro(){
     return fechaRetiro;
     }
     
-    public void setFechaRetiro(Date fechaRetiro){
+    public void setFechaRetiro(String fechaRetiro){
     this.fechaRetiro=fechaRetiro;
     }
 
@@ -98,44 +98,21 @@ public class CuentaEspecial extends Cuenta implements Interes{
 
     @Override
     public boolean retirar(double cantidadRetirar) {
-         if (cantidadRetirar <= this.Monto) {
-            this.Monto -= cantidadRetirar;
-            return true;
-        } else {
-            return false;
-        }
+         if (cantidadRetirar <= this.Monto && (fechaRetiro.equals("diciembre"))) {//PARA CUENTA NAVIDEÑA
+                 this.Monto -= cantidadRetirar;
+                 return true;
+           } else if(cantidadRetirar <= this.Monto && Monto >= 50000){//PARA CUENTA AHORRO
+                 this.Monto -= cantidadRetirar;
+                 return true;
+           }else if(cantidadRetirar <= this.Monto && (fechaRetiro.equals("enero")||fechaRetiro.equals("febrero")||fechaRetiro.equals("agosto")||fechaRetiro.equals("septiembre"))){//PARA CUENTA ESTUDIANTE
+               this.Monto -= cantidadRetirar;
+                 return true;
+           }else {
+               return false;
+           }
     }
     
-     public boolean retirar(double cantidadRetirar, String fechaRetiro){
-        //Para cuenta Estudiante
-        /*String fechaIRE = "20/01/2023";
-        String fechaFRE = "15/02/2023";
-        
-        //Para cuenta navideña
-        String fechaIRN = "16/12/2022";
-        String fechaFRN = "05/01/2023";
-        
-        switch(nombreCE){
-            case "CUENTA AHORRO":
-                if (cantidadRetirar <= this.Monto) {
-                     this.Monto -= cantidadRetirar;
-                     return true;
-                } else {
-                    return false;
-                }
-                break;
-                
-            case "CUENTA NAVIDEÑA":
-                if(fechaRetiro == fechaIRN || fechaRetiro == fechaFRN){
-                    
-                    
-                }
-                break;
-         }*/
-        return false;
-     }
- 
-    @Override
+     @Override
     public double CalculoInteres(double monto) {
         double Interesesremunerados = 0;
         
