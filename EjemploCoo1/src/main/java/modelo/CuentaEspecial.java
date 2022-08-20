@@ -6,7 +6,7 @@
 package modelo;
 
 import Interfaces.Interes;
-import java.util.Date;
+//import java.util.Date;
 /**
  *
  * @author Gleny
@@ -16,14 +16,14 @@ public class CuentaEspecial extends Cuenta implements Interes{
     private String nombreCE;
     private int idCE;
     private double intereses;
-    private Date fechaRetiro;
+    private String fechaRetiro;
     
     //Constructor
     public CuentaEspecial(){
     super();
     }
     
-    public CuentaEspecial(String nombreCE, int idCE, double intereses, Date fechaRetiro){
+    public CuentaEspecial(String nombreCE, int idCE, double intereses, String fechaRetiro){
        super();
         this.intereses=intereses;
         this.nombreCE=nombreCE;
@@ -31,8 +31,8 @@ public class CuentaEspecial extends Cuenta implements Interes{
         this.idCE=idCE;
     }
     
-    public CuentaEspecial(String Nombre, String Id,String CodigoCliente, String Telefono, String Nacimiento, String Direccion, String Email, String TipodeCuenta, String NumerodeCuenta, double Monto, String FechaApertura, double intereses, String nombreCE, int idCE, Date fechaRetiro) {
-	super(Nombre, Id,CodigoCliente, Telefono, Nacimiento, Direccion, Email, TipodeCuenta, NumerodeCuenta, Monto, FechaApertura);
+    public CuentaEspecial(String Nombre, String Id,String CodigoCliente ,String fechaRegistro, String Telefono, String Nacimiento, String Direccion, String Email, String TipodeCuenta, String NumerodeCuenta, double Monto, String FechaApertura, double intereses, String nombreCE, int idCE, String fechaRetiro) {
+	super(Nombre, Id,CodigoCliente, fechaRegistro, Telefono, Nacimiento, Direccion, Email, TipodeCuenta, NumerodeCuenta, Monto, FechaApertura);
 	this.nombreCE=nombreCE;
         this.intereses=intereses;
         this.fechaRetiro=fechaRetiro;
@@ -64,11 +64,11 @@ public class CuentaEspecial extends Cuenta implements Interes{
     this.idCE=idCE;
     }
     
-    public Date getFechaRetiro(){
+    public String getFechaRetiro(){
     return fechaRetiro;
     }
     
-    public void setFechaRetiro(Date fechaRetiro){
+    public void setFechaRetiro(String fechaRetiro){
     this.fechaRetiro=fechaRetiro;
     }
 

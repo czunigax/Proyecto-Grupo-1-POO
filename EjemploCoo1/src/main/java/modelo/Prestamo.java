@@ -13,11 +13,11 @@ import java.util.LinkedList;
 public class Prestamo implements Interes {
         
     //Atributos
-    private Date TiempoPago;
+    private String TiempoPago;
     private String codigoPrestamo;
     private double ValorIntereses;
-    private Date FechaInicio;
-    private Date FechaFinal;
+    private String FechaInicio;
+    private String FechaFinal;
     private String TipoCuenta;
 
   
@@ -26,7 +26,7 @@ public class Prestamo implements Interes {
          
      }
     
-     public Prestamo(Date TiempoPago, String codigoPrestamo, double ValorIntereses,Date FechaInicio,Date FechaFinal,String TipoCuenta){
+     public Prestamo(String TiempoPago, String codigoPrestamo, double ValorIntereses,String FechaInicio,String FechaFinal,String TipoCuenta){
             this.TiempoPago=TiempoPago;
             this.codigoPrestamo=codigoPrestamo;
             this.ValorIntereses=ValorIntereses;
@@ -36,11 +36,11 @@ public class Prestamo implements Interes {
      }
      
     //Getters & Setters
-    public Date getTiempoPago(){
+    public String getTiempoPago(){
          return TiempoPago;
         }
     
-    public void setTiempoPago(Date TiempoPago){
+    public void setTiempoPago(String TiempoPago){
             this.TiempoPago=TiempoPago;
         }
         
@@ -60,19 +60,19 @@ public class Prestamo implements Interes {
         this.ValorIntereses = ValorIntereses;
     }
     
-    public Date getFechaInicio() {
+    public String getFechaInicio() {
         return FechaInicio;
     }
 
-    public void setFechaInicio(Date FechaInicio) {
+    public void setFechaInicio(String FechaInicio) {
         this.FechaInicio = FechaInicio;
     }
 
-    public Date getFechaFinal() {
+    public String getFechaFinal() {
         return FechaFinal;
     }
 
-    public void setFechaFinal(Date FechaFinal) {
+    public void setFechaFinal(String FechaFinal) {
         this.FechaFinal = FechaFinal;
     }
 

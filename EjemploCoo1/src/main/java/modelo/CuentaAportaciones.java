@@ -14,7 +14,7 @@ import java.util.Date;
 public class CuentaAportaciones extends Cuenta implements Interes{
     
     //Atributos
-    private Date fechaDeposito;
+    private String fechaDeposito;
     private double interes;
     
     //Constructor
@@ -22,21 +22,21 @@ public class CuentaAportaciones extends Cuenta implements Interes{
     super();
     }
     
-    public CuentaAportaciones(Date fechaDeposito){
+    public CuentaAportaciones(String fechaDeposito){
        super();
         this.fechaDeposito=fechaDeposito;
     }
     
-    public CuentaAportaciones(String Nombre, String Id,String CodigoCliente, String Telefono, String Nacimiento, String Direccion, String Email, String TipodeCuenta, String NumerodeCuenta, double Monto, String FechaApertura, Date fechaDeposito) {
-	super(Nombre, Id,CodigoCliente, Telefono, Nacimiento, Direccion, Email, TipodeCuenta, NumerodeCuenta, Monto, FechaApertura);
+    public CuentaAportaciones(String Nombre, String Id,String CodigoCliente, String fechaRegistro, String Telefono, String Nacimiento, String Direccion, String Email, String TipodeCuenta, String NumerodeCuenta, double Monto, String FechaApertura, String fechaDeposito) {
+	super(Nombre, Id,CodigoCliente, fechaRegistro, Telefono, Nacimiento, Direccion, Email, TipodeCuenta, NumerodeCuenta, Monto, FechaApertura);
 	this.fechaDeposito=fechaDeposito;
      }
     //Getters & Setters
-    public Date getFechaDeposito(){
+    public String getFechaDeposito(){
     return fechaDeposito;
     }
     
-    public void setFechaDeposito(Date fechaDeposito){
+    public void setFechaDeposito(String fechaDeposito){
     this.fechaDeposito=fechaDeposito;
     }
 
