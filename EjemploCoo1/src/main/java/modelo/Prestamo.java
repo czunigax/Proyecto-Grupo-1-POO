@@ -13,6 +13,7 @@ public class Prestamo implements Interes {
         
     //Atributos
     private String TiempoPago;
+    private double montoPagar;
     private String codigoPrestamo;
     private double ValorIntereses;
     private String FechaInicio;
@@ -25,8 +26,9 @@ public class Prestamo implements Interes {
          
      }
     
-     public Prestamo(String TiempoPago, String codigoPrestamo, double ValorIntereses,String FechaInicio,String FechaFinal,String TipoCuenta){
+     public Prestamo(String TiempoPago, double montoPagar, String codigoPrestamo, double ValorIntereses,String FechaInicio,String FechaFinal,String TipoCuenta){
             this.TiempoPago=TiempoPago;
+            this.montoPagar=montoPagar;
             this.codigoPrestamo=codigoPrestamo;
             this.ValorIntereses=ValorIntereses;
             this.FechaInicio=FechaInicio;
@@ -37,17 +39,25 @@ public class Prestamo implements Interes {
     //Getters & Setters
     public String getTiempoPago(){
          return TiempoPago;
-        }
+    }
     
     public void setTiempoPago(String TiempoPago){
             this.TiempoPago=TiempoPago;
-        }
+    }
         
+    public double getMontoPagar(){
+         return montoPagar;
+    }
+    
+    public void setTiempoPago(double montoPagar){
+            this.montoPagar=montoPagar;
+    }
+    
     public String getCodigoP(){
         return codigoPrestamo;
     }
     
-    public void setCodigoP(String codigoPrestamos){
+    public void setCodigoP(String codigoPrestamo){
         this.codigoPrestamo=codigoPrestamo;
     }
     

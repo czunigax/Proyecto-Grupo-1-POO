@@ -7,15 +7,22 @@ package unah.ejemplocrud1;
 
 
 import controller.CuentaController;
+import java.util.Scanner;
 import javax.swing.JOptionPane;
+import modelo.Cliente;
+import modelo.Cooperativa;
 import modelo.Cuenta;
+import modelo.CuentaAportaciones;
+import modelo.CuentaEspecial;
+import modelo.Empleado;
+import ventanas.Prestamo;
 import view.CuentaView;
 
 
 
 /**
  *
- * @author migsauceda
+ * @author migsauceda, Gleny 
  */
 public class EjemploCRUD1 {
 
@@ -39,12 +46,6 @@ public class EjemploCRUD1 {
         }
     };
     CuentaController controladorcuenta = new CuentaController(modelocuenta, vistacuenta);
-
-
-    
-        
-        
-       
        
       /*
        //modificar info en base al Id
@@ -60,11 +61,6 @@ public class EjemploCRUD1 {
         controlador.Select("123");
         
        // controlador.ActualizarVista();
-       
-    
-       
-      
-      
        
        
        //Tabla Cuenta
@@ -91,8 +87,77 @@ public class EjemploCRUD1 {
      
     // controladorcuenta.InsertarDeposito();
     
-  
+        //INSTANCIAS DE SCANNER
+        Scanner sc = new Scanner(System.in);
+        Scanner scnum = new Scanner(System.in);
+
+        //VARIABLES A UTILIZAR
+        //VARIABLES DDE DATOS DE CLIENTE
+        String nombre, direccion, telefono, id, Email, codigoCliente = null, fechaNacimiento, fechaRegistro,
+                nombreEmpresa, direccionEmpresa, tipoCuenta, numeroCuenta, fechaApertura, fechaDeposito,
+                nombreCE, fechaRetiro, codigoEmpleado, cargo, tiempoPago, codigoPrestamo, fechaInicio, fechaFinal;
     
+        int idCE;
+        
+        byte opcionInicio;
+        double monto, interes, valorInteres, montoPagar;
+        
+        boolean centinelaInicio = true;
+        //HEREDAN DE PERSONA
+        Cliente cliente1 = new Cliente();
+        Empleado cajero = new Empleado();
+        Empleado analista = new Empleado();
+        
+        //COOPERATIVA
+        Cooperativa empresa = new Cooperativa();
+        
+        //HEREDAN DE CUENTA
+        CuentaAportaciones cuentaAP = new CuentaAportaciones();
+        CuentaEspecial cuentaE = new CuentaEspecial();
+        
+        //PRESTAMO
+        Prestamo prestamo1 = new Prestamo();
+        
+ //--------------------------------------INICIO-------------------------------------------//
+        while (centinelaInicio){
+            System.out.println("MENU DE INICIO");
+            System.out.println("1. CREAR CUENTA.");
+            System.out.println("2. TRANSACCIONES.");
+            System.out.println("3. PRESTAMO.");
+            System.out.println("4. CONSULTA");
+            System.out.println("5. SALIR.");
+            opcionInicio = scnum.nextByte();
+            
+            switch(opcionInicio){
+                case 1://CREAR CUENTA
+                    break;
+                    
+                case 2://TRANSACCIONES
+                    byte opcionTransaccion;
+                    boolean centinelaTransaccion = true;
+                    
+                    while (centinelaTransaccion){
+                        System.out.println("MENU DE TRANSACCIONES.");
+                        System.out.println("1. DEPOSITO.");
+                        System.out.println("2. RETIRO.");
+                        System.out.println("3. MENU.");
+                        opcionTransaccion = scnum.nextByte();
+                        
+                        switch (opcionTransaccion){
+                            case 1://DEPOSITAR
+                                System.out.println("Seleccione el tipo de cuenta en la que quiere depositar:");
+                                System.out.println("1. Cuenta de ahorro.");
+                                System.out.println("2. Cuenta de cheques.");
+                                System.out.println("3. Cuenta corriente personal.");
+                                //opcion = scnum.nextByte();
+                        }
+                    }
+                    break;
+                case 3:
+                    break;
+                
+            }
+        } 
      
     }
     

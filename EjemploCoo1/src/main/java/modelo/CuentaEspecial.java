@@ -101,7 +101,7 @@ public class CuentaEspecial extends Cuenta implements Interes{
          if (cantidadRetirar <= this.Monto && (fechaRetiro.equals("diciembre"))) {//PARA CUENTA NAVIDEÑA
                  this.Monto -= cantidadRetirar;
                  return true;
-           } else if(cantidadRetirar <= this.Monto && fechaRetiro.equals("octubre") || fechaRetiro.equals("noviembre")){//PARA CUENTA AHORRO
+           } else if(cantidadRetirar <= this.Monto && Monto >= 50000){//PARA CUENTA AHORRO
                  this.Monto -= cantidadRetirar;
                  return true;
            }else if(cantidadRetirar <= this.Monto && (fechaRetiro.equals("enero")||fechaRetiro.equals("febrero")||fechaRetiro.equals("agosto")||fechaRetiro.equals("septiembre"))){//PARA CUENTA ESTUDIANTE
@@ -111,8 +111,8 @@ public class CuentaEspecial extends Cuenta implements Interes{
                return false;
            }
     }
- 
-    @Override
+    
+     @Override
     public double CalculoInteres(double monto) {
         double Interesesremunerados = 0;
         
