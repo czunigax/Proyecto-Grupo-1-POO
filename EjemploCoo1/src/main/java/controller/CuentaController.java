@@ -251,7 +251,7 @@ public class CuentaController {
         st= null;
         cn= null;
                 
-        sql= "insert into dep values ('"+ModeloCuenta.getNumerodeCuenta()+"', '"+ ModeloCuenta.getMonto()+"')";
+        sql= "insert into deposito values ('"+ModeloCuenta.getNumerodeCuenta()+"', '"+ModeloCuenta.getTipo()+"', '"+ModeloCuenta.getMonto()+"', '"+ ModeloCuenta.getFechaApertura()+"')";
         
         try{
             cn= ConectarBD.Conectar();

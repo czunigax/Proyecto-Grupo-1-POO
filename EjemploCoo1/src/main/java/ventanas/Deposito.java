@@ -144,13 +144,15 @@ public class Deposito extends javax.swing.JFrame {
         CuentaController controladorcuenta = new CuentaController(cuentadepositar, vistacuenta);
       //  if(cuentadepositar.buscarTipoCuenta(numerodecuenta)!=null){
         
-      /*  cuentadepositar.setNumeroC(numerodecuenta);
-        cuentadepositar.setTipo(tipo);*/
+        cuentadepositar.setNumeroC(numerodecuenta);
+        cuentadepositar.setTipo(tipo);
         cuentadepositar.depositar(Double.parseDouble(monto));
-      //  cuentadepositar.setFechaApertura(fecha);
+        cuentadepositar.setFechaApertura(fecha);
         cuentadepositar.setMonto(cuentadepositar.getMonto());
         
-        controladorcuenta.Actualizarmonto(numerodecuenta);
+        controladorcuenta.InsertarDeposito();
+        
+        //controladorcuenta.Actualizarmonto(numerodecuenta);
         
       //  }else{
         System.out.println("Error");

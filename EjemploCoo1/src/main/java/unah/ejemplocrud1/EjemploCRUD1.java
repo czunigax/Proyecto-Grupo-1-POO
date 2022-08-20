@@ -91,9 +91,7 @@ public class EjemploCRUD1 {
      
     // controladorcuenta.InsertarDeposito();
     
-     controladorcuenta.setMonto(20);
-     controladorcuenta.Actualizarmonto("2");
-     controladorcuenta.ActualizarVista();
+  
     
      
     }
