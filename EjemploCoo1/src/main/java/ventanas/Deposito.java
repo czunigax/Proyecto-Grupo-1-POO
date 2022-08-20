@@ -149,15 +149,15 @@ public class Deposito extends javax.swing.JFrame {
         cuentadepositar.setTipo(tipo);
         cuentadepositar.depositar(Double.parseDouble(monto));
         cuentadepositar.setFechaApertura(fecha);
-        cuentadepositar.setMonto(cuentadepositar.getMonto());
+        cuentadepositar.setMonto(Double.parseDouble(monto));
         
         controladorcuenta.InsertarDeposito();
-        controladorcuenta.ActualizarVista();
+       
         
        
         
     
-        System.out.println("Error");
+       
    
        
                

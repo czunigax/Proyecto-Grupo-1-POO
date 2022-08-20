@@ -237,7 +237,7 @@ public class CrearCuenta extends javax.swing.JFrame {
         controladorcuenta.setFechaApertura(apertura);
         
         controladorcuenta.AperturarCuenta();
-        controladorcuenta.ActualizarVista();
+        
         
     }//GEN-LAST:event_jButtonenviarccActionPerformed
 

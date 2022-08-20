@@ -20,12 +20,17 @@ import view.CuentaView;
  * @author cris
  */
 public class Consulta extends javax.swing.JFrame {
-    private boolean exito;
+ 
     private Statement st;
     private Connection cn;
     private ResultSet rs;
     private String sql;
+    private String sql2;
     PreparedStatement ps;
+    PreparedStatement ps2;
+    private ResultSet rs2;
+    private Connection cn2;
+    private Statement st2;
     /**
      * Creates new form Consulta
      */
@@ -160,26 +165,55 @@ public class Consulta extends javax.swing.JFrame {
 
     private void jbconsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbconsultarActionPerformed
         // TODO add your handling code here:
-        String id;
+        String id,sum = null,res = null;
+        double total;
         id=num_txt.getText();
         try{
         
-        sql="Select Sum(monto) as summonto from cuenta where id = ?";
+        sql="Select Sum(monto) as summonto from deposito where id_cuenta = ?";
         cn= ConectarBD.Conectar();
         ps=cn.prepareStatement(sql);
         ps.setString(1, id);
         rs=ps.executeQuery();
         if(rs.next()){
-        String sum=rs.getString("summonto");
+         sum=rs.getString("summonto");
         //txt_sum.setText(sum);
         
-        JOptionPane.showMessageDialog(null,"La cantidad de dinero depositado" + sum);
+        JOptionPane.showMessageDialog(null,"La cantidad de dinero depositado " + sum);
+        
+        
+        
         
         }
+        
+        }catch(Exception e){
+        System.out.println("error I-I");
+        }
+         try{
+        
+        sql2="Select Sum(monto) as retiromonto from retiro where id_cuenta = ?";
+        cn= ConectarBD.Conectar();
+        ps=cn.prepareStatement(sql2);
+        ps.setString(1, id);
+        rs=ps.executeQuery();
+        if(rs.next()){
+         res=rs.getString("retiromonto");
+        //txt_sum.setText(sum);
+        
+        JOptionPane.showMessageDialog(null,"La cantidad de dinero retirado historicamente es " + res);
+        
+        
+        
+        
+        }
+        
         }catch(Exception e){
         System.out.println("error I-I");
         }
         
+         total=Double.parseDouble(sum)-Double.parseDouble(res);
+         JOptionPane.showMessageDialog(null,"El monto total de la cuenta \n sumando depositos y restando retiros es " + total);
+         
         
     }//GEN-LAST:event_jbconsultarActionPerformed
 

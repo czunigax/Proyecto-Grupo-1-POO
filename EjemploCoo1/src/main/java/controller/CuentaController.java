@@ -131,11 +131,7 @@ public class CuentaController {
     this.ModeloCuenta.setFechaApertura(FechaApertura);
     }
     
-     public void ActualizarVista(){
-        VistaCuenta.ImprimirDatosCuenta(ModeloCuenta.getId(), ModeloCuenta.getNombre(), ModeloCuenta.getCodigoCliente(), ModeloCuenta.getTelefono()
-        ,ModeloCuenta.getNacimiento(), ModeloCuenta.getDireccion(), ModeloCuenta.getEmail(), ModeloCuenta.getTipo()
-            ,ModeloCuenta.getNumerodeCuenta(), ModeloCuenta.getMonto(), ModeloCuenta.getFechaApertura());
-    }
+   
      //Crea una nueva cuenta
      public boolean AperturarCuenta(){
         exito= false;
@@ -156,6 +152,11 @@ public class CuentaController {
             
             st.close();
             cn.close();
+            
+            
+             JOptionPane.showMessageDialog(null, "Agregado Correctamente");
+             System.out.println("Agregado correctamente");
+           
         }catch(SQLException e){
             System.out.println("Error al crear Cuenta");
         }
@@ -187,12 +188,12 @@ public class CuentaController {
         return exito;        
     }
      //Busca una cuenta en base al ID
-      public boolean Buscar(String NumerodeCuenta){
+      public boolean Buscar(String Id){
         exito= false;
         st= null;
         cn= null;
         
-        sql= "select numero de cuenta, tipo from cuenta where numero de cuenta= '"+NumerodeCuenta+"'";
+        sql= "select id, nombre from cuenta where id= '"+Id+"'";
         
         try{
             cn= ConectarBD.Conectar();
@@ -273,5 +274,6 @@ public class CuentaController {
         }
         return exito;
     }
-    
+       
+
 }

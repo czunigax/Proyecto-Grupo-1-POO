@@ -181,7 +181,7 @@ public class Retiro extends javax.swing.JFrame {
         cuentadepositar.setMonto(cuentadepositar.getMonto());
         
         controladorcuenta.InsertarRetiro();
-        controladorcuenta.ActualizarVista();
+      
         
         }else{
         JOptionPane.showMessageDialog(null, "No se ha alcanzado el monto esperado");
@@ -232,7 +232,7 @@ public class Retiro extends javax.swing.JFrame {
         cuentadepositar.setMonto(cuentadepositar.getMonto());
         
         controladorcuenta.InsertarRetiro();
-        controladorcuenta.ActualizarVista();
+       
         
         
         }else if(tipo.equals("Estudiante")&& fecha.equals("enero")||fecha.equals("febrero")||fecha.equals("septiembre")||fecha.equals("agosto")){
@@ -269,7 +269,7 @@ public class Retiro extends javax.swing.JFrame {
         cuentadepositar.setMonto(cuentadepositar.getMonto());
         
         controladorcuenta.InsertarRetiro();
-        controladorcuenta.ActualizarVista();
+        
         
         }else if(tipo.equals("Aportaciones")){
         
@@ -306,7 +306,7 @@ public class Retiro extends javax.swing.JFrame {
         cuentadepositar.setMonto(cuentadepositar.getMonto());
         
         controladorcuenta.InsertarRetiro();
-        controladorcuenta.ActualizarVista();
+       
         
         }else {
         JOptionPane.showMessageDialog(null, "Su cuenta y su fecha de retiro no coinciden");

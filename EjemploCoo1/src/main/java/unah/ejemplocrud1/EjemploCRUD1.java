@@ -71,7 +71,7 @@ public class EjemploCRUD1 {
        
      
 */     
-     controladorcuenta.ActualizarVista();
+     
    //  controladorcuenta.SumadeMonto();
      
      //controladorcuenta.setId("1");
