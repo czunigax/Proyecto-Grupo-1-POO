@@ -6,7 +6,6 @@
 package modelo;
 
 import Interfaces.Interes;
-import java.util.Date;
 /**
  *
  * @author gleny

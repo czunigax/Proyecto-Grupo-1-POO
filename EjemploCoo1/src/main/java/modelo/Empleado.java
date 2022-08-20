@@ -5,11 +5,9 @@
  */
 package modelo;
 
-import java.util.Date;
-
 /**
  *
- * @author cris, Gissela
+ * @author cris, Gleny
  */
 public class Empleado extends Persona {
     private String CodigoEmpleado;
