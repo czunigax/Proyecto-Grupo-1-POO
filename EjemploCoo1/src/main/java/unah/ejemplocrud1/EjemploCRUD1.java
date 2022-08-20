@@ -104,7 +104,7 @@ public class EjemploCRUD1 {
     
         int idCE;
         
-        byte opcionInicio;
+        byte opcionInicio, opcionTipoCuenta;
         double monto, interes, valorInteres, montoPagar;
         
         boolean centinelaInicio = true;
@@ -126,15 +126,57 @@ public class EjemploCRUD1 {
  //--------------------------------------INICIO-------------------------------------------//
         while (centinelaInicio){
             System.out.println("MENU DE INICIO");
-            System.out.println("1. CREAR CUENTA.");
+            System.out.println("1. CREAR CUENTA Y REGISTRARSE.");
             System.out.println("2. TRANSACCIONES.");
             System.out.println("3. PRESTAMO.");
-            System.out.println("4. CONSULTA");
+            System.out.println("4. CONSULTA.");
             System.out.println("5. SALIR.");
             opcionInicio = scnum.nextByte();
             
             switch(opcionInicio){
-                case 1://CREAR CUENTA
+                case 1://CREAR CUENTA Y REGISTRARSE
+                    byte opcionRegistro;
+                    boolean centinelaRegistro = true;
+                    
+                    //String CodCliente = Cliente.getCodigoCliente();
+                                System.out.println("INGRESE DATOS PERSONALES.\n");
+                                //System.out.printf("Código de Usuario: %s", CodCliente + "\n");
+                                System.out.print("Nombre: ");
+                                nombre = sc.nextLine();
+                                System.out.print("ID: ");
+                                id = sc.nextLine();
+                                System.out.print("Telefono: ");
+                                telefono = sc.nextLine();
+                                System.out.print("Dirección: ");
+                                direccion = sc.nextLine();
+                                System.out.print("Correo electronico: ");
+                                Email = sc.nextLine();
+                                System.out.print("Fecha de Nacimiento (dd-MM-yyyy): ");
+                                fechaNacimiento = sc.nextLine();
+                                System.out.print("Fecha de Apertura (dd-MM-yyyy): ");
+                                fechaNacimiento = sc.nextLine();
+                                System.out.print("Codigo Cliente: ");
+                                nombre = sc.nextLine();
+                                
+                                
+                    
+                    boolean centinelaTipoCuenta = true;
+                    
+                    while (centinelaTipoCuenta){
+                        
+                        System.out.println("\nCREE UN TIPO DE CUENTA.");
+                        System.out.println("1. CUENTA DE APORTACIONES.");
+                        System.out.println("2. CUENTA ESPECIAL.");
+                        System.out.println("3. MENU.");
+                        opcionTipoCuenta = scnum.nextByte();
+                        
+                        switch (opcionTipoCuenta){
+                            case 1: //CUENTA DE APORTACIONES
+                                System.out.print("Ingrese su ID: ");
+                                id = sc.nextLine();
+                                Cliente cliente2 = cliente1.;
+                        }
+                    }
                     break;
                     
                 case 2://TRANSACCIONES
