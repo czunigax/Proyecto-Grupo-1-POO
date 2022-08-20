@@ -98,44 +98,21 @@ public class CuentaEspecial extends Cuenta implements Interes{
 
     @Override
     public boolean retirar(double cantidadRetirar) {
-         if (cantidadRetirar <= this.Monto) {
-            this.Monto -= cantidadRetirar;
-            return true;
-        } else {
-            return false;
-        }
+         if (cantidadRetirar <= this.Monto && (fechaRetiro.equals("diciembre"))) {//PARA CUENTA NAVIDEÑA
+                 this.Monto -= cantidadRetirar;
+                 return true;
+           } else if(cantidadRetirar <= this.Monto && Monto >= 50000){//PARA CUENTA AHORRO
+                 this.Monto -= cantidadRetirar;
+                 return true;
+           }else if(cantidadRetirar <= this.Monto && (fechaRetiro.equals("enero")||fechaRetiro.equals("febrero")||fechaRetiro.equals("agosto")||fechaRetiro.equals("septiembre"))){//PARA CUENTA ESTUDIANTE
+               this.Monto -= cantidadRetirar;
+                 return true;
+           }else {
+               return false;
+           }
     }
     
-     public boolean retirar(double cantidadRetirar, String fechaRetiro){
-        //Para cuenta Estudiante
-        /*String fechaIRE = "20/01/2023";
-        String fechaFRE = "15/02/2023";
-        
-        //Para cuenta navideña
-        String fechaIRN = "16/12/2022";
-        String fechaFRN = "05/01/2023";
-        
-        switch(nombreCE){
-            case "CUENTA AHORRO":
-                if (cantidadRetirar <= this.Monto) {
-                     this.Monto -= cantidadRetirar;
-                     return true;
-                } else {
-                    return false;
-                }
-                break;
-                
-            case "CUENTA NAVIDEÑA":
-                if(fechaRetiro == fechaIRN || fechaRetiro == fechaFRN){
-                    
-                    
-                }
-                break;
-         }*/
-        return false;
-     }
- 
-    @Override
+     @Override
     public double CalculoInteres(double monto) {
         double Interesesremunerados = 0;
         

@@ -6,7 +6,6 @@
 package modelo;
 
 import Interfaces.Interes;
-import java.util.Date;
 /**
  *
  * @author gleny
@@ -78,6 +77,51 @@ public class CuentaAportaciones extends Cuenta implements Interes{
   
     @Override
     public double CalculoInteres(double monto) {
-        return 0;
+        double Interesesremunerados = 0;
+
+        if (monto >= 0 || monto <= 999.99) {
+            Interesesremunerados = (monto * (0.0005));
+            this.interes += Interesesremunerados;
+            return Interesesremunerados;
+        } else if (monto >= 1000 || monto <= 9999.99) {
+            Interesesremunerados = (monto * (0.0075));
+            this.interes += Interesesremunerados;
+            return Interesesremunerados;
+        } else if (monto >= 10000 || monto <= 24999.99) {
+            Interesesremunerados = (monto * (0.01));
+            this.interes += Interesesremunerados;
+            return Interesesremunerados;
+        } else if (monto >= 25000 || monto <= 49999.99) {
+            Interesesremunerados = (monto * (0.0126));
+            this.interes += Interesesremunerados;
+            return Interesesremunerados;
+        } else if (monto >= 50000 || monto <= 99999.99) {
+            Interesesremunerados = (monto * (0.0151));
+            this.interes += Interesesremunerados;
+            return Interesesremunerados;
+        } else if (monto >= 100000 || monto <= 249999.99) {
+            Interesesremunerados = (monto * (0.0176));
+            this.interes += Interesesremunerados;
+            return Interesesremunerados;
+        } else if (monto >= 250000 || monto <= 499999.99) {
+            Interesesremunerados = (monto * (0.0176));
+            this.interes += Interesesremunerados;
+            return Interesesremunerados;
+        } else if (monto >= 500000 || monto <= 999999.99) {
+            Interesesremunerados = (monto * (0.0176));
+            this.interes += Interesesremunerados;
+            return Interesesremunerados;
+        } else if (monto >= 1000000 || monto <= 1999999.99) {
+            Interesesremunerados = (monto * (0.0176));
+            this.interes += Interesesremunerados;
+            return Interesesremunerados;
+        } else if (monto >= 2000000 || monto > 2000000) {
+            Interesesremunerados = (monto * (0.0176));
+            this.interes += Interesesremunerados;
+            return Interesesremunerados;
+        } else {
+            return Interesesremunerados;
+        }
     }
+    
 }
