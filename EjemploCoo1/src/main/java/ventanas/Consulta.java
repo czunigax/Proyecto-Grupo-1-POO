@@ -17,10 +17,10 @@ import unah.ejemplocrud1.ConectarBD;
 import view.CuentaView;
 /**
  *
- * @author The Ice
+ * @author cris
  */
 public class Consulta extends javax.swing.JFrame {
- private boolean exito;
+    private boolean exito;
     private Statement st;
     private Connection cn;
     private ResultSet rs;
@@ -171,7 +171,10 @@ public class Consulta extends javax.swing.JFrame {
         rs=ps.executeQuery();
         if(rs.next()){
         String sum=rs.getString("summonto");
-        txt_sum.setText(sum);
+        //txt_sum.setText(sum);
+        
+        JOptionPane.showMessageDialog(null,"La cantidad de dinero depositado" + sum);
+        
         }
         }catch(Exception e){
         System.out.println("error I-I");

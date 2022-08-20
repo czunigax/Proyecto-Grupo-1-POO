@@ -5,7 +5,9 @@
 package ventanas;
 
 import controller.CuentaController;
+import javax.swing.JOptionPane;
 import modelo.Cuenta;
+import modelo.CuentaEspecial;
 import view.CuentaView;
 
 /**
@@ -155,7 +157,7 @@ public class CrearCuenta extends javax.swing.JFrame {
         jButtoncancelarcc.setText("Cancelar");
         getContentPane().add(jButtoncancelarcc, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 450, 100, 40));
 
-        tipotxt.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "navidena", "especial", "aportaciones", "estudiante" }));
+        tipotxt.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Navidena", "Especial", "Aportaciones", "Estudiante" }));
         tipotxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tipotxtActionPerformed(evt);
@@ -188,6 +190,8 @@ public class CrearCuenta extends javax.swing.JFrame {
         // TODO add your handling code here:
         String nombre , id, codcliente,telefono,direccion,email,nacimiento,apertura,tipo,monto;
         
+        CuentaEspecial ce = new CuentaEspecial();
+        
         nombre=nombretxt.getText();
         id=idtxt.getText();
         codcliente=codclientetxt.getText();
@@ -198,6 +202,8 @@ public class CrearCuenta extends javax.swing.JFrame {
         apertura=fechaaperturatxt.getText();
         tipo=tipo=tipotxt.getSelectedItem().toString();
         monto=montotxt.getText();
+        
+        
         
         CuentaView vistacuenta = new CuentaView();
         Cuenta modelocuenta = new Cuenta() {
