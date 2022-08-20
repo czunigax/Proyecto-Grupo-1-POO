@@ -4,8 +4,13 @@
  */
 package modelo;
 import Interfaces.Interes;
+import ventanas.Consulta;
+
+import java.io.Console;
 import java.util.Date;
 import java.util.LinkedList;
+
+import javax.swing.text.Position;
 /**
  *
  * @author kevin, Olbin, Gleny
@@ -19,23 +24,43 @@ public class Prestamo implements Interes {
     private String FechaInicio;
     private String FechaFinal;
     private String TipoCuenta;
+    private double Monto;
 
+ 
   
     //Constructor
      public Prestamo(){
          
      }
     
-     public Prestamo(String TiempoPago, String codigoPrestamo, double ValorIntereses,String FechaInicio,String FechaFinal,String TipoCuenta){
+     public Prestamo(String TiempoPago, String codigoPrestamo, double ValorIntereses,String FechaInicio,String FechaFinal,String TipoCuenta,double Monto){
             this.TiempoPago=TiempoPago;
             this.codigoPrestamo=codigoPrestamo;
             this.ValorIntereses=ValorIntereses;
             this.FechaInicio=FechaInicio;
             this.FechaFinal=FechaFinal;
             this.TipoCuenta=TipoCuenta;
+            this.Monto=Monto;
      }
      
     //Getters & Setters
+        public String getCodigoPrestamo() {
+        return codigoPrestamo;
+    }
+
+    public void setCodigoPrestamo(String codigoPrestamo) {
+        this.codigoPrestamo = codigoPrestamo;
+    }
+
+    public double getMonto() {
+        return Monto;
+    }
+
+    public void setMonto(Double Monto) {
+        this.Monto = Monto;
+    }
+
+     
     public String getTiempoPago(){
          return TiempoPago;
         }
@@ -86,10 +111,7 @@ public class Prestamo implements Interes {
     
         
         
-      public void SolicitarPrestamo(){
-      
-      } 
-      
+            
       //RELIZANDO COMPORTAMIENTO POLIMORFICO
       private final LinkedList<Prestamo> _listasPrestamos = new LinkedList<>();
       
@@ -99,10 +121,57 @@ public class Prestamo implements Interes {
      * @param posicion
      * @return POSICI�N O INDICE DE LA COLECI�N
      */
+      
+      private final LinkedList<Prestamo> _Prestamo = new LinkedList<>(); //Se crea una lista para guardar los montos 
+      
+      private final LinkedList<String> _CodigoP = new LinkedList<>();//Lista de codigos de prestamos
+
+      public String getCodigoP(int posicion ){
+            
+        return _CodigoP.get(posicion);
+    } 
+
+    
+    public String getCodigoPos(int posicion) {
+      return _CodigoP.get(posicion);
+    }
+    
+      
+        public Prestamo getPrestamoPos(int posicion ){
+            
+          return _Prestamo.get(posicion);
+      } 
+
+      
       public Prestamo getPrestamsPorPoscion(int posicion) {
         return _listasPrestamos.get(posicion);
       }
       
+      public LinkedList<Prestamo> getListaPrestamos(){
+          return _Prestamo;
+      }
+
+      
+      
+      
+       public void CreacionPrestamo(){
+           //Chequear si existe los datos del cliente
+           //Chequear si el monto es menor o igual a la cuenta aportaicones
+          this.ValorIntereses= CalculoInteres(Monto);
+
+        CuentaAportaciones cuenta = new CuentaAportaciones();
+        
+            if (Monto<cuenta.consultar()) {
+                _Prestamo.add(new Prestamo(null, null , ValorIntereses, null, null , null,Monto));
+                _CodigoP.add( Integer.toString(_Prestamo.size())); //Esto va a cambiar ya que el codigo sera dado cuando el cliente cree la cuenta
+            }
+
+            
+       }
+       
+       
+      
+       
       /**
      * MÉTODO PARA OBTENER COLECCIÓN
      *
@@ -241,7 +310,7 @@ public class Prestamo implements Interes {
     }
 
     @Override
-    public double CalculoInteres(double monto) {
+    public  double CalculoInteres(double monto) {
         double Intereses = 0;
 
         if (monto >= 0 || monto <= 500000) {
@@ -264,5 +333,7 @@ public class Prestamo implements Interes {
             return Intereses;
         }
     }
+    
+    
       
 }
