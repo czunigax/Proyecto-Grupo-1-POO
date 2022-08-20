@@ -112,6 +112,7 @@ public class Deposito extends javax.swing.JFrame {
         // TODO add your handling code here:
         String numerodecuenta, monto, fecha, tipo;
         
+        
         numerodecuenta= numerotxt.getText();
         monto=montotxt.getText();
         fecha=fechatxt.getText();

@@ -7,6 +7,7 @@ package unah.ejemplocrud1;
 
 
 import controller.CuentaController;
+import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import modelo.Cuenta;
 import view.CuentaView;
@@ -19,7 +20,7 @@ import view.CuentaView;
  */
 public class EjemploCRUD1 {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
         
     CuentaView vistacuenta = new CuentaView();
     Cuenta modelocuenta = new Cuenta() {
@@ -72,6 +73,7 @@ public class EjemploCRUD1 {
      
 */     
      controladorcuenta.ActualizarVista();
+   //  controladorcuenta.SumadeMonto();
      
      //controladorcuenta.setId("1");
     // controladorcuenta.setNombre("d d");

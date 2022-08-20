@@ -24,6 +24,11 @@ public class ConectarBD {
         
         try{
             cn = DriverManager.getConnection(url,usuario,passwd);
+            
+            
+            
+            
+            
         }catch(SQLException e){
             System.out.println("Error al conectarse a la base de datos");
         }

@@ -7,6 +7,7 @@ package modelo;
 
 import java.util.Date;
 import java.util.LinkedList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -18,6 +19,7 @@ public abstract class Cuenta extends Cliente{
    protected String NumerodeCuenta;
    protected double Monto;
    protected String FechaApertura;
+   double saldo;
     
    //Constructor
     public Cuenta(){
@@ -71,9 +73,10 @@ public abstract class Cuenta extends Cliente{
     this.FechaApertura=FechaApertura;
     }
     
+     
     //PARA GESTIONES DE LA CLASE CUENTA
     //COLECCIÓN PARA REALIZAR COMPORTAMIENTO POLIMORFICO
-    LinkedList<Cuenta> _listaTipoCuenta = new LinkedList<>();
+    private LinkedList<Cuenta> listacuentas = new LinkedList<>();
    
     
    /**
@@ -81,26 +84,50 @@ public abstract class Cuenta extends Cliente{
      *
      */
     public LinkedList<Cuenta> getCuenta() {
-        return _listaTipoCuenta;
+        return listacuentas;
     }
     
+    public boolean agregar(Cuenta cuenta) {
+		if(buscarcliente(cuenta.getId())==-1){
+		listacuentas.add(cuenta);
+	    return true;
+		}
+		else {
+		return false;
+	}	
+	}
+    
+    public int buscarcliente(String codigo){
+		int posicion=-1;
+		for(int i=0;i<listacuentas.size();i++){
+			if(listacuentas.get(i).getId().equals(codigo)){
+				posicion=i;
+				break;}
+			}
+		return posicion;
+	}	
+    public void imprimirtodo() {
+		for(int i=0;i<listacuentas.size();i++) {
+			JOptionPane.showMessageDialog(null,listacuentas.get(i));
+		}
+	}
     /**
      * MÉTODO PARA OBTENER POSICIÓN DE LA COLECCI�N TIPO DE CUENTA
      * @param _index
      * @return POSICIÓN O INDICE DE LA COLECCIÓN
      */
-    public Cuenta getCuenta(int _index) {
+   /* public Cuenta getCuenta(int _index) {
         return _listaTipoCuenta.get(_index);
-    }
+    }/*
     
-   /**
+   /*
      * MÉTODO QUE BUSCA TIPO DE CUENTA
      *
      * @param numeroCuenta
      * @return null, SI NO SE ENCUENTRA TIPO CUENTA, CASO CONTRARIO return OBJ
      * CUENTA 
      */
-     public Cuenta buscarTipoCuenta(String numeroCuenta) {
+     /*public Cuenta buscarTipoCuenta(String numeroCuenta) {
         Cuenta cuentaBuscada = null;
         for (int i = 0; i < _listaTipoCuenta.size(); i++) {
             if (_listaTipoCuenta.get(i).getNumerodeCuenta() == numeroCuenta) {
@@ -108,15 +135,15 @@ public abstract class Cuenta extends Cliente{
             }
         }
         return cuentaBuscada;
-    }
-     /**
+    }*/
+     /*
       * METODO BUSCAR TIPO DE CUENTA 
       * @param numeroCuenta
       * @param tipoCta
       * @return 
       */
     
-    public Cuenta buscarTipoCuenta(String numeroCuenta, String tipoCta) {
+   /* public Cuenta buscarTipoCuenta(String numeroCuenta, String tipoCta) {
         Cuenta cuentaBuscada = null;
         for (int i = 0; i < _listaTipoCuenta.size(); i++) {
             if (_listaTipoCuenta.get(i).getNumerodeCuenta() == numeroCuenta
@@ -125,34 +152,34 @@ public abstract class Cuenta extends Cliente{
             }
         }
         return cuentaBuscada;
-    }
+    }*/
     
-    /**
+    /*
      * MÉTODO QUE AGREGA TIPO DE CUENTA
      *
      * @param tipoCuenta
      * @return true - SI SE AGREGA CORRECTAMENTE, CASO CONTRARIO return false
      */
     
-        public boolean agregarTipoCuenta(Cuenta tipoCuenta) {
+     /*   public boolean agregarTipoCuenta(Cuenta tipoCuenta) {
         if (buscarTipoCuenta(tipoCuenta.getNumerodeCuenta()) == null) {//Si la cuenta no esta agregada
             _listaTipoCuenta.add(tipoCuenta);
             return true;
         } else {
             return false;
         }
-    }
+    }*/
         
     //Metodo para eliminar cuenta
-    public boolean eliminarTipoCuenta(Cuenta tipoCuenta) {
+   /* public boolean eliminarTipoCuenta(Cuenta tipoCuenta) {
         if (buscarTipoCuenta(tipoCuenta.getNumerodeCuenta()) == null) {
             return false;
         } else {
             _listaTipoCuenta.remove(tipoCuenta);
             return true;
-        }
+       }
     }
-    
+    */
     //DEFINICION DE METODOS ABSTRACTOS
     public abstract boolean depositar(double cantidad);
 

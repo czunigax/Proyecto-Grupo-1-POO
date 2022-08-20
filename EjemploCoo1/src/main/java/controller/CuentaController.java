@@ -7,10 +7,14 @@ package controller;
 import unah.ejemplocrud1.ConectarBD;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.Statement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import modelo.Cuenta;
 import view.CuentaView;
 
@@ -29,6 +33,7 @@ public class CuentaController {
     private Connection cn;
     private ResultSet rs;
     private String sql;
+    PreparedStatement ps;
     
     
      public CuentaController(Cuenta ModeloCuenta, CuentaView VistaCuenta){
@@ -224,15 +229,22 @@ public class CuentaController {
         }
         return exito;       
 }*/
-      public boolean Actualizarmonto(String Id ){
+      public boolean Actualizarmonto(String NumerodeCuenta ){
         exito= false;
         st= null;
         cn= null;
         
-        sql= "update deposito set monto= '"+ModeloCuenta.getMonto()+"'"+ 
-             "where numero de cuenta='"+ModeloCuenta.getNumerodeCuenta()+"'";
+        try {
+          //  ps=ConectarBD.Conectar().prepareStatement("SELECT SUM(monto) FROM cuenta WHERE id = '"+ModeloCuenta.getNumerodeCuenta()"'");
+            ps.setString(1, "1");
+            rs=ps.executeQuery();
+        } catch (SQLException ex) {
+            Logger.getLogger(CuentaController.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
-        try{
+       
+        
+       /* try{
             cn= ConectarBD.Conectar();
             st= cn.createStatement();
             st.execute(sql);
@@ -243,7 +255,7 @@ public class CuentaController {
             cn.close();
         }catch(SQLException e){
             System.out.println("Error en la actualizacion");
-        }
+        }*/
         return exito;       
 }
       public boolean InsertarDeposito(){
@@ -267,4 +279,43 @@ public class CuentaController {
         }
         return exito;
     }
+       public boolean SumadeMonto(String NumerodeCuenta) throws SQLException{
+        exito= false;
+        st= null;
+        cn= null;
+        ps=null;
+        sql= "select sum(monto) from cuenta where id = '?'";
+      // sql="Select count (monto) from deposito";
+               
+        try{
+            
+            
+              cn= ConectarBD.Conectar();
+              ps=cn.prepareStatement(sql);
+             ps.setString(1, NumerodeCuenta);
+              rs=ps.executeQuery();
+              if(rs.next()){
+              
+              String sum = rs.getString("sum(monto)");
+              
+             System.out.println(sum);
+             exito= true;
+            
+            st.close();
+            cn.close();
+              }
+            
+          /*  cn= ConectarBD.Conectar();
+            st= cn.createStatement();
+            st.execute(sql);
+            
+            exito= true;
+            
+            st.close();
+            cn.close();*/
+        }catch(SQLException e){
+            System.out.println("Error en la suma");
+        }
+        return exito;  
+       }
 }
