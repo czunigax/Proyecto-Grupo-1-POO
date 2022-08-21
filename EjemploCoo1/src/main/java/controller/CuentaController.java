@@ -140,8 +140,35 @@ public class CuentaController {
                 
         sql= "insert into cuenta values ('"+ModeloCuenta.getId()+"', '"+ ModeloCuenta.getNombre()+"', '"+ModeloCuenta.getCodigoCliente()+"', '"+ModeloCuenta.getTelefono()
         +"', '"+ModeloCuenta.getNacimiento()+"', '"+ModeloCuenta.getDireccion()+"', '"+ModeloCuenta.getEmail()+"', '"+ModeloCuenta.getTipo()
-            +"', '"+ModeloCuenta.getNumerodeCuenta()+"', '"+ModeloCuenta.getMonto()+"', '"+ModeloCuenta.getFechaApertura()
-                +"')";
+            +"', '"+ModeloCuenta.getNumerodeCuenta()+"', '"+ModeloCuenta.getMonto()+"', '"+ModeloCuenta.getFechaApertura()  +"')";
+        
+        try{
+            cn= ConectarBD.Conectar();
+            st= cn.createStatement();
+            st.execute(sql);
+            
+            exito= true;
+            
+            st.close();
+            cn.close();
+            
+            
+             JOptionPane.showMessageDialog(null, "Agregado Correctamente");
+             System.out.println("Agregado correctamente");
+           
+        }catch(SQLException e){
+            System.out.println("Error al crear Cuenta");
+        }
+        return exito;
+    }
+     
+     public boolean InsertarClientes(){
+        exito= false;
+        st= null;
+        cn= null;
+                
+        sql= "insert clientes cuenta values ('"+ModeloCuenta.getId()+"', '"+ ModeloCuenta.getNumerodeCuenta()+"', '"+ModeloCuenta.getNombre()+"', '"+ModeloCuenta.getTelefono()
+        +"', '"+ModeloCuenta.getNacimiento()+"', '"+ModeloCuenta.getDireccion()+"', '"+ModeloCuenta.getEmail() +"')";
         
         try{
             cn= ConectarBD.Conectar();

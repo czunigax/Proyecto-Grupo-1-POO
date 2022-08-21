@@ -57,6 +57,8 @@ public class CrearCuenta extends javax.swing.JFrame {
         jButtonenviarcc = new javax.swing.JButton();
         jButtoncancelarcc = new javax.swing.JButton();
         tipotxt = new javax.swing.JComboBox<>();
+        cuentatxt = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -150,12 +152,12 @@ public class CrearCuenta extends javax.swing.JFrame {
                 jButtonenviarccActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonenviarcc, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 450, 90, 40));
+        getContentPane().add(jButtonenviarcc, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 460, 90, 40));
 
         jButtoncancelarcc.setBackground(new java.awt.Color(153, 153, 255));
         jButtoncancelarcc.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButtoncancelarcc.setText("Cancelar");
-        getContentPane().add(jButtoncancelarcc, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 450, 100, 40));
+        getContentPane().add(jButtoncancelarcc, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 460, 100, 40));
 
         tipotxt.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Navidena", "Especial", "Aportaciones", "Estudiante" }));
         tipotxt.addActionListener(new java.awt.event.ActionListener() {
@@ -164,6 +166,11 @@ public class CrearCuenta extends javax.swing.JFrame {
             }
         });
         getContentPane().add(tipotxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 320, -1, -1));
+        getContentPane().add(cuentatxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 410, 220, -1));
+
+        jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel12.setText("Numero de Cuenta");
+        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 410, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -188,12 +195,13 @@ public class CrearCuenta extends javax.swing.JFrame {
 
     private void jButtonenviarccActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonenviarccActionPerformed
         // TODO add your handling code here:
-        String nombre , id, codcliente,telefono,direccion,email,nacimiento,apertura,tipo,monto;
+        String nombre , id, codcliente,telefono,direccion,email,nacimiento,apertura,tipo,monto,cuenta;
         
         CuentaEspecial ce = new CuentaEspecial();
         
         nombre=nombretxt.getText();
         id=idtxt.getText();
+        cuenta=cuentatxt.getText();
         codcliente=codclientetxt.getText();
         telefono=teltxt.getText();
         direccion=direcciontxt.getText();
@@ -233,10 +241,22 @@ public class CrearCuenta extends javax.swing.JFrame {
         controladorcuenta.setNacimiento(nacimiento);
         controladorcuenta.setDireccion(direccion);
         controladorcuenta.setEmail(email);
+        controladorcuenta.setTipo(tipo);
+        controladorcuenta.setNumerodeCuenta(cuenta);
         controladorcuenta.setMonto(Double.parseDouble(monto));
         controladorcuenta.setFechaApertura(apertura);
         
         controladorcuenta.AperturarCuenta();
+        
+        controladorcuenta.setId(id);
+        controladorcuenta.setNumerodeCuenta(cuenta);
+        controladorcuenta.setNombre(nombre);
+        controladorcuenta.setTelefono(telefono);
+        controladorcuenta.setNacimiento(nacimiento);
+        controladorcuenta.setDireccion(direccion);
+        controladorcuenta.setEmail(email);
+       
+        controladorcuenta.InsertarClientes();
         
         
     }//GEN-LAST:event_jButtonenviarccActionPerformed
@@ -282,6 +302,7 @@ public class CrearCuenta extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField codclientetxt;
+    private javax.swing.JTextField cuentatxt;
     private javax.swing.JTextField direcciontxt;
     private javax.swing.JTextField emailtxt;
     private javax.swing.JTextField fechaaperturatxt;
@@ -292,6 +313,7 @@ public class CrearCuenta extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
