@@ -38,7 +38,13 @@ public class PrestamoController {
     PreparedStatement ps;
   
     
-    
+     public String getIdc() {
+        return ModeloPrestamo.getIdc();
+    }
+
+    public void setIdc(String Idc) {
+        this.ModeloPrestamo.setIdc(Idc);
+    }
       public String getCodigoPrestamo() {
         return ModeloPrestamo.getCodigoPrestamo();
     }
@@ -63,7 +69,7 @@ public class PrestamoController {
         cn= null;
         
         sql="insert into prestamos values('"+ModeloPrestamo.getCodigoPrestamo()+"', '"+ModeloPrestamo.getValorIntereses()+"', '"+ModeloPrestamo.getTiempoPago()
-                +"', '"+ModeloPrestamo.getFechaInicio()+"', '"+ModeloPrestamo.getFechaFinal()+"', '"+ModeloPrestamo.getTipoCuenta()+"', '"+ModeloPrestamo.getMontoPagar()+"', '"+ModeloPrestamo.getMonto()+"')";
+                +"', '"+ModeloPrestamo.getFechaInicio()+"', '"+ModeloPrestamo.getFechaFinal()+"', '"+ModeloPrestamo.getTipoCuenta()+"', '"+ModeloPrestamo.getMontoPagar()+"', '"+ModeloPrestamo.getMonto()+"', '"+ModeloPrestamo.getIdc()+"')";
          try{
             cn= ConectarBD.Conectar();
             st= cn.createStatement();

@@ -25,6 +25,7 @@ public class Prestamo implements Interes {
     private String FechaFinal;
     private String TipoCuenta;
     private double Monto;
+    private String id_cuenta;
 
  
   
@@ -33,7 +34,7 @@ public class Prestamo implements Interes {
          
      }
     
-     public Prestamo(String TiempoPago,double montoPagar, String codigoPrestamo, double ValorIntereses,String FechaInicio,String FechaFinal,String TipoCuenta, double Monto){
+     public Prestamo(String TiempoPago,double montoPagar, String codigoPrestamo, double ValorIntereses,String FechaInicio,String FechaFinal,String TipoCuenta, double Monto,String id_cuenta){
             this.TiempoPago=TiempoPago;
             this.montoPagar=montoPagar;
             this.codigoPrestamo=codigoPrestamo;
@@ -42,10 +43,19 @@ public class Prestamo implements Interes {
             this.FechaFinal=FechaFinal;
             this.TipoCuenta=TipoCuenta;
             this.Monto=Monto;
+            this.id_cuenta=id_cuenta;
      }
      
     //Getters & Setters
-        public String getCodigoPrestamo() {
+       public String getIdc() {
+        return id_cuenta;
+    }
+
+    public void setIdc(String id_cuenta) {
+        this.id_cuenta = id_cuenta;
+    }
+     
+     public String getCodigoPrestamo() {
         return codigoPrestamo;
     }
 

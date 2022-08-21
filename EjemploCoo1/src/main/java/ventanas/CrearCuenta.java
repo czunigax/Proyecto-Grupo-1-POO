@@ -232,6 +232,16 @@ public class CrearCuenta extends javax.swing.JFrame {
         };
         CuentaController controladorcuenta = new CuentaController(modelocuenta, vistacuenta);
         
+         controladorcuenta.setId(id);
+        controladorcuenta.setNumerodeCuenta(cuenta);
+        controladorcuenta.setNombre(nombre);
+        controladorcuenta.setTelefono(telefono);
+        controladorcuenta.setNacimiento(nacimiento);
+        controladorcuenta.setDireccion(direccion);
+        controladorcuenta.setEmail(email);
+       
+        controladorcuenta.InsertarClientes();
+        
         
         
         controladorcuenta.setId(id);
@@ -248,15 +258,7 @@ public class CrearCuenta extends javax.swing.JFrame {
         
         controladorcuenta.AperturarCuenta();
         
-        controladorcuenta.setId(id);
-        controladorcuenta.setNumerodeCuenta(cuenta);
-        controladorcuenta.setNombre(nombre);
-        controladorcuenta.setTelefono(telefono);
-        controladorcuenta.setNacimiento(nacimiento);
-        controladorcuenta.setDireccion(direccion);
-        controladorcuenta.setEmail(email);
        
-        controladorcuenta.InsertarClientes();
         
         
     }//GEN-LAST:event_jButtonenviarccActionPerformed

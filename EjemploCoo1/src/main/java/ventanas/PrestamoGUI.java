@@ -51,6 +51,8 @@ public class PrestamoGUI extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        idctxt = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -130,6 +132,11 @@ public class PrestamoGUI extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 20, -1, -1));
+        getContentPane().add(idctxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 272, 230, 30));
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel1.setText("Id de Cuenta");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 280, 130, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -140,12 +147,12 @@ public class PrestamoGUI extends javax.swing.JFrame {
         PrestamoView vistaprestamo = new PrestamoView();
         PrestamoController controladorprestamo = new PrestamoController(vistaprestamo, modeloprestamo);
         
-        String codigo ,inicio,finalfecha,monto,nombre,tiempo,tipo;
+        String codigo ,inicio,finalfecha,monto,nombre,tiempo,tipo,idc;
         
         codigo = codigotxt.getText();
         inicio = iniciotxt.getText();
         finalfecha = finaltxt.getText();
-       
+        idc=idctxt.getText();
         monto = montosoltxt.getText();
         nombre = nombretxt.getText();
         tiempo = tiempodepagotxt.getText();
@@ -165,6 +172,7 @@ public class PrestamoGUI extends javax.swing.JFrame {
        modeloprestamo.setFechaFinal(finalfecha);
        modeloprestamo.setTipoCuenta(tipo);
        modeloprestamo.setMontoPagar(Double.parseDouble(monto));
+       modeloprestamo.setIdc(idc);
        
        controladorprestamo.CreacionPrestamo();
         
@@ -219,11 +227,13 @@ public class PrestamoGUI extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField codigotxt;
     private javax.swing.JTextField finaltxt;
+    private javax.swing.JTextField idctxt;
     private javax.swing.JTextField iniciotxt;
     private javax.swing.JTextField interestxt;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
