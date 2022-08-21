@@ -124,7 +124,7 @@ public class Deposito extends javax.swing.JFrame {
         Cuenta cuentadepositar = new Cuenta(tipo,numerodecuenta,Double.parseDouble(monto),fecha) {
             @Override
             public boolean depositar(double cantidad) {
-                 if (cantidad <= 0) {
+                if (cantidad <= 0) {
             return false;
         } else {
             this.Monto += cantidad;
@@ -149,15 +149,16 @@ public class Deposito extends javax.swing.JFrame {
         cuentadepositar.setTipo(tipo);
         cuentadepositar.depositar(Double.parseDouble(monto));
         cuentadepositar.setFechaApertura(fecha);
-        cuentadepositar.setMonto(cuentadepositar.getMonto());
+        cuentadepositar.setMonto(Double.parseDouble(monto));
         
         controladorcuenta.InsertarDeposito();
+       
         
-        //controladorcuenta.Actualizarmonto(numerodecuenta);
+       
         
-      //  }else{
-        System.out.println("Error");
-      //  }
+    
+       
+   
        
                
         

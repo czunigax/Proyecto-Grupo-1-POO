@@ -86,6 +86,7 @@ public class EjemploCRUD1 {
        
      
 */     
+<<<<<<< HEAD
     }
 }
  //--------------------------------------INICIO-------------------------------------------//
@@ -129,6 +130,29 @@ public class EjemploCRUD1 {
             }
         } 
      
+=======
+     
+   //  controladorcuenta.SumadeMonto();
+     
+     //controladorcuenta.setId("1");
+    // controladorcuenta.setNombre("d d");
+    // controladorcuenta.setCodigoCliente("1");
+     //controladorcuenta.setTelefono("1");
+    // controladorcuenta.setNacimiento("12/11/92");
+    // controladorcuenta.setDireccion("Col. loarque 3a calle");
+    // controladorcuenta.setEmail("er@gmail.com");
+     /*controladorcuenta.setNumerodeCuenta("2");
+     controladorcuenta.setTipo("enfermo");
+     controladorcuenta.setMonto(9);
+     controladorcuenta.setFechaApertura("21/10/2017");*/
+     
+    /* controladorcuenta.setNumerodeCuenta("2");
+    
+     controladorcuenta.setMonto(20);*/
+     
+    // controladorcuenta.InsertarDeposito();
+    
+>>>>>>> f560a435896adc7cb372c541eb202c794e82d5ed
     }
     
 

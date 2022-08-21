@@ -17,6 +17,7 @@ public class CuentaEspecial extends Cuenta implements Interes{
     private int idCE;
     private double intereses;
     private String fechaRetiro;
+    private String fechaDeposito;
     
     //Constructor
     public CuentaEspecial(){
@@ -70,6 +71,14 @@ public class CuentaEspecial extends Cuenta implements Interes{
     
     public void setFechaRetiro(String fechaRetiro){
     this.fechaRetiro=fechaRetiro;
+    }
+    
+     public String getFechaDeposito(){
+    return fechaDeposito;
+    }
+    
+    public void setFechaDeposito(String fechaDeposito){
+    this.fechaDeposito=fechaDeposito;
     }
 
    //METODOS

@@ -131,11 +131,7 @@ public class CuentaController {
     this.ModeloCuenta.setFechaApertura(FechaApertura);
     }
     
-     public void ActualizarVista(){
-        VistaCuenta.ImprimirDatosCuenta(ModeloCuenta.getId(), ModeloCuenta.getNombre(), ModeloCuenta.getCodigoCliente(), ModeloCuenta.getTelefono()
-        ,ModeloCuenta.getNacimiento(), ModeloCuenta.getDireccion(), ModeloCuenta.getEmail(), ModeloCuenta.getTipo()
-            ,ModeloCuenta.getNumerodeCuenta(), ModeloCuenta.getMonto(), ModeloCuenta.getFechaApertura());
-    }
+   
      //Crea una nueva cuenta
      public boolean AperturarCuenta(){
         exito= false;
@@ -156,6 +152,11 @@ public class CuentaController {
             
             st.close();
             cn.close();
+            
+            
+             JOptionPane.showMessageDialog(null, "Agregado Correctamente");
+             System.out.println("Agregado correctamente");
+           
         }catch(SQLException e){
             System.out.println("Error al crear Cuenta");
         }
@@ -187,12 +188,12 @@ public class CuentaController {
         return exito;        
     }
      //Busca una cuenta en base al ID
-      public boolean Buscar(String NumerodeCuenta){
+      public boolean Buscar(String Id){
         exito= false;
         st= null;
         cn= null;
         
-        sql= "select numero de cuenta, tipo from cuenta where numero de cuenta= '"+NumerodeCuenta+"'";
+        sql= "select id, nombre from cuenta where id= '"+Id+"'";
         
         try{
             cn= ConectarBD.Conectar();
@@ -229,35 +230,8 @@ public class CuentaController {
         }
         return exito;       
 }*/
-      public boolean Actualizarmonto(String NumerodeCuenta ){
-        exito= false;
-        st= null;
-        cn= null;
-        
-        try {
-          //  ps=ConectarBD.Conectar().prepareStatement("SELECT SUM(monto) FROM cuenta WHERE id = '"+ModeloCuenta.getNumerodeCuenta()"'");
-            ps.setString(1, "1");
-            rs=ps.executeQuery();
-        } catch (SQLException ex) {
-            Logger.getLogger(CuentaController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-       
-        
-       /* try{
-            cn= ConectarBD.Conectar();
-            st= cn.createStatement();
-            st.execute(sql);
-            
-            exito= true;
-            
-            st.close();
-            cn.close();
-        }catch(SQLException e){
-            System.out.println("Error en la actualizacion");
-        }*/
-        return exito;       
-}
+           
+
       public boolean InsertarDeposito(){
         exito= false;
         st= null;
@@ -279,43 +253,27 @@ public class CuentaController {
         }
         return exito;
     }
-       public boolean SumadeMonto(String NumerodeCuenta) throws SQLException{
+       public boolean InsertarRetiro(){
         exito= false;
         st= null;
         cn= null;
-        ps=null;
-        sql= "select sum(monto) as sumo from cuenta where id = '?'";
-      // sql="Select count (monto) from deposito";
-               
+                
+        sql= "insert into retiro values ('"+ModeloCuenta.getNumerodeCuenta()+"', '"+ModeloCuenta.getTipo()+"', '"+ModeloCuenta.getMonto()+"', '"+ ModeloCuenta.getFechaApertura()+"')";
+        
         try{
-            
-            
-              cn= ConectarBD.Conectar();
-              ps=cn.prepareStatement(sql);
-              ps.setString(1, NumerodeCuenta);
-              rs=ps.executeQuery();
-              if(rs.next()){
-              
-              String sum = rs.getString("sumo");
-              
-             System.out.println(sum);
-             exito= true;
-            
-            st.close();
-            cn.close();
-              }
-            
-          /*  cn= ConectarBD.Conectar();
+            cn= ConectarBD.Conectar();
             st= cn.createStatement();
             st.execute(sql);
             
             exito= true;
             
             st.close();
-            cn.close();*/
+            cn.close();
         }catch(SQLException e){
-            System.out.println("Error en la suma");
+            System.out.println("Error al insertar retiro");
         }
-        return exito;  
-       }
+        return exito;
+    }
+       
+
 }
