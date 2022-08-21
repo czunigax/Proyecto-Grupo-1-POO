@@ -6,8 +6,10 @@ package modelo;
 import Interfaces.Interes;
 import java.util.Date;
 import java.util.LinkedList;
-
 import javax.swing.text.Position;
+
+
+
 /**
  *
  * @author kevin, Olbin, Gleny
@@ -169,7 +171,7 @@ public class Prestamo implements Interes {
         CuentaAportaciones cuenta = new CuentaAportaciones();
         
             if (Monto<cuenta.consultar()) {
-                _Prestamo.add(new Prestamo(null, null , ValorIntereses, null, null , null,Monto));
+             //   _Prestamo.add(new Prestamo(null, null , ValorIntereses, null, null , null,Monto));
                 _CodigoP.add( Integer.toString(_Prestamo.size())); //Esto va a cambiar ya que el codigo sera dado cuando el cliente cree la cuenta
             }
 
@@ -341,6 +343,28 @@ public class Prestamo implements Interes {
         }
     }
     
-    
+        public double MontoTotal(double monto ){
+            double Intereses = 0;
+        if (monto >= 0 || monto <= 500000) {
+            Intereses = (monto * (0.0));
+            this.ValorIntereses += Intereses;
+            return ValorIntereses;
+        } else if (monto >= 500000 || monto <= 1000000) {
+            Intereses = (monto * (0.0025));
+            this.ValorIntereses += Intereses;
+            return ValorIntereses;
+        } else if (monto >= 1000000 || monto <= 2000000) {
+            Intereses = (monto * (0.005));
+            this.ValorIntereses += Intereses;
+            return ValorIntereses;
+        } else if (monto >= 2000000 || monto > 2000000) {
+            Intereses = (monto * (0.0356));
+            this.ValorIntereses += Intereses;
+            return ValorIntereses;
+        } else {
+            return ValorIntereses;
+        }
+            
+        }
       
 }
