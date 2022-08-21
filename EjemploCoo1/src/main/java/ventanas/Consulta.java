@@ -33,6 +33,7 @@ public class Consulta extends javax.swing.JFrame {
      */
     public Consulta() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**

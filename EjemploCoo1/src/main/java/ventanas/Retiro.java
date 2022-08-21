@@ -37,6 +37,7 @@ public class Retiro extends javax.swing.JFrame {
     
     public Retiro() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
