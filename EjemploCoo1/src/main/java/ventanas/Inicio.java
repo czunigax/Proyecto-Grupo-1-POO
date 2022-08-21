@@ -59,9 +59,10 @@ jLabel1.setIcon(icono);*/
         jButtoncuenta = new javax.swing.JButton();
         jButtonsalir = new javax.swing.JButton();
         jButtontransacciones = new javax.swing.JButton();
-        jButtonprestamo = new javax.swing.JButton();
+        prestamo = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jLayeredPane1 = new javax.swing.JLayeredPane();
+        jButtonprestamo = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -97,16 +98,16 @@ jLabel1.setIcon(icono);*/
         });
         getContentPane().add(jButtontransacciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 220, 130, 60));
 
-        jButtonprestamo.setBackground(new java.awt.Color(153, 153, 255));
-        jButtonprestamo.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButtonprestamo.setText("Prestamo");
-        jButtonprestamo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jButtonprestamo.addActionListener(new java.awt.event.ActionListener() {
+        prestamo.setBackground(new java.awt.Color(153, 153, 255));
+        prestamo.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        prestamo.setText("Pago de Prestamo");
+        prestamo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        prestamo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonprestamoActionPerformed(evt);
+                prestamoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonprestamo, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 210, 130, 60));
+        getContentPane().add(prestamo, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 340, 170, 60));
 
         jButton3.setBackground(new java.awt.Color(153, 153, 255));
         jButton3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -118,6 +119,17 @@ jLabel1.setIcon(icono);*/
         });
         getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 310, 130, 60));
         getContentPane().add(jLayeredPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 20, -1, -1));
+
+        jButtonprestamo.setBackground(new java.awt.Color(153, 153, 255));
+        jButtonprestamo.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jButtonprestamo.setText("Prestamo");
+        jButtonprestamo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jButtonprestamo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonprestamoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonprestamo, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 210, 130, 60));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -136,11 +148,11 @@ jLabel1.setIcon(icono);*/
         this.setVisible(false);
     }//GEN-LAST:event_jButtontransaccionesActionPerformed
 
-    private void jButtonprestamoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonprestamoActionPerformed
-        Prestamo inicio2= new Prestamo();
+    private void prestamoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_prestamoActionPerformed
+        PrestamoGUI inicio2= new PrestamoGUI();
         inicio2.setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_jButtonprestamoActionPerformed
+    }//GEN-LAST:event_prestamoActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
        Consulta inicio3= new Consulta();
@@ -151,6 +163,13 @@ jLabel1.setIcon(icono);*/
     private void jButtonsalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonsalirActionPerformed
         System.exit(0);
     }//GEN-LAST:event_jButtonsalirActionPerformed
+
+    private void jButtonprestamoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonprestamoActionPerformed
+        // TODO add your handling code here:
+         PagarPrestamo inicioj= new PagarPrestamo();
+        inicioj.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButtonprestamoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -194,5 +213,6 @@ jLabel1.setIcon(icono);*/
     private javax.swing.JButton jButtonsalir;
     private javax.swing.JButton jButtontransacciones;
     private javax.swing.JLayeredPane jLayeredPane1;
+    private javax.swing.JButton prestamo;
     // End of variables declaration//GEN-END:variables
 }

@@ -74,6 +74,10 @@ public class Prestamo implements Interes {
          return montoPagar;
     }
     
+     public void setMontoPagar(double montoapagar){
+         this.montoPagar= montoapagar;
+    }
+    
     public void setTiempoPago(double montoPagar){
             this.montoPagar=montoPagar;
     }

@@ -62,8 +62,8 @@ public class PrestamoController {
         st= null;
         cn= null;
         
-        sql="insert into prestamos values('"+ModeloPrestamo.getCodigoP()+"', '"+ModeloPrestamo.getValorIntereses()+"', '"+ModeloPrestamo.getTiempoPago()
-                +"', '"+ModeloPrestamo.getFechaInicio()+"', '"+ModeloPrestamo.getFechaFinal()+"', '"+ModeloPrestamo.getTipoCuenta()+"', '"+ModeloPrestamo.getMontoPagar()+"')";
+        sql="insert into prestamos values('"+ModeloPrestamo.getCodigoPrestamo()+"', '"+ModeloPrestamo.getValorIntereses()+"', '"+ModeloPrestamo.getTiempoPago()
+                +"', '"+ModeloPrestamo.getFechaInicio()+"', '"+ModeloPrestamo.getFechaFinal()+"', '"+ModeloPrestamo.getTipoCuenta()+"', '"+ModeloPrestamo.getMontoPagar()+"', '"+ModeloPrestamo.getMonto()+"')";
          try{
             cn= ConectarBD.Conectar();
             st= cn.createStatement();
@@ -80,5 +80,27 @@ public class PrestamoController {
                 
         
     }
-    
+     public boolean ActualizarmontoPrestamo(String NumerodeCuenta){
+        exito= false;
+        st= null;
+        cn= null;
+        
+        sql= "update prestamos set monto_restante= '"+ModeloPrestamo.getMontoPagar()+"' "+ "where codigo_prestamo='"+ModeloPrestamo.getCodigoPrestamo()+"'";
+       
+        try{
+            cn= ConectarBD.Conectar();
+            st= cn.createStatement();
+            st.execute(sql);
+            
+            exito= true;
+            
+            st.close();
+            cn.close();
+        }catch(SQLException e){
+            System.out.println("Error en la actualizacion");
+        }
+        return exito;       
+}
+     
+     
 }

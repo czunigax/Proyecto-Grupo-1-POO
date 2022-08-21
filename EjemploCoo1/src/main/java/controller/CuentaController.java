@@ -208,28 +208,7 @@ public class CuentaController {
         }
         return exito;
     }
-    /*  public boolean Actualizarmonto(String NumerodeCuenta){
-        exito= false;
-        st= null;
-        cn= null;
-        
-        sql= "update deposito set monto= '"+ModeloCuenta.getNumerodeCuenta()+"' "+ModeloCuenta.getTipo()+"' "+ModeloCuenta.getMonto()+"' "+
-                ModeloCuenta.getFechaApertura()+"' "+ "where numero de cuenta='"+ModeloCuenta.getNumerodeCuenta()+"'";
-        
-        try{
-            cn= ConectarBD.Conectar();
-            st= cn.createStatement();
-            st.execute(sql);
-            
-            exito= true;
-            
-            st.close();
-            cn.close();
-        }catch(SQLException e){
-            System.out.println("Error en la actualizacion");
-        }
-        return exito;       
-}*/
+  
            
 
       public boolean InsertarDeposito(){
@@ -276,4 +255,48 @@ public class CuentaController {
     }
        
 
+        public boolean BorrarCuenta(String Id){
+        exito= false;
+        st= null;
+        cn= null;
+        
+        sql= "delete from deposito where id '"+Id+"'";
+        
+        try{
+            cn= ConectarBD.Conectar();
+            st= cn.createStatement();
+            st.execute(sql);
+            
+            exito= true;
+            
+            st.close();
+            cn.close();
+        }catch(SQLException e){
+            System.out.println("Error en la eliminacion");
+        }
+        return exito;       
+}
+   
+         public boolean ActualizarmontoCliente(String id){
+        exito= false;
+        st= null;
+        cn= null;
+        
+        sql= "update cuenta set monto= '"+ModeloCuenta.getMonto()+"' "+ "where codigo_prestamo='"+ModeloCuenta.getId()+"'";
+       
+        try{
+            cn= ConectarBD.Conectar();
+            st= cn.createStatement();
+            st.execute(sql);
+            
+            exito= true;
+            
+            st.close();
+            cn.close();
+        }catch(SQLException e){
+            System.out.println("Error en la actualizacion");
+        }
+        return exito;       
+}
+       
 }

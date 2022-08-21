@@ -27,10 +27,7 @@ public class Consulta extends javax.swing.JFrame {
     private String sql;
     private String sql2;
     PreparedStatement ps;
-    PreparedStatement ps2;
-    private ResultSet rs2;
-    private Connection cn2;
-    private Statement st2;
+    
     /**
      * Creates new form Consulta
      */
