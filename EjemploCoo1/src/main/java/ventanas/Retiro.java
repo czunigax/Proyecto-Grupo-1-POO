@@ -306,6 +306,7 @@ public class Retiro extends javax.swing.JFrame {
         cuentadepositar.setMonto(cuentadepositar.getMonto());
         
         controladorcuenta.InsertarRetiro();
+        controladorcuenta.BorrarCuenta(numerodecuenta);
        
         
         }else {

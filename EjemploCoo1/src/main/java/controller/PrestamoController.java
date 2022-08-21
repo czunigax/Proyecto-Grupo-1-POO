@@ -85,7 +85,7 @@ public class PrestamoController {
         st= null;
         cn= null;
         
-        sql= "update prestamos set monto_restante= '"+ModeloPrestamo.getMontoPagar()+"' "+ "where codigo_prestamo='"+ModeloPrestamo.getCodigoPrestamo()+"'";
+        sql= "update prestamos set monto_restante= '"+ModeloPrestamo.getMonto()+"' "+"where codigo_prestamo='"+NumerodeCuenta+"'";
        
         try{
             cn= ConectarBD.Conectar();

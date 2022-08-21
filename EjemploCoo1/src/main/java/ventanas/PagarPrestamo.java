@@ -170,7 +170,7 @@ public class PagarPrestamo extends javax.swing.JFrame {
          JOptionPane.showMessageDialog(null,"El monto restante a pagar es " + restapagar);
          
          modeloprestamo.setMonto(restapagar);
-        controladorprestamo.ActualizarmontoPrestamo(codigo);
+         controladorprestamo.ActualizarmontoPrestamo(codigo);
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
