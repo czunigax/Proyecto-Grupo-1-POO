@@ -44,6 +44,7 @@ public class Deposito extends javax.swing.JFrame {
         fechatxt = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         tipocbx = new javax.swing.JComboBox<>();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -104,6 +105,9 @@ public class Deposito extends javax.swing.JFrame {
 
         tipocbx.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Navidena", "Especial", "Aportaciones", "Estudiante" }));
         getContentPane().add(tipocbx, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 320, -1, -1));
+
+        jLabel6.setBackground(new java.awt.Color(204, 204, 204));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 480));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -218,6 +222,7 @@ public class Deposito extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JButton jbenviar;
     private javax.swing.JTextField montotxt;
     private javax.swing.JTextField numerotxt;

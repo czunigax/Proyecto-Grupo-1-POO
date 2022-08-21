@@ -59,6 +59,7 @@ public class CrearCuenta extends javax.swing.JFrame {
         tipotxt = new javax.swing.JComboBox<>();
         cuentatxt = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -171,6 +172,9 @@ public class CrearCuenta extends javax.swing.JFrame {
         jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel12.setText("Numero de Cuenta");
         getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 410, -1, -1));
+
+        jLabel13.setBackground(new java.awt.Color(204, 204, 204));
+        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 790, 530));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -316,6 +320,7 @@ public class CrearCuenta extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

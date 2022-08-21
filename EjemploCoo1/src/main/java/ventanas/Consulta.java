@@ -33,6 +33,7 @@ public class Consulta extends javax.swing.JFrame {
      */
     public Consulta() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -58,6 +59,7 @@ public class Consulta extends javax.swing.JFrame {
         txt_sum = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -144,6 +146,10 @@ public class Consulta extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 10, -1, -1));
+
+        jLabel1.setBackground(new java.awt.Color(204, 204, 204));
+        jLabel1.setText("jLabel1");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 540));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -266,6 +272,7 @@ public class Consulta extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
