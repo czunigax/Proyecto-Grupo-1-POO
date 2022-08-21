@@ -30,6 +30,7 @@ public class Transacciones extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButtonmenutc = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -63,7 +64,11 @@ public class Transacciones extends javax.swing.JFrame {
                 jButtonmenutcActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonmenutc, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 10, -1, -1));
+        getContentPane().add(jButtonmenutc, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 30, -1, -1));
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        jLabel1.setText("Transacciones");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 150, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -126,5 +131,6 @@ public class Transacciones extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButtonmenutc;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

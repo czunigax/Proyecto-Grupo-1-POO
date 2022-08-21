@@ -60,6 +60,7 @@ public class Retiro extends javax.swing.JFrame {
         fechatxt = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         tiporetirotxt = new javax.swing.JComboBox<>();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -102,7 +103,7 @@ public class Retiro extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 10, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 20, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel4.setText("Fecha:");
@@ -121,6 +122,9 @@ public class Retiro extends javax.swing.JFrame {
 
         tiporetirotxt.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Navidena", "Aportaciones", "Especial", "Estudiante" }));
         getContentPane().add(tiporetirotxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 310, -1, -1));
+
+        jLabel6.setBackground(new java.awt.Color(204, 204, 204));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 790, 500));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -374,6 +378,7 @@ public class Retiro extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JTextField montotxt;
     private javax.swing.JComboBox<String> tiporetirotxt;
     // End of variables declaration//GEN-END:variables

@@ -65,7 +65,7 @@ jLabel1.setIcon(icono);*/
         jButtonprestamo = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -79,7 +79,7 @@ jLabel1.setIcon(icono);*/
                 jButtoncuentaActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtoncuenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 320, 130, 60));
+        getContentPane().add(jButtoncuenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 310, 130, 60));
 
         jButtonsalir.setBackground(new java.awt.Color(153, 153, 255));
         jButtonsalir.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -89,7 +89,7 @@ jLabel1.setIcon(icono);*/
                 jButtonsalirActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonsalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 450, 90, -1));
+        getContentPane().add(jButtonsalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 436, 110, 30));
 
         jButtontransacciones.setBackground(new java.awt.Color(153, 153, 255));
         jButtontransacciones.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -103,14 +103,14 @@ jLabel1.setIcon(icono);*/
 
         prestamo.setBackground(new java.awt.Color(153, 153, 255));
         prestamo.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        prestamo.setText("Pago de Prestamo");
+        prestamo.setText("Prestamo");
         prestamo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         prestamo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 prestamoActionPerformed(evt);
             }
         });
-        getContentPane().add(prestamo, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 340, 170, 60));
+        getContentPane().add(prestamo, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 260, 170, 60));
 
         jButton3.setBackground(new java.awt.Color(153, 153, 255));
         jButton3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -120,19 +120,19 @@ jLabel1.setIcon(icono);*/
                 jButton3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 310, 130, 60));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 310, 150, 60));
         getContentPane().add(jLayeredPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 20, -1, -1));
 
         jButtonprestamo.setBackground(new java.awt.Color(153, 153, 255));
         jButtonprestamo.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButtonprestamo.setText("Prestamo");
+        jButtonprestamo.setText("Pago a prestamo");
         jButtonprestamo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButtonprestamo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonprestamoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonprestamo, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 210, 130, 60));
+        getContentPane().add(jButtonprestamo, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 210, 150, 60));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 120)); // NOI18N
         jLabel1.setText("POO");
@@ -142,8 +142,8 @@ jLabel1.setIcon(icono);*/
         jLabel2.setText("Cooperativa de ahorro y credito.");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 160, -1, -1));
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 255));
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 490));
+        jLabel3.setBackground(new java.awt.Color(204, 204, 204));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 490));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -228,8 +228,8 @@ jLabel1.setIcon(icono);*/
     private javax.swing.JButton jButtontransacciones;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLayeredPane jLayeredPane1;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JButton prestamo;
     // End of variables declaration//GEN-END:variables
 }
