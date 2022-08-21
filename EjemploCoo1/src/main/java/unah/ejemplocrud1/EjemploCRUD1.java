@@ -7,6 +7,7 @@ package unah.ejemplocrud1;
 
 
 import controller.CuentaController;
+import controller.PrestamoController;
 
 import java.sql.SQLException;
 
@@ -19,8 +20,10 @@ import modelo.Cuenta;
 import modelo.CuentaAportaciones;
 import modelo.CuentaEspecial;
 import modelo.Empleado;
-import ventanas.Prestamo;
+import modelo.Prestamo;
 import view.CuentaView;
+import view.PrestamoView;
+
 
 
 
@@ -51,6 +54,18 @@ public class EjemploCRUD1 {
     };
     CuentaController controladorcuenta = new CuentaController(modelocuenta, vistacuenta);
        
+    PrestamoView vistaprestamo = new PrestamoView();
+    Prestamo modeloprestamo = new Prestamo();
+    
+    
+    PrestamoController controladorprestamo = new PrestamoController(vistaprestamo,modeloprestamo);
+    
+    controladorprestamo.setCodigoPrestamo("1");
+    controladorprestamo.setValorIntereses(2500);
+    controladorprestamo.CreacionPrestamo();
+    
+    
+    
       /*
        //modificar info en base al Id
         System.out.println("Modificar");
@@ -71,60 +86,10 @@ public class EjemploCRUD1 {
        
      
 */     
-     controladorcuenta.ActualizarVista();
-   //  controladorcuenta.SumadeMonto();
-     
-     //controladorcuenta.setId("1");
-    // controladorcuenta.setNombre("d d");
-    // controladorcuenta.setCodigoCliente("1");
-     //controladorcuenta.setTelefono("1");
-    // controladorcuenta.setNacimiento("12/11/92");
-    // controladorcuenta.setDireccion("Col. loarque 3a calle");
-    // controladorcuenta.setEmail("er@gmail.com");
-     /*controladorcuenta.setNumerodeCuenta("2");
-     controladorcuenta.setTipo("enfermo");
-     controladorcuenta.setMonto(9);
-     controladorcuenta.setFechaApertura("21/10/2017");*/
-     
-    /* controladorcuenta.setNumerodeCuenta("2");
-    
-     controladorcuenta.setMonto(20);*/
-     
-    // controladorcuenta.InsertarDeposito();
-    
-        //INSTANCIAS DE SCANNER
-        Scanner sc = new Scanner(System.in);
-        Scanner scnum = new Scanner(System.in);
-
-        //VARIABLES A UTILIZAR
-        //VARIABLES DDE DATOS DE CLIENTE
-        String nombre, direccion, telefono, id, Email, codigoCliente = null, fechaNacimiento, fechaRegistro,
-                nombreEmpresa, direccionEmpresa, tipoCuenta, numeroCuenta, fechaApertura, fechaDeposito,
-                nombreCE, fechaRetiro, codigoEmpleado, cargo, tiempoPago, codigoPrestamo, fechaInicio, fechaFinal;
-    
-        int idCE;
-        
-        byte opcionInicio;
-        double monto, interes, valorInteres, montoPagar;
-        
-        boolean centinelaInicio = true;
-        //HEREDAN DE PERSONA
-        Cliente cliente1 = new Cliente();
-        Empleado cajero = new Empleado();
-        Empleado analista = new Empleado();
-        
-        //COOPERATIVA
-        Cooperativa empresa = new Cooperativa();
-        
-        //HEREDAN DE CUENTA
-        CuentaAportaciones cuentaAP = new CuentaAportaciones();
-        CuentaEspecial cuentaE = new CuentaEspecial();
-        
-        //PRESTAMO
-        Prestamo prestamo1 = new Prestamo();
-        
+    }
+}
  //--------------------------------------INICIO-------------------------------------------//
-        while (centinelaInicio){
+     /*   while (centinelaInicio){
             System.out.println("MENU DE INICIO");
             System.out.println("1. CREAR CUENTA.");
             System.out.println("2. TRANSACCIONES.");
@@ -168,3 +133,4 @@ public class EjemploCRUD1 {
     
 
 }
+*/
