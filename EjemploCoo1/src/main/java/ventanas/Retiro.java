@@ -5,6 +5,7 @@
 package ventanas;
 
 import controller.CuentaController;
+import java.awt.Color;
 import modelo.CuentaAportaciones;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -37,6 +38,7 @@ public class Retiro extends javax.swing.JFrame {
     
     public Retiro() {
         initComponents();
+        getContentPane().setBackground(Color.ORANGE);
         this.setLocationRelativeTo(null);
     }
 
@@ -187,7 +189,7 @@ public class Retiro extends javax.swing.JFrame {
         
         controladorcuenta.InsertarRetiro();
       
-        
+        JOptionPane.showMessageDialog(null, "Retiro con exito");
         }else{
         JOptionPane.showMessageDialog(null, "No se ha alcanzado el monto esperado");
         }
@@ -238,7 +240,7 @@ public class Retiro extends javax.swing.JFrame {
         
         controladorcuenta.InsertarRetiro();
        
-        
+        JOptionPane.showMessageDialog(null, "Retiro con exito");
         
         }else if(tipo.equals("Estudiante")&& fecha.equals("enero")||fecha.equals("febrero")||fecha.equals("septiembre")||fecha.equals("agosto")){
         
@@ -274,7 +276,7 @@ public class Retiro extends javax.swing.JFrame {
         cuentadepositar.setMonto(cuentadepositar.getMonto());
         
         controladorcuenta.InsertarRetiro();
-        
+        JOptionPane.showMessageDialog(null, "Retiro con exito");
         
         }else if(tipo.equals("Aportaciones")){
         
@@ -313,7 +315,7 @@ public class Retiro extends javax.swing.JFrame {
         controladorcuenta.InsertarRetiro();
         controladorcuenta.BorrarCuenta(numerodecuenta);
        
-        
+        JOptionPane.showMessageDialog(null, "Retiro con exito");
         }else {
         JOptionPane.showMessageDialog(null, "Su cuenta y su fecha de retiro no coinciden");
         }

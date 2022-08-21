@@ -167,7 +167,7 @@ public class CuentaController {
         st= null;
         cn= null;
                 
-        sql= "insert clientes cuenta values ('"+ModeloCuenta.getId()+"', '"+ ModeloCuenta.getNumerodeCuenta()+"', '"+ModeloCuenta.getNombre()+"', '"+ModeloCuenta.getTelefono()
+        sql= "insert into cliente values ('"+ModeloCuenta.getId()+"', '"+ ModeloCuenta.getNumerodeCuenta()+"', '"+ModeloCuenta.getNombre()+"', '"+ModeloCuenta.getTelefono()
         +"', '"+ModeloCuenta.getNacimiento()+"', '"+ModeloCuenta.getDireccion()+"', '"+ModeloCuenta.getEmail() +"')";
         
         try{

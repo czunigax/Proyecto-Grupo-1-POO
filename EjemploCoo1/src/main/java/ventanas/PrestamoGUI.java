@@ -5,6 +5,7 @@
 package ventanas;
 
 import controller.PrestamoController;
+import java.awt.Color;
 import modelo.Prestamo;
 import view.PrestamoView;
 
@@ -19,6 +20,7 @@ public class PrestamoGUI extends javax.swing.JFrame {
      */
     public PrestamoGUI() {
         initComponents();
+        getContentPane().setBackground(Color.ORANGE);
         this.setLocationRelativeTo(null);
     }
 
@@ -55,6 +57,7 @@ public class PrestamoGUI extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 204, 255));
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -121,6 +124,11 @@ public class PrestamoGUI extends javax.swing.JFrame {
         jButton2.setBackground(new java.awt.Color(153, 153, 255));
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jButton2.setText("Cancelar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 460, -1, -1));
 
         jButton3.setBackground(new java.awt.Color(153, 153, 255));
@@ -187,6 +195,13 @@ public class PrestamoGUI extends javax.swing.JFrame {
     private void interestxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_interestxtActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_interestxtActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+         Inicio cc= new Inicio();
+        cc.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments

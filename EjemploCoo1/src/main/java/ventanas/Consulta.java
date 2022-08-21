@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package ventanas;
+import java.awt.Color;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.Statement;
@@ -33,6 +34,7 @@ public class Consulta extends javax.swing.JFrame {
      */
     public Consulta() {
         initComponents();
+        getContentPane().setBackground(Color.ORANGE);
         this.setLocationRelativeTo(null);
     }
 
@@ -148,7 +150,6 @@ public class Consulta extends javax.swing.JFrame {
         getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 10, -1, -1));
 
         jLabel1.setBackground(new java.awt.Color(204, 204, 204));
-        jLabel1.setText("jLabel1");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 540));
 
         pack();
@@ -182,7 +183,7 @@ public class Consulta extends javax.swing.JFrame {
          sum=rs.getString("summonto");
         //txt_sum.setText(sum);
         
-        JOptionPane.showMessageDialog(null,"La cantidad de dinero depositado " + sum);
+        JOptionPane.showMessageDialog(null,"La cantidad de dinero depositado historicamente es " + sum);
         
         
         
@@ -216,12 +217,16 @@ public class Consulta extends javax.swing.JFrame {
         
          total=Double.parseDouble(sum)-Double.parseDouble(res);
          JOptionPane.showMessageDialog(null,"El monto total de la cuenta \n sumando depositos y restando retiros es " + total);
-         
+         String val = Double.toString(total);
+         txt_sum.setText(val);
         
     }//GEN-LAST:event_jbconsultarActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        Inicio cc= new Inicio();
+        cc.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void txt_sumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_sumActionPerformed

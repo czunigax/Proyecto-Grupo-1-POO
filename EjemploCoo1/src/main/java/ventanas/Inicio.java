@@ -6,6 +6,7 @@ package ventanas;
 import modelo.Cuenta;
 import view.CuentaView;
 import controller.CuentaController;
+import java.awt.Color;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 /**
@@ -44,6 +45,7 @@ jLabel1.setIcon(icono);*/
      */
     public Inicio() {
         initComponents();
+        getContentPane().setBackground(Color.ORANGE);
         this.setLocationRelativeTo(null);
     }
 

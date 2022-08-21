@@ -4,6 +4,9 @@
  */
 package ventanas;
 
+import java.awt.Color;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author The Ice
@@ -15,6 +18,7 @@ public class Transacciones extends javax.swing.JFrame {
      */
     public Transacciones() {
         initComponents();
+        getContentPane().setBackground(Color.ORANGE);
         this.setLocationRelativeTo(null);
     }
 
@@ -80,6 +84,7 @@ public class Transacciones extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         Retiro retiro=new Retiro();
         retiro.setVisible(true);
+        JOptionPane.showMessageDialog(null, "Si su cuenta es navidena podra retirar solo en el mes de diciembre\n Si su cuenta es estudiante podra retirar solo en los meses de enero-febrero y agosto-septiembre\n Si su cuenta es especial podra retirar si se alcanzo un monto de ahorro especifico \n Si su cuenta es de aportaciones podra retirar solo si cancela su cuenta ");
         this.setVisible(false);
         
     }//GEN-LAST:event_jButton2ActionPerformed

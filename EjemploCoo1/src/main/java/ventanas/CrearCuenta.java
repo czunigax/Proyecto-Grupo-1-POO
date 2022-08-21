@@ -5,6 +5,7 @@
 package ventanas;
 
 import controller.CuentaController;
+import java.awt.Color;
 import javax.swing.JOptionPane;
 import modelo.Cuenta;
 import modelo.CuentaEspecial;
@@ -21,6 +22,7 @@ public class CrearCuenta extends javax.swing.JFrame {
      */
     public CrearCuenta() {
         initComponents();
+        getContentPane().setBackground(Color.ORANGE);
         this.setLocationRelativeTo(null);
     }
 
@@ -86,7 +88,7 @@ public class CrearCuenta extends javax.swing.JFrame {
                 jButtonmenuccActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonmenucc, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 10, -1, -1));
+        getContentPane().add(jButtonmenucc, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 10, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel4.setText("Telefono:");
@@ -158,6 +160,11 @@ public class CrearCuenta extends javax.swing.JFrame {
         jButtoncancelarcc.setBackground(new java.awt.Color(153, 153, 255));
         jButtoncancelarcc.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButtoncancelarcc.setText("Cancelar");
+        jButtoncancelarcc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtoncancelarccActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButtoncancelarcc, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 460, 100, 40));
 
         tipotxt.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Navidena", "Especial", "Aportaciones", "Estudiante" }));
@@ -236,7 +243,7 @@ public class CrearCuenta extends javax.swing.JFrame {
         };
         CuentaController controladorcuenta = new CuentaController(modelocuenta, vistacuenta);
         
-         controladorcuenta.setId(id);
+        controladorcuenta.setId(id);
         controladorcuenta.setNumerodeCuenta(cuenta);
         controladorcuenta.setNombre(nombre);
         controladorcuenta.setTelefono(telefono);
@@ -270,6 +277,13 @@ public class CrearCuenta extends javax.swing.JFrame {
     private void tipotxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tipotxtActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tipotxtActionPerformed
+
+    private void jButtoncancelarccActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtoncancelarccActionPerformed
+        // TODO add your handling code here:
+         Inicio cc= new Inicio();
+        cc.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButtoncancelarccActionPerformed
 
     /**
      * @param args the command line arguments

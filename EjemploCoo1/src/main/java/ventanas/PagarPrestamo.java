@@ -5,6 +5,7 @@
 package ventanas;
 
 import controller.PrestamoController;
+import java.awt.Color;
 import javax.swing.JOptionPane;
 import unah.ejemplocrud1.ConectarBD;
 import java.sql.Connection;
@@ -37,6 +38,7 @@ public class PagarPrestamo extends javax.swing.JFrame {
      */
     public PagarPrestamo() {
         initComponents();
+        getContentPane().setBackground(Color.ORANGE);
         this.setLocationRelativeTo(null);
     }
 

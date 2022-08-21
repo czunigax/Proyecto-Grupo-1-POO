@@ -5,6 +5,8 @@
 package ventanas;
 
 import controller.CuentaController;
+import java.awt.Color;
+import javax.swing.JOptionPane;
 import modelo.Cuenta;
 import static ventanas.Inicio.vistacuenta;
 import view.CuentaView;
@@ -20,6 +22,7 @@ public class Deposito extends javax.swing.JFrame {
      */
     public Deposito() {
         initComponents();
+        getContentPane().setBackground(Color.ORANGE);
         this.setLocationRelativeTo(null);
     }
 
@@ -157,7 +160,7 @@ public class Deposito extends javax.swing.JFrame {
         
         controladorcuenta.InsertarDeposito();
        
-        
+        JOptionPane.showMessageDialog(null, "Deposito con exito");
        
         
     
@@ -170,6 +173,9 @@ public class Deposito extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+         Transacciones retiro=new Transacciones();
+        retiro.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
