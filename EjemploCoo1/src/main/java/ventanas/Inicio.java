@@ -63,6 +63,9 @@ jLabel1.setIcon(icono);*/
         jButton3 = new javax.swing.JButton();
         jLayeredPane1 = new javax.swing.JLayeredPane();
         jButtonprestamo = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -86,7 +89,7 @@ jLabel1.setIcon(icono);*/
                 jButtonsalirActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonsalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 420, 90, -1));
+        getContentPane().add(jButtonsalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 450, 90, -1));
 
         jButtontransacciones.setBackground(new java.awt.Color(153, 153, 255));
         jButtontransacciones.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -130,6 +133,17 @@ jLabel1.setIcon(icono);*/
             }
         });
         getContentPane().add(jButtonprestamo, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 210, 130, 60));
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 120)); // NOI18N
+        jLabel1.setText("POO");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 20, -1, -1));
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel2.setText("Cooperativa de ahorro y credito.");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 160, -1, -1));
+
+        jPanel1.setBackground(new java.awt.Color(204, 204, 255));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 490));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -212,7 +226,10 @@ jLabel1.setIcon(icono);*/
     private javax.swing.JButton jButtonprestamo;
     private javax.swing.JButton jButtonsalir;
     private javax.swing.JButton jButtontransacciones;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLayeredPane jLayeredPane1;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JButton prestamo;
     // End of variables declaration//GEN-END:variables
 }
