@@ -62,8 +62,8 @@ public class PrestamoController {
         st= null;
         cn= null;
         
-        sql="insert into prestamos values('"+ModeloPrestamo.getCodigoP()+"', '"+ModeloPrestamo.getValorIntereses()
-                +"')";
+        sql="insert into prestamos values('"+ModeloPrestamo.getCodigoP()+"', '"+ModeloPrestamo.getValorIntereses()+"', '"+ModeloPrestamo.getTiempoPago()
+                +"', '"+ModeloPrestamo.getFechaInicio()+"', '"+ModeloPrestamo.getFechaFinal()+"', '"+ModeloPrestamo.getTipoCuenta()+"', '"+ModeloPrestamo.getMontoPagar()+"')";
          try{
             cn= ConectarBD.Conectar();
             st= cn.createStatement();

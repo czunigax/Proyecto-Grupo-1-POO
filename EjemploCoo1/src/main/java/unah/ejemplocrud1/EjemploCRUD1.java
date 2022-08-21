@@ -86,8 +86,7 @@ public class EjemploCRUD1 {
        
      
 */     
-<<<<<<< HEAD
-    }
+
 }
  //--------------------------------------INICIO-------------------------------------------//
      /*   while (centinelaInicio){
@@ -152,9 +151,8 @@ public class EjemploCRUD1 {
      
     // controladorcuenta.InsertarDeposito();
     
->>>>>>> f560a435896adc7cb372c541eb202c794e82d5ed
+
     }
     
 
-}
-*/
+

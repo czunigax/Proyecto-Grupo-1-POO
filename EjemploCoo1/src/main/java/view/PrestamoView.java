@@ -28,7 +28,7 @@ public class PrestamoView {
                 }
             }            
         } catch (SQLException ex) {
-            Logger.getLogger(CuentaView.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(PrestamoView.class.getName()).log(Level.SEVERE, null, ex);
         }                   
     }
 }
